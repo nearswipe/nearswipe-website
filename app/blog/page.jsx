@@ -1,12 +1,15 @@
 "use client";
 import CustomButton from "@/components/CustomButton";
 import WaitlistModal from "@/components/WaitlistModal";
+import { useGlobalContext } from "@/context/GlobalContext";
+import { urlFor } from "@/lib/sanity";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const page = () => {
   const [windowWidth, setWindowWidth] = useState(0);
+  const { blogs } = useGlobalContext();
   const router = useRouter();
   const [isActive, setIsActive] = useState(false);
 
@@ -27,28 +30,16 @@ const page = () => {
       )}
       <div className="relative h-[70vh] font-roboto w-full flex flex-col items-center justify-center">
         {/* Responsive image container */}
-        <div
-          className={`absolute -z-2 ${
-            windowWidth > 768 ? "w-[850px] h-[100vh]" : "w-[300px] h-[300px]"
-          } rounded-full -top-[130px]`}
-        >
-          <Image
-            src="/assets/hero-gradient.png"
-            className="w-full h-[90%] object-cover rounded-full"
-            width={500}
-            height={500}
-            alt="Hero"
-          />
-        </div>
-
-        {/* Background gradient */}
-        <div className="absolute top-0 bottom-0 left-0 right-0 z-20 bg-gradient-to-b from-black/85 via-black/70 to-black/0 h-[70vh] w-full"></div>
-
-        <div
-          className={`absolute -z-1 bg-[#283BE5]/80 ${
-            windowWidth > 768 ? "w-[500px] h-[500px]" : "w-[250px] h-[250px]"
-          } -top-[200px] rounded-full`}
-        ></div>
+        <div className="absolute">
+                <Image
+                  src="/assets/bg.svg"
+                  className="w-full h-full object-cover rounded-full"
+                  width={windowWidth}
+                  priority
+                  height={500}
+                  alt=""
+                />
+              </div>
 
         <div className="z-50 text-white w-full mt-20 px-20">
           <div className=" w-full h-fit flex space-x-56 items-center justify-center">
@@ -67,10 +58,39 @@ const page = () => {
 
       <div className="w-full sm:mt-24 px-5 text-white md:px-20">
         <p className="text-white mb-12 text-center text-[2.3rem] font-bold">
-          All post
+          All posts
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+          {blogs.map((post, idx) => (
+            <div key={idx} onClick={() => router.push(`/blog/${post?.currentSlug }`)} className="w-full flex flex-col items-center h-full cursor-pointer">
+            <div className="h-fit rounded-2xl">
+              <Image
+                src={urlFor(post?.titleImage).url()}
+                className="object-cover w-[350px] h-[350px] rounded-2xl"
+                width={450}
+                height={450}
+                alt=""
+              />
+            </div>
+
+            <div className="font-roboto w-full text-[15px] grid gap-3 font-thin text-[#a1a1aa] mt-7 text-start">
+              <h4 className="text-white line-clamp-2 text-2xl font-bold">
+                {post?.title}
+              </h4>
+
+              <h4 className="line-clamp-2">
+                {post?.smallDescription}
+              </h4>
+
+              <h4 className="flex items-center space-x-1 text-sm sm:justify-start justify-center">
+                <span>Dec 23, 2024</span>
+                <span className="text-2xl">&#8729;</span> <span>4 min</span>
+              </h4>
+            </div>
+          </div>
+          ))}
+
           <div onClick={() => router.push("/blog/234")} className="w-full flex flex-col items-center h-full cursor-pointer">
             <div className="h-fit rounded-2xl">
               <Image

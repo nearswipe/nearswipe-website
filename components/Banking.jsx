@@ -5,7 +5,7 @@ const Banking = () => {
   return (
     <div className="font-roboto text-white w-full h-full bg-black sm:py-12 px-6 sm:px-28 ">
       <div className="w-full h-full flex flex-col items-center">
-        <div className="p-2 sm:w-2/3 w-full h-full  flex flex-col items-center sm:px-24">
+        <div className="p-2 sm:w-2/3 w-full h-full  flex flex-col items-center sm:px-10">
           <p className="uppercase text-sm tracking-[0.3rem] text-[#635BFF]">
             banking
           </p>

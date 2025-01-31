@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import CustomButton from "./CustomButton";
 import Image from "next/image";
 
-const Banner = ({ isActive, setIsActive }) => {
+const Banner = ({ setIsActive }) => {
   const [windowWidth, setWindowWidth] = useState(0);
 
   useEffect(() => {

@@ -25,42 +25,31 @@ const page = () => {
           <WaitlistModal isActive={isActive} setIsActive={setIsActive} />
         )}
         {/* Responsive image container */}
-        <div
-          className={`absolute -z-2 ${
-            windowWidth > 768 ? "w-[850px] h-[850px]" : "w-[300px] h-[300px]"
-          } rounded-full -top-[150px]`}
-        >
+        <div className="absolute">
           <Image
-            src="/assets/hero-gradient.png"
+            src="/assets/bg.svg"
             className="w-full h-full object-cover rounded-full"
-            width={500}
+            width={windowWidth}
+            priority
             height={500}
-            alt="Hero"
+            alt=""
           />
         </div>
-
-        {/* Background gradient */}
-        <div className="absolute top-0 bottom-0 left-0 right-0 z-20 bg-gradient-to-b from-black/85 via-black/70 to-black/0 h-screen w-full"></div>
-        <div
-          className={`absolute -z-1 bg-[#283BE5]/80 ${
-            windowWidth > 768 ? "w-[500px] h-[500px]" : "w-[250px] h-[250px]"
-          } -top-[200px] rounded-full`}
-        ></div>
 
         <div className="z-50 text-white w-full px-20">
           <div className=" w-full mt-12 h-fit flex space-x-56 items-center justify-between">
             <div className="md:w-1/2 w-full">
-              <p className="text-[5rem] text-[#d1d1d1] font-black">
+              <p className="text-[3.5rem] text-[#d1d1d1] font-black">
                 Our Products
               </p>
 
-              <p className="text-[1.479rem] leading-7o font-light text-[#a1a1aa]">
+              <p className="text-[1.2rem] leading-7o font-light text-[#a1a1aa]">
                 Discover the perfect NearSwipe solution for your needs, whether
                 you're a student, business owner, or institution.
               </p>
 
               <CustomButton
-                textStyles="uppercase text-[16px] sm:text-[18px] font-bold"
+                textStyles="uppercase text-sm sm:text-md font-bold"
                 imageStyles="rounded-[35px]"
                 func={() => setIsActive(true)}
                 containerStyles="mt-6 py-3 sm:py-4 self-center sm:self-start w-full sm:w-fit px-6 rounded-[35px]"
@@ -68,7 +57,7 @@ const page = () => {
               />
             </div>
 
-            <div className="hidden w-1/2 h-fit relative md:flex items-center justify-end">
+            <div className="hidden w-1/2 h-fit mt-5 relative md:flex items-center justify-end">
               <Image
                 src="/assets/mockup.svg"
                 className={`object-fill `}
@@ -81,14 +70,14 @@ const page = () => {
         </div>
       </div>
 
-      <div className="flex flex-col gap-16 px-5 md:px-20">
+      <div className="flex flex-col mt-10 gap-16 px-5 md:px-20">
         <div className="z-50 font-roboto text-white bg-[#1e1e1e] flex flex-col items-center gap-12 w-full p-6 px-12 rounded-3xl">
           <div>
-            <p className="text-[3rem] text-center font-bold">
+            <p className="text-[2.5rem] text-center font-bold">
               NearSwipe Student/Staff
             </p>
 
-            <p className="text-lg text-center leading-7o font-light mt-3 text-[#a1a1aa]">
+            <p className="text-lg text-center leading-7o font-light mt-1 text-[#a1a1aa]">
               NFC-enabled smart cards transforming campus life with seamless
               access and payments.
             </p>
@@ -153,11 +142,11 @@ const page = () => {
 
         <div className="z-50 font-roboto text-white bg-[#1e1e1e] flex flex-col items-center gap-12 w-full p-6 px-12 rounded-3xl">
           <div>
-            <p className="text-[3rem] text-center font-bold">
+            <p className="text-[2.5rem] text-center font-bold">
               NearSwipe Merchant
             </p>
 
-            <p className="text-lg text-center leading-7o font-light mt-3 text-[#a1a1aa]">
+            <p className="text-lg text-center leading-7o font-light mt-1 text-[#a1a1aa]">
               Transform any smartphone into a powerful NFC payment terminal.
             </p>
           </div>
@@ -221,9 +210,9 @@ const page = () => {
 
         <div className="z-50 font-roboto text-white bg-[#1e1e1e] flex flex-col items-center gap-12 w-full p-6 px-12 rounded-3xl">
           <div>
-            <p className="text-[3rem] text-center font-bold">NearSwipe Bank</p>
+            <p className="text-[2.5rem] text-center font-bold">NearSwipe Bank</p>
 
-            <p className="text-lg text-center leading-7o font-light mt-3 text-[#a1a1aa]">
+            <p className="text-lg text-center leading-7o font-light mt-1 text-[#a1a1aa]">
               Virtual accounts that make digital banking seamless and secure.
             </p>
           </div>
@@ -287,26 +276,27 @@ const page = () => {
       </div>
 
       <div className="flex md:p-20 p-5 mt-16 font-roboto">
-        <div className="relative flex flex-col rounded-2xl border items-center justify-center w-full md:h-96 h-80">
+        <div className="relative flex flex-col rounded-2xl border items-center justify-center w-full md: 0">
           <Image
             src={
               windowWidth > 1200
                 ? "/assets/bg-gradient.svg"
                 : "/assets/image-gradient.svg"
             }
+            priority
             className="z-40 w-full h-full absolute rounded-2xl inset-0 object-cover"
             width={400}
             height={400}
             alt=""
           />
 
-          <div className="absolute z-50 w-full flex justify-center">
-            <div className="w-full md:w-[45%] px-4 flex flex-col items-center gap-6">
-              <h1 className="text-2xl font-black md:text-[3rem] text-center md:leading-[3.8rem]">
+          <div className="z-40 w-full py-10 flex justify-center">
+            <div className="w-full md:w-[50%] px-4 flex flex-col items-center gap-6">
+              <h1 className="text-2xl font-black md:text-[2.5rem] text-center md:leading-[2.5rem]">
                 Ready to Transform Your Financial future?
               </h1>
 
-              <p className="text-center font-normal md:text-[1.3rem]">
+              <p className="text-center font-normal md:text-[1.2.5rem]">
                 Join thousands of users already experiencing the future of
                 banking, business and campus life.
               </p>

@@ -21,7 +21,7 @@ const page = () => {
 
   const submit = (e) => {
     e.preventDefault();
-  }
+  };
 
   return (
     <div className="relative w-full">
@@ -30,28 +30,16 @@ const page = () => {
       )}
       <div className="relative h-[70vh] font-roboto w-full flex flex-col items-center justify-center">
         {/* Responsive image container */}
-        <div
-          className={`absolute -z-2 ${
-            windowWidth > 768 ? "w-[850px] h-[100vh]" : "w-[300px] h-[300px]"
-          } rounded-full -top-[130px]`}
-        >
+        <div className="absolute">
           <Image
-            src="/assets/hero-gradient.png"
-            className="w-full h-[90%] object-cover rounded-full"
-            width={500}
+            src="/assets/bg.svg"
+            className="w-full h-full object-cover rounded-full"
+            width={windowWidth}
+            priority
             height={500}
-            alt="Hero"
+            alt=""
           />
         </div>
-
-        {/* Background gradient */}
-        <div className="absolute top-0 bottom-0 left-0 right-0 z-20 bg-gradient-to-b from-black/85 via-black/70 to-black/0 h-[70vh] w-full"></div>
-
-        <div
-          className={`absolute -z-1 bg-[#283BE5]/80 ${
-            windowWidth > 768 ? "w-[500px] h-[500px]" : "w-[250px] h-[250px]"
-          } -top-[200px] rounded-full`}
-        ></div>
 
         <div className="z-50 text-white w-full mt-20 px-20">
           <div className=" w-full h-fit flex space-x-56 items-center justify-center">
@@ -70,7 +58,9 @@ const page = () => {
 
       <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-16 sm:mt-16 px-5 text-white md:px-20">
         <div className="w-full">
-          <p className="text-xl font-semibold capitalize">contact information</p>
+          <p className="text-xl font-semibold capitalize">
+            contact information
+          </p>
 
           <div className="flex items-center space-x-5 mt-5">
             <div className="w-16 h-16 bg-[#282828] flex items-center justify-center rounded-xl">
@@ -86,7 +76,10 @@ const page = () => {
             <div className="font-semibold">
               <p>Email</p>
 
-              <Link className="text-sm text-[#a1a1aa] font-light" href="mailto:contact@nearswipe.com">
+              <Link
+                className="text-sm text-[#a1a1aa] font-light"
+                href="mailto:contact@nearswipe.com"
+              >
                 contact@nearswipe.com
               </Link>
             </div>
@@ -106,29 +99,56 @@ const page = () => {
             <div className="font-semibold">
               <p>Phone</p>
 
-              <Link href="tel:+12345667890" className="text-sm font-light text-[#a1a1aa]">
+              <Link
+                href="tel:+12345667890"
+                className="text-sm font-light text-[#a1a1aa]"
+              >
                 +234 123 456 7890
               </Link>
             </div>
           </div>
         </div>
 
-        <form onSubmit={submit} className="w-full" >
-            <div className="w-full bg-[#1e1e1e] p-6 rounded-2xl">
-                <label htmlFor="name" className="text-[#a1a1aa]">Name</label>
+        <form onSubmit={submit} className="w-full">
+          <div className="w-full bg-[#1e1e1e] p-6 rounded-2xl">
+            <label htmlFor="name" className="text-[#a1a1aa]">
+              Name
+            </label>
 
-                <input name="name" id="name" className="w-full px-4 bg-[#282828] py-3 mt-2 mb-7 rounded-xl focus-within:outline-[#635BFF] outline-none" />
+            <input
+              name="name"
+              id="name"
+              className="w-full px-4 bg-[#282828] py-3 mt-2 mb-7 rounded-xl focus-within:outline-[#635BFF] outline-none"
+            />
 
-                <label htmlFor="email" className="text-[#a1a1aa]">Email</label>
+            <label htmlFor="email" className="text-[#a1a1aa]">
+              Email
+            </label>
 
-                <input name="email" id="email" type="email" className="w-full px-4 bg-[#282828] py-3 mt-2 mb-7 rounded-xl focus-within:outline-[#635BFF] outline-none" />
+            <input
+              name="email"
+              id="email"
+              type="email"
+              className="w-full px-4 bg-[#282828] py-3 mt-2 mb-7 rounded-xl focus-within:outline-[#635BFF] outline-none"
+            />
 
-                <label htmlFor="message" className="text-[#a1a1aa] block">Message</label>
+            <label htmlFor="message" className="text-[#a1a1aa] block">
+              Message
+            </label>
 
-                <textarea name="message" id="message" className="h-40 w-full px-4 bg-[#282828] py-3 mt-2 rounded-xl focus-within:outline-[#635BFF] outline-none" />
-            </div>
+            <textarea
+              name="message"
+              id="message"
+              className="h-40 w-full px-4 bg-[#282828] py-3 mt-2 rounded-xl focus-within:outline-[#635BFF] outline-none"
+            />
+          </div>
 
-            <button type="submit" className="text-black w-full bg-white text-center py-3 text-xl font-semibold capitalize mt-7 rounded-[30px]">Get in touch</button>
+          <button
+            type="submit"
+            className="text-black w-full bg-white text-center py-3 text-xl font-semibold capitalize mt-7 rounded-[30px]"
+          >
+            Get in touch
+          </button>
         </form>
       </div>
 

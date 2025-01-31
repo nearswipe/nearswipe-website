@@ -20,32 +20,21 @@ const page = () => {
 
   return (
     <div className="relative w-full">
-        {isActive && (
-          <WaitlistModal isActive={isActive} setIsActive={setIsActive} />
-        )}
+      {isActive && (
+        <WaitlistModal isActive={isActive} setIsActive={setIsActive} />
+      )}
       <div className="relative h-screen font-roboto w-full flex flex-col items-center justify-center">
         {/* Responsive image container */}
-        <div
-          className={`absolute -z-2 ${
-            windowWidth > 768 ? "w-[850px] h-[850px]" : "w-[300px] h-[300px]"
-          } rounded-full -top-[130px]`}
-        >
+        <div className="absolute">
           <Image
-            src="/assets/hero-gradient.png"
+            src="/assets/bg.svg"
             className="w-full h-full object-cover rounded-full"
-            width={500}
+            width={windowWidth}
+            priority
             height={500}
-            alt="Hero"
+            alt=""
           />
         </div>
-
-        {/* Background gradient */}
-        <div className="absolute top-0 bottom-0 left-0 right-0 z-20 bg-gradient-to-b from-black/85 via-black/70 to-black/0 h-screen w-full"></div>
-        <div
-          className={`absolute -z-1 bg-[#283BE5]/80 ${
-            windowWidth > 768 ? "w-[500px] h-[500px]" : "w-[250px] h-[250px]"
-          } -top-[200px] rounded-full`}
-        ></div>
 
         <div className="z-50 text-white w-full px-20">
           <div className=" w-full mt-12 h-fit flex space-x-56 items-center justify-between">
@@ -316,7 +305,8 @@ const page = () => {
               </h1>
 
               <p className="text-center text-[#656573] font-light md:text-[1.2rem]">
-                Our NFC technologyis protected by military-grade encryption, ensuring your data and transactions remain secure at all times.
+                Our NFC technologyis protected by military-grade encryption,
+                ensuring your data and transactions remain secure at all times.
               </p>
 
               <CustomButton

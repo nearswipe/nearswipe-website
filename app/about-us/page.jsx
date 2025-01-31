@@ -25,28 +25,16 @@ const page = () => {
       )}
       <div className="relative h-screen font-roboto w-full flex flex-col items-center justify-center">
         {/* Responsive image container */}
-        <div
-          className={`absolute -z-2 ${
-            windowWidth > 768 ? "w-[850px] h-[850px]" : "w-[300px] h-[300px]"
-          } rounded-full -top-[130px]`}
-        >
+        <div className="absolute">
           <Image
-            src="/assets/hero-gradient.png"
+            src="/assets/bg.svg"
             className="w-full h-full object-cover rounded-full"
-            width={500}
+            width={windowWidth}
+            priority
             height={500}
-            alt="Hero"
+            alt=""
           />
         </div>
-
-        {/* Background gradient */}
-        <div className="absolute top-0 bottom-0 left-0 right-0 z-20 bg-gradient-to-b from-black/85 via-black/70 to-black/0 h-screen w-full"></div>
-
-        <div
-          className={`absolute -z-1 bg-[#283BE5]/80 ${
-            windowWidth > 768 ? "w-[500px] h-[500px]" : "w-[250px] h-[250px]"
-          } -top-[200px] rounded-full`}
-        ></div>
 
         <div className="z-50 text-white w-full px-20">
           <div className=" w-full  h-fit flex space-x-56 items-center justify-center">
@@ -268,10 +256,12 @@ const page = () => {
               March 2023
             </p>
 
-            <h1 className="text-2xl font-bold capitalize">First Bank Innovaor Pitch Win</h1>
+            <h1 className="text-2xl font-bold capitalize">
+              First Bank Innovaor Pitch Win
+            </h1>
 
             <p className="text-md text-[#a1a1aa] font-light text-center">
-            Fintech veteran with +10 years of experience in payment solutions
+              Fintech veteran with +10 years of experience in payment solutions
             </p>
           </div>
 
@@ -290,10 +280,13 @@ const page = () => {
               March 2023
             </p>
 
-            <h1 className="text-2xl font-bold capitalize">University of Abuja Partnership</h1>
+            <h1 className="text-2xl font-bold capitalize">
+              University of Abuja Partnership
+            </h1>
 
             <p className="text-md text-[#a1a1aa] font-light text-center">
-              Launched campus-wide NFC ayment and access, our system, our major institutional deployment
+              Launched campus-wide NFC ayment and access, our system, our major
+              institutional deployment
             </p>
           </div>
         </div>
