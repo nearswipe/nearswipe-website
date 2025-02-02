@@ -23,12 +23,12 @@ const page = () => {
       {isActive && (
         <WaitlistModal isActive={isActive} setIsActive={setIsActive} />
       )}
-      <div className="relative h-screen font-roboto w-full flex flex-col items-center justify-center">
+      <div className="relative h-[70vh] sm:h-screen font-roboto w-full flex flex-col items-center justify-center">
         {/* Responsive image container */}
-        <div className="absolute">
+        <div className="absolute w-full h-full inset-0">
           <Image
             src="/assets/bg.svg"
-            className="w-full h-full object-cover rounded-full"
+            className="w-full h-full object-cover"
             width={windowWidth}
             priority
             height={500}
@@ -36,20 +36,20 @@ const page = () => {
           />
         </div>
 
-        <div className="z-50 text-white w-full px-20">
-          <div className=" w-full mt-12 h-fit flex space-x-56 items-center justify-between">
-            <div className="md:w-1/2 w-full">
-              <p className="text-[5.5rem] text-[#d1d1d1] font-black">
+        <div className="z-50 text-white w-full px-6 md:px-20">
+          <div className=" w-full md:mt-12 h-fit flex space-x-56 items-center justify-between">
+            <div className="md:w-1/2 text-center md:text-start w-full">
+              <p className="text-[2rem] md:text-[3.5rem] text-[#d1d1d1] font-black">
                 Technology
               </p>
 
-              <p className="text-[1.479rem] mt-2 leading-7o font-light text-[#a1a1aa]">
+              <p className="text-sm md:text-[1.2rem] mt-6 md:mt-6 leading-7o font-light text-[#a1a1aa]">
                 Experience the future of seamless transactions and access
                 control with our advanced Near-Field Communication solutions
               </p>
 
               <CustomButton
-                textStyles="uppercase text-[16px] sm:text-[18px] font-bold"
+                textStyles="uppercase text-sm sm:text-md font-bold"
                 imageStyles="rounded-[35px]"
                 func={() => setIsActive(true)}
                 containerStyles="mt-6 py-3 sm:py-4 self-center sm:self-start w-full sm:w-fit px-6 rounded-[35px]"
@@ -70,9 +70,9 @@ const page = () => {
         </div>
       </div>
 
-      <div className="flex flex-col gap-16 px-5 md:px-20">
-        <div className="z-50 font-roboto text-white bg-[#1e1e1e] flex flex-col md:flex-row items-center gap-12 w-full px-12 rounded-3xl">
-          <div className="w-full hidden md:flex h-full mt-6">
+      <div className="flex flex-col mt-10 gap-16 px-5 md:px-20">
+        <div className="z-50 font-roboto text-white bg-[#1e1e1e] flex flex-col md:flex-row items-center gap-9 md:gap-12 w-full px-5 md:px-12 rounded-3xl">
+          <div className="w-full hidden md:flex h-full pt-6">
             <Image
               src="/assets/campus-acs.svg"
               className="w-full object-contain"
@@ -82,14 +82,14 @@ const page = () => {
             />
           </div>
 
-          <div className=" w-full px-4 flex flex-col gap-4">
-            <p className="capitalize text-3xl font-black">Campus access</p>
+          <div className=" w-full px-4 pt-6 md:pt-0 flex flex-col gap-4">
+            <p className="capitalize text-2xl md:text-3xl font-black">Campus access</p>
 
-            <p className="text-lg w-full font-light text-[#a1a1aa]">
+            <p className="text-md md:text-lg w-full font-light text-[#a1a1aa]">
               Seamless entry to buildings and facilities with a simple tap
             </p>
 
-            <div className="w-full grid grid-cols-1 gap-4">
+            <div className="w-full grid grid-cols-1 gap-1 md:gap-4">
               <div className="flex space-x-4 w-full items-center">
                 <Image
                   src="/assets/mark.svg"
@@ -99,7 +99,7 @@ const page = () => {
                   alt=""
                 />
 
-                <p className="text-lg w-full font-light text-[#a1a1aa]">
+                <p className="text-md md:text-lg w-full font-light text-[#a1a1aa]">
                   Instant authentication
                 </p>
               </div>
@@ -113,7 +113,7 @@ const page = () => {
                   alt=""
                 />
 
-                <p className="text-lg w-full font-light text-[#a1a1aa]">
+                <p className="text-md md:text-lg w-full font-light text-[#a1a1aa]">
                   Real-Time access logs
                 </p>
               </div>
@@ -127,14 +127,14 @@ const page = () => {
                   alt=""
                 />
 
-                <p className="text-lg w-full font-light text-[#a1a1aa]">
+                <p className="text-md md:text-lg w-full font-light text-[#a1a1aa]">
                   Integration with campus security
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="w-full flex md:hidden h-full mt-6">
+          <div className="w-full flex md:hidden h-full ">
             <Image
               src="/assets/campus-acs.svg"
               className="w-full object-contain"
@@ -145,15 +145,15 @@ const page = () => {
           </div>
         </div>
 
-        <div className="z-50 font-roboto text-white bg-[#1e1e1e] flex flex-col md:flex-row items-center gap-12 w-full px-12 rounded-3xl">
-          <div className=" w-full px-4 flex flex-col gap-5">
-            <p className="capitalize text-3xl font-black">merchant payments</p>
+        <div className="z-50 font-roboto text-white bg-[#1e1e1e] flex flex-col md:flex-row items-center gap-9 md:gap-12 w-full md:px-12 rounded-3xl">
+          <div className="w-full md:px-4 px-9 pt-6 md:pt-0 flex flex-col gap-5">
+            <p className="capitalize text-2xl md:text-3xl font-black">merchant payments</p>
 
-            <p className="text-lg w-full font-light text-[#a1a1aa]">
+            <p className="text-md md:text-lg w-full font-light text-[#a1a1aa]">
               Transform any smartphone into a powerful payment terminal
             </p>
 
-            <div className="w-full grid grid-cols-1 gap-4">
+            <div className="w-full grid grid-cols-1 gap-1 md:gap-4">
               <div className="flex space-x-4 w-full items-center">
                 <Image
                   src="/assets/mark.svg"
@@ -163,7 +163,7 @@ const page = () => {
                   alt=""
                 />
 
-                <p className="text-lg w-full font-light text-[#a1a1aa]">
+                <p className="text-md md:text-lg w-full font-light text-[#a1a1aa]">
                   Contactless transactions
                 </p>
               </div>
@@ -177,7 +177,7 @@ const page = () => {
                   alt=""
                 />
 
-                <p className="text-lg w-full font-light text-[#a1a1aa]">
+                <p className="text-md md:text-lg w-full font-light text-[#a1a1aa]">
                   Real-Time access logs
                 </p>
               </div>
@@ -191,14 +191,14 @@ const page = () => {
                   alt=""
                 />
 
-                <p className="text-lg w-full font-light text-[#a1a1aa]">
+                <p className="text-md md:text-lg w-full font-light text-[#a1a1aa]">
                   Digital receipts
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="w-full flex max-h-[500px] pt-6 overflow-hidden relative h-full">
+          <div className="w-full flex max-h-[500px] md:pt-6 overflow-hidden relative h-full">
             <Image
               src="/assets/merchant-pay.svg"
               className="w-full h-full object-contain"
@@ -209,8 +209,8 @@ const page = () => {
           </div>
         </div>
 
-        <div className="z-50 font-roboto text-white bg-[#1e1e1e] flex flex-col md:flex-row items-center gap-12 w-full rounded-3xl">
-          <div className="w-full flex max-h-[500px] pt-6 overflow-hidden relative h-full">
+        <div className="z-50 font-roboto text-white bg-[#1e1e1e] flex flex-col md:flex-row items-center gap-9 md:gap-12 w-full rounded-3xl">
+          <div className="w-full hidden md:flex max-h-[500px] pt-6 overflow-hidden relative h-full">
             <Image
               src="/assets/digital-bnk.svg"
               className="w-full object-contain"
@@ -220,14 +220,14 @@ const page = () => {
             />
           </div>
 
-          <div className=" w-full px-4 flex flex-col gap-4">
-            <p className="capitalize text-3xl font-black">digital banking</p>
+          <div className=" w-full md:px-4 px-9 pt-6 md:pt-0 flex flex-col gap-4">
+            <p className="capitalize text-2xl md:text-3xl font-black">digital banking</p>
 
-            <p className="text-lg w-full font-light text-[#a1a1aa]">
+            <p className="text-md md:text-lg w-full font-light text-[#a1a1aa]">
               Secure integration with virtual accounts and banking services
             </p>
 
-            <div className="w-full grid grid-cols-1 gap-4">
+            <div className="w-full grid grid-cols-1 gap-1 md:gap-4">
               <div className="flex space-x-4 w-full items-center">
                 <Image
                   src="/assets/mark.svg"
@@ -237,7 +237,7 @@ const page = () => {
                   alt=""
                 />
 
-                <p className="text-lg w-full font-light text-[#a1a1aa]">
+                <p className="text-md md:text-lg w-full font-light text-[#a1a1aa]">
                   Multi-Currency support
                 </p>
               </div>
@@ -251,7 +251,7 @@ const page = () => {
                   alt=""
                 />
 
-                <p className="text-lg w-full font-light text-[#a1a1aa]">
+                <p className="text-md md:text-lg w-full font-light text-[#a1a1aa]">
                   Real-Time transfers
                 </p>
               </div>
@@ -265,7 +265,7 @@ const page = () => {
                   alt=""
                 />
 
-                <p className="text-lg w-full font-light text-[#a1a1aa]">
+                <p className="text-md md:text-lg w-full font-light text-[#a1a1aa]">
                   Enhanced security
                 </p>
               </div>
@@ -285,13 +285,14 @@ const page = () => {
       </div>
 
       <div className="flex md:p-20 p-5 mt-16 font-roboto">
-        <div className="relative flex flex-col rounded-2xl border items-center justify-center w-full md:h-96 h-80">
+        <div className="relative flex flex-col rounded-2xl items-center justify-center w-full md:h-96 h-80">
           <Image
             src={
               windowWidth > 1200
                 ? "/assets/bg-gradient.svg"
                 : "/assets/image-gradient.svg"
             }
+            priority
             className="z-40 w-full h-full absolute rounded-2xl inset-0 object-cover"
             width={400}
             height={400}

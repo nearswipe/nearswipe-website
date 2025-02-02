@@ -68,7 +68,7 @@ const page = ({ params }) => {
                   {article?.smallDescription}
                 </p>
 
-                <p className="prose font-roboto min-w-full text-md text-center sm:text-start my-8 leading-7o font-light text-[#a1a1aa]">
+                <p className="prose font-roboto min-w-full text-md  my-8 font-light text-[#a1a1aa]">
                   <PortableText value={article?.content} />
                 </p>
               </div>

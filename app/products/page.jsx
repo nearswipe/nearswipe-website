@@ -20,15 +20,15 @@ const page = () => {
 
   return (
     <div>
-      <div className="relative h-screen font-roboto w-full flex flex-col items-center justify-center">
+      <div className="relative h-[70vh] sm:h-screen font-roboto w-full flex flex-col items-center justify-center">
         {isActive && (
           <WaitlistModal isActive={isActive} setIsActive={setIsActive} />
         )}
         {/* Responsive image container */}
-        <div className="absolute">
+        <div className="absolute w-full h-full inset-0">
           <Image
             src="/assets/bg.svg"
-            className="w-full h-full object-cover rounded-full"
+            className="w-full h-full object-cover"
             width={windowWidth}
             priority
             height={500}
@@ -36,14 +36,14 @@ const page = () => {
           />
         </div>
 
-        <div className="z-50 text-white w-full px-20">
-          <div className=" w-full mt-12 h-fit flex space-x-56 items-center justify-between">
-            <div className="md:w-1/2 w-full">
-              <p className="text-[3.5rem] text-[#d1d1d1] font-black">
+        <div className="z-50 text-white w-full px-6 md:px-20">
+          <div className=" w-full md:mt-12 h-full flex space-x-56 items-center justify-between">
+            <div className="md:w-1/2 text-center md:text-start w-full">
+              <p className="text-3xl md:text-[3.5rem] text-[#d1d1d1] font-black">
                 Our Products
               </p>
 
-              <p className="text-[1.2rem] leading-7o font-light text-[#a1a1aa]">
+              <p className="text-sm md:text-[1.2rem] mt-4 md:mt-6 font-light text-[#a1a1aa]">
                 Discover the perfect NearSwipe solution for your needs, whether
                 you're a student, business owner, or institution.
               </p>
@@ -60,6 +60,7 @@ const page = () => {
             <div className="hidden w-1/2 h-fit mt-5 relative md:flex items-center justify-end">
               <Image
                 src="/assets/mockup.svg"
+                priority
                 className={`object-fill `}
                 width={windowWidth / 3}
                 height={600}
@@ -77,14 +78,14 @@ const page = () => {
               NearSwipe Student/Staff
             </p>
 
-            <p className="text-lg text-center leading-7o font-light mt-1 text-[#a1a1aa]">
+            <p className="text-sm md:text-[17px] text-center leading-7o font-light mt-1 text-[#a1a1aa]">
               NFC-enabled smart cards transforming campus life with seamless
               access and payments.
             </p>
           </div>
 
-          <div className="flex w-full items-center justify-between">
-            <div className="flex w-1/3 flex-col items-center gap-4">
+          <div className="w-full grid grid-cols-1 gap-6 md:grid-cols-3">
+            <div className="flex w-full flex-col items-center gap-4">
               <div className="w-20 h-20 bg-[#282828] flex items-center justify-center rounded-xl">
                 <Image
                   src="/assets/campus.svg"
@@ -97,12 +98,12 @@ const page = () => {
 
               <p className="capitalize text-xl">campus access</p>
 
-              <p className="text-lg w-[73%] text-center font-light text-[#a1a1aa]">
+              <p className="text-sm md:text-[17px] w-full   text-center font-light text-[#a1a1aa]">
                 Tap to enter buildings, labs, and facilities
               </p>
             </div>
 
-            <div className="flex w-1/3 flex-col items-center gap-4">
+            <div className="flex w-full flex-col items-center gap-4">
               <div className="w-20 h-20 bg-[#282828] flex items-center justify-center rounded-xl">
                 <Image
                   src="/assets/card.svg"
@@ -115,12 +116,12 @@ const page = () => {
 
               <p className="capitalize text-xl">smart payments</p>
 
-              <p className="text-lg w-[73%] text-center font-light text-[#a1a1aa]">
+              <p className="text-sm md:text-[17px] w-full   text-center font-light text-[#a1a1aa]">
                 Cashless transactions for cafeteria, bookstore, and more
               </p>
             </div>
 
-            <div className="flex w-1/3 flex-col items-center gap-4">
+            <div className="flex w-full flex-col items-center gap-4">
               <div className="w-20 h-20 bg-[#282828] flex items-center justify-center rounded-xl">
                 <Image
                   src="/assets/identity.svg"
@@ -133,26 +134,26 @@ const page = () => {
 
               <p className="capitalize text-xl">Identity verification</p>
 
-              <p className="text-lg  w-[73%] text-center font-light text-[#a1a1aa]">
+              <p className="text-sm md:text-[17px]  w-full text-center font-light text-[#a1a1aa]">
                 Secure authentication for exams and events
               </p>
             </div>
           </div>
         </div>
 
-        <div className="z-50 font-roboto text-white bg-[#1e1e1e] flex flex-col items-center gap-12 w-full p-6 px-12 rounded-3xl">
+        <div className="z-50 font-roboto text-white bg-[#1e1e1e] flex flex-col items-center gap-12 w-full p-6  rounded-3xl">
           <div>
             <p className="text-[2.5rem] text-center font-bold">
               NearSwipe Merchant
             </p>
 
-            <p className="text-lg text-center leading-7o font-light mt-1 text-[#a1a1aa]">
+            <p className="text-sm md:text-[17px] text-center leading-7o font-light mt-1 text-[#a1a1aa]">
               Transform any smartphone into a powerful NFC payment terminal.
             </p>
           </div>
 
-          <div className="flex w-full items-center justify-between">
-            <div className="flex w-1/3 flex-col items-center gap-4">
+          <div className="w-full grid grid-cols-1 gap-6 md:grid-cols-3">
+            <div className="flex w-full flex-col items-center gap-4">
               <div className="w-20 h-20 bg-[#282828] flex items-center justify-center rounded-xl">
                 <Image
                   src="/assets/easy-setup.svg"
@@ -165,12 +166,12 @@ const page = () => {
 
               <p className="capitalize text-xl">Easy setup</p>
 
-              <p className="text-lg w-[73%] text-center font-light text-[#a1a1aa]">
+              <p className="text-sm md:text-[17px] w-full   text-center font-light text-[#a1a1aa]">
                 Start accepting payments in minutes
               </p>
             </div>
 
-            <div className="flex w-1/3 flex-col items-center gap-4">
+            <div className="flex w-full flex-col items-center gap-4">
               <div className="w-20 h-20 bg-[#282828] flex items-center justify-center rounded-xl">
                 <Image
                   src="/assets/instant-settle.svg"
@@ -183,12 +184,12 @@ const page = () => {
 
               <p className="capitalize text-xl">instant settlements</p>
 
-              <p className="text-lg w-[73%] text-center font-light text-[#a1a1aa]">
+              <p className="text-sm md:text-[17px] w-full   text-center font-light text-[#a1a1aa]">
                 Get paid immediatelyafter each transaction
               </p>
             </div>
 
-            <div className="flex w-1/3 flex-col items-center gap-4">
+            <div className="flex w-full flex-col items-center gap-4">
               <div className="w-20 h-20 bg-[#282828] flex items-center justify-center rounded-xl">
                 <Image
                   src="/assets/b-analysis.svg"
@@ -201,7 +202,7 @@ const page = () => {
 
               <p className="capitalize text-xl">business analytics</p>
 
-              <p className="text-lg  w-[73%] text-center font-light text-[#a1a1aa]">
+              <p className="text-sm md:text-[17px]  w-full text-center font-light text-[#a1a1aa]">
                 Track sales and growth in real-time
               </p>
             </div>
@@ -210,15 +211,17 @@ const page = () => {
 
         <div className="z-50 font-roboto text-white bg-[#1e1e1e] flex flex-col items-center gap-12 w-full p-6 px-12 rounded-3xl">
           <div>
-            <p className="text-[2.5rem] text-center font-bold">NearSwipe Bank</p>
+            <p className="text-[2.5rem] text-center font-bold">
+              NearSwipe Bank
+            </p>
 
-            <p className="text-lg text-center leading-7o font-light mt-1 text-[#a1a1aa]">
+            <p className="text-sm md:text-[17px] text-center leading-7o font-light mt-1 text-[#a1a1aa]">
               Virtual accounts that make digital banking seamless and secure.
             </p>
           </div>
 
-          <div className="flex w-full items-center justify-between">
-            <div className="flex w-1/3 flex-col items-center gap-4">
+          <div className="w-full grid grid-cols-1 gap-6 md:grid-cols-3">
+            <div className="flex w-full flex-col items-center gap-4">
               <div className="w-20 h-20 bg-[#282828] flex items-center justify-center rounded-xl">
                 <Image
                   src="/assets/virtual-accts.svg"
@@ -231,12 +234,12 @@ const page = () => {
 
               <p className="capitalize text-xl">virtual accounts</p>
 
-              <p className="text-lg w-[73%] text-center font-light text-[#a1a1aa]">
+              <p className="text-sm md:text-[17px] w-full  text-center font-light text-[#a1a1aa]">
                 Instant account creation and management
               </p>
             </div>
 
-            <div className="flex w-1/3 flex-col items-center gap-4">
+            <div className="flex w-full flex-col items-center gap-4">
               <div className="w-20 h-20 bg-[#282828] flex items-center justify-center rounded-xl">
                 <Image
                   src="/assets/linked-cards.svg"
@@ -249,12 +252,12 @@ const page = () => {
 
               <p className="capitalize text-xl">linked cards</p>
 
-              <p className="text-lg w-[73%] text-center font-light text-[#a1a1aa]">
+              <p className="text-sm md:text-[17px] w-full   text-center font-light text-[#a1a1aa]">
                 Connect your NFC cards for easy payments
               </p>
             </div>
 
-            <div className="flex w-1/3 flex-col items-center gap-4">
+            <div className="flex w-full flex-col items-center gap-4">
               <div className="w-20 h-20 bg-[#282828] flex items-center justify-center rounded-xl">
                 <Image
                   src="/assets/secure-bank.svg"
@@ -267,7 +270,7 @@ const page = () => {
 
               <p className="capitalize text-xl">secure banking</p>
 
-              <p className="text-lg  w-[73%] text-center font-light text-[#a1a1aa]">
+              <p className="text-sm md:text-[17px]  w-full text-center font-light text-[#a1a1aa]">
                 Enhance security for all transactions
               </p>
             </div>

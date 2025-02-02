@@ -74,7 +74,7 @@ const page = () => {
               />
             </div>
 
-            <div className="font-roboto w-full text-[15px] grid gap-3 font-thin text-[#a1a1aa] mt-7 text-start">
+            <div className="font-roboto w-full text-[15px] grid gap-3 font-thin text-[#a1a1aa] mt-7 sm:text-start text-center">
               <h4 className="text-white line-clamp-2 text-2xl font-bold">
                 {post?.title}
               </h4>

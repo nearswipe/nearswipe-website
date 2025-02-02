@@ -28,12 +28,12 @@ const page = () => {
       {isActive && (
         <WaitlistModal isActive={isActive} setIsActive={setIsActive} />
       )}
-      <div className="relative h-[70vh] overflow-hidden font-roboto w-full flex flex-col items-center justify-center">
+      <div className="relative h-[70vh] sm:h-screen overflow-hidden font-roboto w-full flex flex-col items-center justify-center">
         {/* Responsive image container */}
-        <div className="absolute">
+        <div className="absolute w-full h-full inset-0">
           <Image
             src="/assets/bg.svg"
-            className="w-full h-full object-cover rounded-full"
+            className="w-full h-full object-cover"
             width={windowWidth}
             priority
             height={500}
@@ -41,14 +41,14 @@ const page = () => {
           />
         </div>
 
-        <div className="z-50 text-white w-full mt-20 px-20">
+        <div className="z-50 text-white w-full mt-6 md:mt-12 px-6 md:px-20">
           <div className=" w-full h-fit flex space-x-56 items-center justify-center">
             <div className="md:w-1/2 w-full flex flex-col items-center">
-              <p className="text-[5.5rem] text-center text-[#d1d1d1] font-black">
+              <p className="text-[2.2rem] md:text-[3.5rem] text-center text-[#d1d1d1] font-black">
                 Career
               </p>
 
-              <p className="text-[1.4rem] text-center mt-2 leading-7o font-light text-[#a1a1aa]">
+              <p className="text-md md:text-[1.4rem] text-center mt-2 leading-7o font-light text-[#a1a1aa]">
                 Join our team of innovators and help shape the future of
                 Near-field technology. We're looking for passionate individuals
                 who want to make a difference.
@@ -58,94 +58,94 @@ const page = () => {
         </div>
       </div>
 
-      <div className="w-full sm:mt-16 flex flex-col gap-8 px-5 text-white md:px-20">
+      <div className="w-full flex flex-col gap-8 px-5 text-white md:px-20">
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-xl font-bold">Senior Frontend developer</p>
-            <p className="flex items-center text-[#a1a1aa]">
-              Lagos, Nigeria <span className="mx-2 text-3xl">&#8729;</span>{" "}
+            <p className="text-sm md:text-xl font-bold">Senior Frontend developer</p>
+            <p className="flex items-center text-[#a1a1aa] text-[12px] md:text-[17px]">
+              Lagos, Nigeria <span className="mx-2 text-md text-3xl">&#8729;</span>{" "}
               Full-time
             </p>
           </div>
 
-          <div className="px-6 cursor-pointer rounded-[35px] py-3 border font-medium uppercase">
+          <div className="md:px-6 px-4 py-2 md:text-[17px] text-[12px] cursor-pointer rounded-[35px] md:py-3 border font-medium uppercase">
             Apply now
           </div>
         </div>
 
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-xl font-bold">Senior Frontend developer</p>
-            <p className="flex items-center text-[#a1a1aa]">
-              Lagos, Nigeria <span className="mx-2 text-3xl">&#8729;</span>{" "}
+            <p className="text-sm md:text-xl font-bold">Senior Frontend developer</p>
+            <p className="flex items-center text-[#a1a1aa] text-[12px] md:text-[17px]">
+              Lagos, Nigeria <span className="mx-2 text-md text-3xl">&#8729;</span>{" "}
               Full-time
             </p>
           </div>
 
-          <div className="px-6 cursor-pointer rounded-[35px] py-3 border font-medium uppercase">
+          <div className="md:px-6 px-4 py-2 md:text-[17px] text-[12px] cursor-pointer rounded-[35px] md:py-3 border font-medium uppercase">
             Apply now
           </div>
         </div>
 
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-xl font-bold">Senior Frontend developer</p>
-            <p className="flex items-center text-[#a1a1aa]">
-              Lagos, Nigeria <span className="mx-2 text-3xl">&#8729;</span>{" "}
+            <p className="text-sm md:text-xl font-bold">Senior Frontend developer</p>
+            <p className="flex items-center text-[#a1a1aa] text-[12px] md:text-[17px]">
+              Lagos, Nigeria <span className="mx-2 text-md text-3xl">&#8729;</span>{" "}
               Full-time
             </p>
           </div>
 
-          <div className="px-6 cursor-pointer rounded-[35px] py-3 border font-medium uppercase">
+          <div className="md:px-6 px-4 py-2 md:text-[17px] text-[12px] cursor-pointer rounded-[35px] md:py-3 border font-medium uppercase">
             Apply now
           </div>
         </div>
 
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-xl font-bold">Senior Frontend developer</p>
-            <p className="flex items-center text-[#a1a1aa]">
-              Lagos, Nigeria <span className="mx-2 text-3xl">&#8729;</span>{" "}
+            <p className="text-sm md:text-xl font-bold">Senior Frontend developer</p>
+            <p className="flex items-center text-[#a1a1aa] text-[12px] md:text-[17px]">
+              Lagos, Nigeria <span className="mx-2 text-md text-3xl">&#8729;</span>{" "}
               Full-time
             </p>
           </div>
 
-          <div className="px-6 cursor-pointer rounded-[35px] py-3 border font-medium uppercase">
+          <div className="md:px-6 px-4 py-2 md:text-[17px] text-[12px] cursor-pointer rounded-[35px] md:py-3 border font-medium uppercase">
             Apply now
           </div>
         </div>
 
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-xl font-bold">Senior Frontend developer</p>
-            <p className="flex items-center text-[#a1a1aa]">
-              Lagos, Nigeria <span className="mx-2 text-3xl">&#8729;</span>{" "}
+            <p className="text-sm md:text-xl font-bold">Senior Frontend developer</p>
+            <p className="flex items-center text-[#a1a1aa] text-[12px] md:text-[17px]">
+              Lagos, Nigeria <span className="mx-2 text-md text-3xl">&#8729;</span>{" "}
               Full-time
             </p>
           </div>
 
-          <div className="px-6 cursor-pointer rounded-[35px] py-3 border font-medium uppercase">
+          <div className="md:px-6 px-4 py-2 md:text-[17px] text-[12px] cursor-pointer rounded-[35px] md:py-3 border font-medium uppercase">
             Apply now
           </div>
         </div>
 
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-xl font-bold">Senior Frontend developer</p>
-            <p className="flex items-center text-[#a1a1aa]">
-              Lagos, Nigeria <span className="mx-2 text-3xl">&#8729;</span>{" "}
+            <p className="text-sm md:text-xl font-bold">Senior Frontend developer</p>
+            <p className="flex items-center text-[#a1a1aa] text-[12px] md:text-[17px]">
+              Lagos, Nigeria <span className="mx-2 text-md text-3xl">&#8729;</span>{" "}
               Full-time
             </p>
           </div>
 
-          <div className="px-6 cursor-pointer rounded-[35px] py-3 border font-medium uppercase">
+          <div className="md:px-6 px-4 py-2 md:text-[17px] text-[12px] cursor-pointer rounded-[35px] md:py-3 border font-medium uppercase">
             Apply now
           </div>
         </div>
       </div>
 
       <div className="flex md:p-20 p-5 mt-16 font-roboto">
-        <div className="relative flex flex-col rounded-2xl border items-center justify-center w-full md:h-96 h-80">
+        <div className="relative flex flex-col rounded-2xl items-center justify-center w-full md:h-96 h-80">
           <Image
             src={
               windowWidth > 1200
