@@ -23,12 +23,12 @@ const page = () => {
       {isActive && (
         <WaitlistModal isActive={isActive} setIsActive={setIsActive} />
       )}
-      <div className="relative h-screen font-roboto w-full flex flex-col items-center justify-center">
+      <div className="relative h-[70vh] sm:h-screen font-roboto w-full flex flex-col items-center justify-center">
         {/* Responsive image container */}
-        <div className="absolute">
+        <div className="absolute w-full h-full inset-0">
           <Image
             src="/assets/bg.svg"
-            className="w-full h-full object-cover rounded-full"
+            className="w-full h-full object-cover"
             width={windowWidth}
             priority
             height={500}
@@ -36,14 +36,14 @@ const page = () => {
           />
         </div>
 
-        <div className="z-50 text-white w-full px-20">
+        <div className="z-50 text-white w-full px-6 md:px-20">
           <div className=" w-full  h-fit flex space-x-56 items-center justify-center">
             <div className="md:w-1/2 w-full flex flex-col items-center">
-              <p className="text-[5.5rem] text-center text-[#d1d1d1] font-black">
+              <p className="text-[2.2rem] md:text-[3.5rem] text-center text-[#d1d1d1] font-black">
                 About us
               </p>
 
-              <p className="text-[1.4rem] text-center mt-2 leading-7o font-light text-[#a1a1aa]">
+              <p className="text-sm md:text-[1.4rem] text-center mt-2 leading-7o font-light text-[#a1a1aa]">
                 Experience the future of seamless transactions and access
                 control with our advanced Near-Field Communication solutions
               </p>
