@@ -23,7 +23,7 @@ const page = () => {
       {isActive && (
         <WaitlistModal isActive={isActive} setIsActive={setIsActive} />
       )}
-      <div className="relative h-[70vh] sm:h-screen font-roboto w-full flex flex-col items-center justify-center">
+      <div className="relative h-[65vh] sm:h-screen font-roboto w-full flex flex-col items-center justify-center">
         {/* Responsive image container */}
         <div className="absolute w-full h-full inset-0">
           <Image
@@ -43,10 +43,11 @@ const page = () => {
                 About us
               </p>
 
-              <p className="text-sm md:text-[1.4rem] text-center mt-2 leading-7o font-light text-[#a1a1aa]">
+              <p className="text-md md:text-[1.4rem] text-center mt-2 leading-7o font-light text-[#a1a1aa]">
                 Experience the future of seamless transactions and access
                 control with our advanced Near-Field Communication solutions
               </p>
+              
 
               <CustomButton
                 textStyles="uppercase text-[16px] sm:text-[18px] font-bold"
@@ -60,7 +61,7 @@ const page = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 px-5 text-white md:px-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-5 text-white md:px-20">
         <div className="w-full flex flex-col items-center gap-5">
           <div className="w-20 h-20 bg-[#282828] flex items-center justify-center rounded-xl">
             <Image
@@ -72,9 +73,9 @@ const page = () => {
             />
           </div>
 
-          <h1 className="text-[2.5rem] font-black capitalize">Our mission</h1>
+          <h1 className="text-2xl md:text-[2.5rem] font-black capitalize">Our mission</h1>
 
-          <p className="w-1/2 text-xl text-[#a1a1aa] font-light text-center">
+          <p className="w-full md:w-1/2 text-sm md:text-xl text-[#a1a1aa] font-light text-center">
             To revolutionize identity, payments, and access with
             Near-fieldtechnology.
           </p>
@@ -91,17 +92,17 @@ const page = () => {
             />
           </div>
 
-          <h1 className="text-[2.5rem] font-black capitalize">Our vision</h1>
+          <h1 className="text-2xl md:text-[2.5rem] font-black capitalize">Our vision</h1>
 
-          <p className="w-2/3 text-xl text-[#a1a1aa] font-light text-center">
+          <p className="w-full md:w-2/3 text-sm md:text-xl text-[#a1a1aa] font-light text-center">
             To become the global standard for NFC-enabled solutions in
             education,commerce, and finance.
           </p>
         </div>
       </div>
 
-      <div className="w-full sm:mt-16 px-5 text-white md:px-20">
-        <p className="text-white mb-12 text-center text-[2.5rem] capitalize font-bold">
+      <div className="w-full sm:mt-16 px-5 mt-12 text-white md:px-20">
+        <p className="text-white mb-6 md:mb-12 text-center text-3xl md:text-[2.5rem] capitalize font-bold">
           meet our team
         </p>
 
@@ -117,13 +118,13 @@ const page = () => {
               /> */}
             </div>
 
-            <h1 className="text-[2rem] font-black capitalize">Sarah Johnson</h1>
+            <h1 className="text-2xl md:text-[2rem] font-black capitalize">Sarah Johnson</h1>
 
-            <p className="text-xl text-[#a1a1aa] font-light text-center">
+            <p className="text-sm md:text-xl text-[#a1a1aa] font-light text-center">
               CEO & Founder
             </p>
 
-            <p className="text-xl text-[#a1a1aa] font-light text-center">
+            <p className="text-sm md:text-xl text-[#a1a1aa] font-light text-center">
               Fintech veteran with +10 years of experience in payment solutions
             </p>
           </div>
@@ -139,13 +140,13 @@ const page = () => {
               /> */}
             </div>
 
-            <h1 className="text-[2rem] font-black capitalize">Sarah Johnson</h1>
+            <h1 className="text-2xl md:text-[2rem] font-black capitalize">Sarah Johnson</h1>
 
-            <p className="text-xl text-[#a1a1aa] font-light text-center">
+            <p className="text-sm md:text-xl text-[#a1a1aa] font-light text-center">
               CEO & Founder
             </p>
 
-            <p className="text-xl text-[#a1a1aa] font-light text-center">
+            <p className="text-sm md:text-xl text-[#a1a1aa] font-light text-center">
               Fintech veteran with +10 years of experience in payment solutions
             </p>
           </div>
@@ -161,26 +162,26 @@ const page = () => {
               /> */}
             </div>
 
-            <h1 className="text-[2rem] font-black capitalize">Sarah Johnson</h1>
+            <h1 className="text-2xl md:text-[2rem] font-black capitalize">Sarah Johnson</h1>
 
-            <p className="text-xl text-[#a1a1aa] font-light text-center">
+            <p className="text-sm md:text-xl text-[#a1a1aa] font-light text-center">
               CEO & Founder
             </p>
 
-            <p className="text-xl text-[#a1a1aa] font-light text-center">
+            <p className="text-sm md:text-xl text-[#a1a1aa] font-light text-center">
               Fintech veteran with +10 years of experience in payment solutions
             </p>
           </div>
         </div>
       </div>
 
-      <div className="w-full sm:mt-16 px-5 text-white md:px-20">
-        <p className="text-white mb-12 text-center text-[2.5rem] capitalize font-bold">
+      <div className="w-full sm:mt-16 mt-12 px-5 text-white md:px-20">
+        <p className="text-white mb-6 md:mb-12 text-center text-3xl md:text-[2.5rem] capitalize font-bold">
           our journey
         </p>
 
         <div className="flex flex-col items-center">
-          <div className="w-1/2 bg-[#1e1e1e] p-8 rounded-2xl flex flex-col items-center gap-5">
+          <div className="w-full md:w-1/2 bg-[#1e1e1e] p-8 rounded-2xl flex flex-col items-center gap-5">
             <p className="text-md text-[#635BFF] font-normal text-center">
               March 2023
             </p>
@@ -203,17 +204,16 @@ const page = () => {
             />
           </div>
 
-          <div className="w-1/2 bg-[#1e1e1e] p-8 rounded-2xl flex flex-col items-center gap-5">
+          <div className="w-full md:w-1/2 bg-[#1e1e1e] p-8 rounded-2xl flex flex-col items-center gap-5">
             <p className="text-md text-[#635BFF] font-normal text-center">
               March 2023
             </p>
 
-            <h1 className="text-2xl font-bold capitalize">
-              NearSwipe Merchant Lunch
-            </h1>
+            <h1 className="text-2xl font-bold capitalize">NearSwipe Founded</h1>
 
             <p className="text-md text-[#a1a1aa] font-light text-center">
-              Fintech veteran with +10 years of experience in payment solutions
+              Started a journey to revolutionize NFC payments and identity
+              solutions
             </p>
           </div>
 
@@ -227,17 +227,16 @@ const page = () => {
             />
           </div>
 
-          <div className="w-1/2 bg-[#1e1e1e] p-8 rounded-2xl flex flex-col items-center gap-5">
+          <div className="w-full md:w-1/2 bg-[#1e1e1e] p-8 rounded-2xl flex flex-col items-center gap-5">
             <p className="text-md text-[#635BFF] font-normal text-center">
               March 2023
             </p>
 
-            <h1 className="text-2xl font-bold capitalize">
-              NearSwipe Banking Platform
-            </h1>
+            <h1 className="text-2xl font-bold capitalize">NearSwipe Founded</h1>
 
             <p className="text-md text-[#a1a1aa] font-light text-center">
-              Fintech veteran with +10 years of experience in payment solutions
+              Started a journey to revolutionize NFC payments and identity
+              solutions
             </p>
           </div>
 
@@ -251,17 +250,16 @@ const page = () => {
             />
           </div>
 
-          <div className="w-1/2 bg-[#1e1e1e] p-8 rounded-2xl flex flex-col items-center gap-5">
+          <div className="w-full md:w-1/2 bg-[#1e1e1e] p-8 rounded-2xl flex flex-col items-center gap-5">
             <p className="text-md text-[#635BFF] font-normal text-center">
               March 2023
             </p>
 
-            <h1 className="text-2xl font-bold capitalize">
-              First Bank Innovaor Pitch Win
-            </h1>
+            <h1 className="text-2xl font-bold capitalize">NearSwipe Founded</h1>
 
             <p className="text-md text-[#a1a1aa] font-light text-center">
-              Fintech veteran with +10 years of experience in payment solutions
+              Started a journey to revolutionize NFC payments and identity
+              solutions
             </p>
           </div>
 
@@ -275,18 +273,16 @@ const page = () => {
             />
           </div>
 
-          <div className="w-1/2 bg-[#1e1e1e] p-8 rounded-2xl flex flex-col items-center gap-5">
+          <div className="w-full md:w-1/2 bg-[#1e1e1e] p-8 rounded-2xl flex flex-col items-center gap-5">
             <p className="text-md text-[#635BFF] font-normal text-center">
               March 2023
             </p>
 
-            <h1 className="text-2xl font-bold capitalize">
-              University of Abuja Partnership
-            </h1>
+            <h1 className="text-2xl font-bold capitalize">NearSwipe Founded</h1>
 
             <p className="text-md text-[#a1a1aa] font-light text-center">
-              Launched campus-wide NFC ayment and access, our system, our major
-              institutional deployment
+              Started a journey to revolutionize NFC payments and identity
+              solutions
             </p>
           </div>
         </div>
