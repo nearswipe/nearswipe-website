@@ -4,7 +4,7 @@ import CustomButton from "./CustomButton";
 
 const WaitlistModal = ({ isActive, setIsActive }) => {
   return (
-    <div className="z-[70] cursor-pointer px-6 text-white fixed flex items-center justify-center inset-0 bg-black/40">
+    <div className="z-[80] cursor-pointer px-6 text-white fixed flex items-center justify-center inset-0 bg-black/40">
       <div
         className="fixed inset-0 z-50"
         onClick={() => {

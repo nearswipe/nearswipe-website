@@ -29,7 +29,7 @@ const Nav = ({ isActive, setIsActive, sideNav, setSideNav }) => {
         <div className="flex items-center space-x-6 capitalize font-roboto font-thin text-[13px] text-[#a1a1aa]">
           <div
             onClick={() => router.push("/")}
-            className={`cursor-pointer ${pathName === "/" && "text-white"}`}
+            className={`cursor-pointer hover:text-white  ${pathName === "/" && "text-white"}`}
           >
             home
           </div>

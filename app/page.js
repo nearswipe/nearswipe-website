@@ -4,21 +4,16 @@ import Banner from "@/components/Banner";
 import Blog from "@/components/Blog";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
-import NearSwipeAiChat from "@/components/NearSwipeAI";
-import WaitlistModal from "@/components/WaitlistModal";
-import { useState } from "react";
+import { useGlobalContext } from "@/context/GlobalContext";
 
 export default function Home() {
-  const [modalActive, setModalActive] = useState(false);
+  const { modalActive, setModalActive, blogs} = useGlobalContext();
   return (
     <main className="relative w-full pb-2">
-      {modalActive && (
-        <WaitlistModal isActive={modalActive} setIsActive={setModalActive} />
-      )}
       <Hero isActive={modalActive} setIsActive={setModalActive} />
 
       <Banking />
-      <Blog />
+      <Blog blogs={blogs} />
       <Banner isActive={modalActive} setIsActive={setModalActive} />
     </main>
   );

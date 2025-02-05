@@ -14,7 +14,7 @@ const page = ({ params }) => {
   const { blogs } = useGlobalContext();
   const router = useRouter();
   const { slug } = use(params);
-  const [isActive, setIsActive] = useState(false);
+  const { setModalActive} = useGlobalContext();
   const [article, setArticle] = useState(null);
 
   useEffect(() => {
@@ -36,9 +36,6 @@ const page = ({ params }) => {
 
   return (
     <div className="relative w-full">
-      {isActive && (
-        <WaitlistModal isActive={isActive} setIsActive={setIsActive} />
-      )}
       <div className="relative font-roboto w-full flex flex-col items-center justify-center">
         <div className="z-50 text-white w-full mt-32 md:mt-48 px-6 md:px-20">
           <div className=" w-full h-fit flex space-x-56 items-center justify-center">
@@ -68,9 +65,9 @@ const page = ({ params }) => {
                   {article?.smallDescription}
                 </p>
 
-                <p className="prose font-roboto min-w-full text-md  my-8 font-light text-[#a1a1aa]">
+                <div className="prose font-roboto min-w-full text-md  my-8 font-light text-[#a1a1aa]">
                   <PortableText value={article?.content} />
-                </p>
+                </div>
               </div>
             </div>
           </div>
@@ -82,6 +79,7 @@ const page = ({ params }) => {
           <p className="text-white mb-12 text-center text-[2.3rem] font-bold">
             Other posts
           </p>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {blogs.slice(0, 6).map((post, idx) => {
               if (post?.currentSlug === slug) return null; // Ensure it returns null instead of nothing
@@ -118,177 +116,6 @@ const page = ({ params }) => {
                 </div>
               );
             })}
-
-            <div
-              onClick={() => router.push("/blog/234")}
-              className="w-full flex flex-col items-center h-full"
-            >
-              <div className="h-fit rounded-2xl">
-                <Image
-                  src="/assets/blog.png"
-                  className="object-cover w-[350px] h-[350px] rounded-2xl"
-                  width={450}
-                  height={450}
-                  alt=""
-                />
-              </div>
-
-              <div className="font-roboto text-[15px] grid gap-3 font-thin text-[#a1a1aa] mt-7 sm:text-start text-center">
-                <h4 className="text-white text-2xl font-bold">
-                  The Digital Revolution in Nigeria
-                </h4>
-
-                <h4>
-                  In an era where digital ransformation is rehaping every aspect
-                  of our lives Nigeria and beyond
-                </h4>
-
-                <h4 className="flex items-center space-x-1 text-sm sm:justify-start justify-center">
-                  <span>Dec 23, 2024</span>
-                  <span className="text-2xl">&#8729;</span> <span>4 min</span>
-                </h4>
-              </div>
-            </div>
-
-            <div className="w-full flex flex-col items-center h-full">
-              <div className="h-fit rounded-2xl">
-                <Image
-                  src="/assets/blog.png"
-                  className="object-cover w-[350px] h-[350px] rounded-2xl"
-                  width={450}
-                  height={450}
-                  alt=""
-                />
-              </div>
-
-              <div className="font-roboto text-[15px] grid gap-3 font-thin text-[#a1a1aa] mt-7 sm:text-start text-center">
-                <h4 className="text-white text-2xl font-bold">
-                  The Digital Revolution in Nigeria
-                </h4>
-
-                <h4>
-                  In an era where digital ransformation is rehaping every aspect
-                  of our lives Nigeria and beyond
-                </h4>
-
-                <h4 className="flex items-center space-x-1 text-sm sm:justify-start justify-center">
-                  <span>Dec 23, 2024</span>
-                  <span className="text-2xl">&#8729;</span> <span>4 min</span>
-                </h4>
-              </div>
-            </div>
-
-            <div className="w-full flex flex-col items-center h-full">
-              <div className="h-fit rounded-2xl">
-                <Image
-                  src="/assets/blog.png"
-                  className="object-cover w-[350px] h-[350px] rounded-2xl"
-                  width={450}
-                  height={450}
-                  alt=""
-                />
-              </div>
-
-              <div className="font-roboto text-[15px] grid gap-3 font-thin text-[#a1a1aa] mt-7 sm:text-start text-center">
-                <h4 className="text-white text-2xl font-bold">
-                  The Digital Revolution in Nigeria
-                </h4>
-
-                <h4>
-                  In an era where digital ransformation is rehaping every aspect
-                  of our lives Nigeria and beyond
-                </h4>
-
-                <h4 className="flex items-center space-x-1 text-sm sm:justify-start justify-center">
-                  <span>Dec 23, 2024</span>
-                  <span className="text-2xl">&#8729;</span> <span>4 min</span>
-                </h4>
-              </div>
-            </div>
-
-            <div className="w-full flex flex-col items-center h-full">
-              <div className="h-fit rounded-2xl">
-                <Image
-                  src="/assets/blog.png"
-                  className="object-cover w-[350px] h-[350px] rounded-2xl"
-                  width={450}
-                  height={450}
-                  alt=""
-                />
-              </div>
-
-              <div className="font-roboto text-[15px] grid gap-3 font-thin text-[#a1a1aa] mt-7 sm:text-start text-center">
-                <h4 className="text-white text-2xl font-bold">
-                  The Digital Revolution in Nigeria
-                </h4>
-
-                <h4>
-                  In an era where digital ransformation is rehaping every aspect
-                  of our lives Nigeria and beyond
-                </h4>
-
-                <h4 className="flex items-center space-x-1 text-sm sm:justify-start justify-center">
-                  <span>Dec 23, 2024</span>
-                  <span className="text-2xl">&#8729;</span> <span>4 min</span>
-                </h4>
-              </div>
-            </div>
-
-            <div className="w-full flex flex-col items-center h-full">
-              <div className="h-fit rounded-2xl">
-                <Image
-                  src="/assets/blog.png"
-                  className="object-cover w-[350px] h-[350px] rounded-2xl"
-                  width={450}
-                  height={450}
-                  alt=""
-                />
-              </div>
-
-              <div className="font-roboto text-[15px] grid gap-3 font-thin text-[#a1a1aa] mt-7 sm:text-start text-center">
-                <h4 className="text-white text-2xl font-bold">
-                  The Digital Revolution in Nigeria
-                </h4>
-
-                <h4>
-                  In an era where digital ransformation is rehaping every aspect
-                  of our lives Nigeria and beyond
-                </h4>
-
-                <h4 className="flex items-center space-x-1 text-sm sm:justify-start justify-center">
-                  <span>Dec 23, 2024</span>
-                  <span className="text-2xl">&#8729;</span> <span>4 min</span>
-                </h4>
-              </div>
-            </div>
-
-            <div className="w-full flex flex-col items-center h-full">
-              <div className="h-fit rounded-2xl">
-                <Image
-                  src="/assets/blog.png"
-                  className="object-cover w-[350px] h-[350px] rounded-2xl"
-                  width={450}
-                  height={450}
-                  alt=""
-                />
-              </div>
-
-              <div className="font-roboto text-[15px] grid gap-3 font-thin text-[#a1a1aa] mt-7 sm:text-start text-center">
-                <h4 className="text-white text-2xl font-bold">
-                  The Digital Revolution in Nigeria
-                </h4>
-
-                <h4>
-                  In an era where digital ransformation is rehaping every aspect
-                  of our lives Nigeria and beyond
-                </h4>
-
-                <h4 className="flex items-center space-x-1 text-sm sm:justify-start justify-center">
-                  <span>Dec 23, 2024</span>
-                  <span className="text-2xl">&#8729;</span> <span>4 min</span>
-                </h4>
-              </div>
-            </div>
           </div>
         </div>
       )}
@@ -322,7 +149,7 @@ const page = ({ params }) => {
               <CustomButton
                 textStyles="uppercase text-[16px] sm:text-[18px] font-bold"
                 imageStyles="rounded-[35px]"
-                func={() => setIsActive(true)}
+                func={() => setModalActive(true)}
                 containerStyles="py-3 sm:py-4 self-center w-full sm:w-fit px-6 rounded-[35px]"
                 title="Join the waitlist"
               />

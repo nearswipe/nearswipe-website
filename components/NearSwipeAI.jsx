@@ -3,11 +3,8 @@
 import { useState, useEffect, useRef } from "react";
 import { OpenAI } from "openai";
 import CustomButton from "./CustomButton";
-import ReactMarkdown from "react-markdown";
-import { Box } from "@chakra-ui/react";
 import { LiaTimesSolid } from "react-icons/lia";
 import { HiMiniCheckBadge } from "react-icons/hi2";
-
 
 const openai = new OpenAI({
   apiKey: process.env.NEXT_PUBLIC_OPENAI_KEY, // Store this in your .env file
@@ -15,10 +12,11 @@ const openai = new OpenAI({
 });
 
 const NearSwipeAiChat = ({ setIsActive, isActive }) => {
-  const [messages, setMessages] = useState(JSON.parse(localStorage.getItem("NearSwipeAiChat")) || []);
+  const [messages, setMessages] = useState(
+    JSON.parse(localStorage.getItem("NearSwipeAiChat")) || []
+  );
   const [input, setInput] = useState("");
   const messagesEndRef = useRef(null);
-
 
   useEffect(() => {
     const messagesContainer = messagesEndRef.current?.parentElement;
@@ -108,7 +106,9 @@ const NearSwipeAiChat = ({ setIsActive, isActive }) => {
   return (
     <div className="w-full max-w-lg mx-auto bg-[#0e0e0e] shadow-lg rounded-lg p-4">
       <div className="flex items-center justify-between pb-3">
-        <div className="text-white flex gap-1 items-center text-md font-semibold">NearSwipe AI <HiMiniCheckBadge color="#635BFF" /></div>
+        <div className="text-white flex gap-1 items-center text-md font-semibold">
+          NearSwipe AI <HiMiniCheckBadge color="#635BFF" />
+        </div>
 
         <div className="flex my- items-center justify-end">
           <div
@@ -125,6 +125,7 @@ const NearSwipeAiChat = ({ setIsActive, isActive }) => {
       <div className="h-[50vh] md:h-[60vh] overflow-y-auto scrollbar-hide bg-[#131313] rounded-xl p-4">
         {messages.map((msg, index) => (
           <div
+            ref={messages.length - 1 === index ? messagesEndRef : () => {}}
             key={index}
             className={`flex my-2 w-full ${msg.sender === "user" ? "justify-end" : "justify-start"}`}
           >

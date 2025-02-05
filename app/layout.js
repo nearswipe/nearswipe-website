@@ -1,12 +1,5 @@
-"use client";
-import Footer from "@/components/Footer";
 import "./globals.css";
-import Nav from "@/components/Nav";
-import { useState } from "react";
 import { GlobalProvider } from "@/context/GlobalContext";
-import NearSwipeAiChat from "@/components/NearSwipeAI";
-import Image from "next/image";
-import { LiaTimesSolid } from "react-icons/lia";
 
 const metadata = {
   title: "NearSwipe",
@@ -14,59 +7,11 @@ const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  const [chatBot, setChatBot] = useState(false);
-    const [sideNav, setSideNav] = useState(false);
   return (
     <html lang="en">
       <body className="bg-black">
         <GlobalProvider>
-          <Nav isActive={chatBot} setIsActive={setChatBot} sideNav={sideNav} setSideNav={setSideNav} />
-          {sideNav && (
-        <div className="w-full h-[100vh] fixed top-0 bottom-0 inset-0 z-[100] px-4 py-6 bg-black">
-          <div className="flex items-center justify-between">
-
-          <div className="w-8 h-8 bg-white rounded-full overflow-hidden">
-            <Image
-              src="/assets/hero-gradient.png"
-              className="w-full h-full object-cover"
-              width={12}
-              height={12}
-              alt="NearSwipe"
-            />
-          </div>
-
-          <div className="flex items-center justify-end">
-            <div
-              onClick={() => {
-                setSideNav(!sideNav);
-              }}
-              className="p-2 cursor-pointer text-white text-[1.2rem] font-black rounded-full bg-[#fff]/15"
-            >
-              <LiaTimesSolid />
-            </div>
-          </div>
-          </div>
-        </div>
-      )}
-
           {children}
-          <div
-            className={`fixed z-[70] flex items-center justify-end inset-0 w-full  self-end px-6 md:px-0 bottom-16 md:bottom-4`}
-          >
-            <div className="w-full md:w-1/2 flex justify-end">
-              {chatBot ? (
-                <NearSwipeAiChat isActive={chatBot} setIsActive={setChatBot} />
-              ) : (
-                <div
-                  onClick={() => {
-                    setChatBot(true);
-                  }}
-                  className="md:hidden border w-fit mr-4 cursor-pointer md:mr-8 p-8"
-                ></div>
-              )}
-            </div>
-          </div>
-          <Footer />
         </GlobalProvider>
       </body>
     </html>

@@ -1,12 +1,13 @@
 "use client";
 import CustomButton from "@/components/CustomButton";
 import WaitlistModal from "@/components/WaitlistModal";
+import { useGlobalContext } from "@/context/GlobalContext";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const page = () => {
   const [windowWidth, setWindowWidth] = useState(0);
-  const [isActive, setIsActive] = useState(false);
+  const { setModalActive} = useGlobalContext();
 
   useEffect(() => {
     // Set the initial window width on the client side
@@ -21,9 +22,6 @@ const page = () => {
   return (
     <div>
       <div className="relative h-[70vh] sm:h-screen font-roboto w-full flex flex-col items-center justify-center">
-        {isActive && (
-          <WaitlistModal isActive={isActive} setIsActive={setIsActive} />
-        )}
         {/* Responsive image container */}
         <div className="absolute w-full h-full inset-0">
           <Image
@@ -51,7 +49,7 @@ const page = () => {
               <CustomButton
                 textStyles="uppercase text-sm sm:text-md font-bold"
                 imageStyles="rounded-[35px]"
-                func={() => setIsActive(true)}
+                func={() => setModalActive(true)}
                 containerStyles="mt-6 py-3 sm:py-4 self-center sm:self-start w-full sm:w-fit px-6 rounded-[35px]"
                 title="Join the waitlist"
               />
@@ -307,7 +305,7 @@ const page = () => {
               <CustomButton
                 textStyles="uppercase text-[16px] sm:text-[18px] font-bold"
                 imageStyles="rounded-[35px]"
-                func={() => setIsActive(true)}
+                func={() => setModalActive(true)}
                 containerStyles="py-3 sm:py-4 self-center w-full sm:w-fit px-6 rounded-[35px]"
                 title="Join the waitlist"
               />

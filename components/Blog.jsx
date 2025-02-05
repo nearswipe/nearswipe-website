@@ -1,8 +1,10 @@
+import { urlFor } from "@/lib/sanity";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React from "react";
+import dateFormat from "./formatDate";
 
-const Blog = () => {
+const Blog = ({blogs}) => {
   const router = useRouter();
   return (
     <div className="font-roboto text-white w-full h-full bg-black py-8 sm:py-12 px-6 sm:px-24">
@@ -27,10 +29,11 @@ const Blog = () => {
         </div>
 
         <div className="w-full h-full grid grid-cols-1 gap-12 sm:gap-12 sm:grid-cols-3 mt-12">
-          <div className="w-full flex flex-col items-center h-full">
+        {blogs.map((post, idx) => (
+            <div key={idx} onClick={() => router.push(`/blog/${post?.currentSlug }`)} className="w-full flex flex-col items-center h-full cursor-pointer">
             <div className="h-fit rounded-2xl">
               <Image
-                src="/assets/blog.png"
+                src={urlFor(post?.titleImage).url()}
                 className="object-cover w-[350px] h-[350px] rounded-2xl"
                 width={450}
                 height={450}
@@ -38,78 +41,21 @@ const Blog = () => {
               />
             </div>
 
-            <div className="font-roboto text-[15px] grid gap-3 font-thin text-[#a1a1aa] mt-7 sm:text-start text-center">
-              <h4 className="text-white text-2xl font-bold">
-                The Digital Revolution in Nigeria
+            <div className="font-roboto w-full text-[15px] grid gap-3 font-thin text-[#a1a1aa] mt-7 sm:text-start text-center">
+              <h4 className="text-white line-clamp-2 text-2xl font-bold">
+                {post?.title}
               </h4>
 
-              <h4>
-                In an era where digital ransformation is rehaping every aspect
-                of our lives Nigeria and beyond
-              </h4>
-
-              <h4 className="flex items-center space-x-1 text-sm sm:justify-start justify-center">
-                <span>Dec 23, 2024</span>
-                <span className="text-2xl">&#8729;</span> <span>4 min</span>
-              </h4>
-            </div>
-          </div>
-
-          <div className="w-full flex flex-col items-center h-full">
-            <div className="h-fit rounded-2xl">
-              <Image
-                src="/assets/blog.png"
-                className="object-cover w-[350px] h-[350px] rounded-2xl"
-                width={450}
-                height={450}
-                alt=""
-              />
-            </div>
-
-            <div className="font-roboto text-[15px] grid gap-3 font-thin text-[#a1a1aa] mt-7 sm:text-start text-center">
-              <h4 className="text-white text-2xl font-bold">
-                The Digital Revolution in Nigeria
-              </h4>
-
-              <h4>
-                In an era where digital ransformation is rehaping every aspect
-                of our lives Nigeria and beyond
+              <h4 className="line-clamp-2">
+                {post?.smallDescription}
               </h4>
 
               <h4 className="flex items-center space-x-1 text-sm sm:justify-start justify-center">
-                <span>Dec 23, 2024</span>
-                <span className="text-2xl">&#8729;</span> <span>4 min</span>
+              {dateFormat(post?._createdAt)}
               </h4>
             </div>
           </div>
-
-          <div className="w-full flex flex-col items-center h-full">
-            <div className="h-fit rounded-2xl">
-              <Image
-                src="/assets/blog.png"
-                className="object-cover w-[350px] h-[350px] rounded-2xl"
-                width={450}
-                height={450}
-                alt=""
-              />
-            </div>
-
-            <div className="font-roboto text-[15px] grid gap-3 font-thin text-[#a1a1aa] mt-7 sm:text-start text-center">
-              <h4 className="text-white text-2xl font-bold">
-                The Digital Revolution in Nigeria
-              </h4>
-
-              <h4>
-                In an era where digital ransformation is rehaping every aspect
-                of our lives Nigeria and beyond
-              </h4>
-
-              <h4 className="flex items-center space-x-1 text-sm sm:justify-start justify-center">
-                <span>Dec 23, 2024</span>
-                <span className="text-2xl">&#8729;</span> <span>4 min</span>
-              </h4>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>

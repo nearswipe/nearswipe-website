@@ -12,7 +12,7 @@ const page = () => {
   const [windowWidth, setWindowWidth] = useState(0);
   const { blogs } = useGlobalContext();
   const router = useRouter();
-  const [isActive, setIsActive] = useState(false);
+  const { setModalActive} = useGlobalContext();
 
   useEffect(() => {
     // Set the initial window width on the client side
@@ -26,9 +26,6 @@ const page = () => {
 
   return (
     <div className="relative w-full">
-      {isActive && (
-        <WaitlistModal isActive={isActive} setIsActive={setIsActive} />
-      )}
       <div className="relative h-[70vh] font-roboto w-full flex flex-col items-center justify-center">
         {/* Responsive image container */}
         <div className="absolute">
@@ -91,7 +88,7 @@ const page = () => {
           </div>
           ))}
 
-          <div onClick={() => router.push("/blog/234")} className="w-full flex flex-col items-center h-full cursor-pointer">
+          {/* <div onClick={() => router.push("/blog/234")} className="w-full flex flex-col items-center h-full cursor-pointer">
             <div className="h-fit rounded-2xl">
               <Image
                 src="/assets/blog.png"
@@ -117,147 +114,7 @@ const page = () => {
                 <span className="text-2xl">&#8729;</span> <span>4 min</span>
               </h4>
             </div>
-          </div>
-
-          <div onClick={() => router.push("/blog/234")} className="w-full flex flex-col items-center h-full cursor-pointer">
-            <div className="h-fit rounded-2xl">
-              <Image
-                src="/assets/blog.png"
-                className="object-cover w-[350px] h-[350px] rounded-2xl"
-                width={450}
-                height={450}
-                alt=""
-              />
-            </div>
-
-            <div className="font-roboto text-[15px] grid gap-3 font-thin text-[#a1a1aa] mt-7 sm:text-start text-center">
-              <h4 className="text-white text-2xl font-bold">
-                The Digital Revolution in Nigeria
-              </h4>
-
-              <h4>
-                In an era where digital ransformation is rehaping every aspect
-                of our lives Nigeria and beyond
-              </h4>
-
-              <h4 className="flex items-center space-x-1 text-sm sm:justify-start justify-center">
-                <span>Dec 23, 2024</span>
-                <span className="text-2xl">&#8729;</span> <span>4 min</span>
-              </h4>
-            </div>
-          </div>
-
-          <div onClick={() => router.push("/blog/234")} className="w-full flex flex-col items-center h-full cursor-pointer">
-            <div className="h-fit rounded-2xl">
-              <Image
-                src="/assets/blog.png"
-                className="object-cover w-[350px] h-[350px] rounded-2xl"
-                width={450}
-                height={450}
-                alt=""
-              />
-            </div>
-
-            <div className="font-roboto text-[15px] grid gap-3 font-thin text-[#a1a1aa] mt-7 sm:text-start text-center">
-              <h4 className="text-white text-2xl font-bold">
-                The Digital Revolution in Nigeria
-              </h4>
-
-              <h4>
-                In an era where digital ransformation is rehaping every aspect
-                of our lives Nigeria and beyond
-              </h4>
-
-              <h4 className="flex items-center space-x-1 text-sm sm:justify-start justify-center">
-                <span>Dec 23, 2024</span>
-                <span className="text-2xl">&#8729;</span> <span>4 min</span>
-              </h4>
-            </div>
-          </div>
-
-          <div onClick={() => router.push("/blog/234")} className="w-full flex flex-col items-center h-full cursor-pointer">
-            <div className="h-fit rounded-2xl">
-              <Image
-                src="/assets/blog.png"
-                className="object-cover w-[350px] h-[350px] rounded-2xl"
-                width={450}
-                height={450}
-                alt=""
-              />
-            </div>
-
-            <div className="font-roboto text-[15px] grid gap-3 font-thin text-[#a1a1aa] mt-7 sm:text-start text-center">
-              <h4 className="text-white text-2xl font-bold">
-                The Digital Revolution in Nigeria
-              </h4>
-
-              <h4>
-                In an era where digital ransformation is rehaping every aspect
-                of our lives Nigeria and beyond
-              </h4>
-
-              <h4 className="flex items-center space-x-1 text-sm sm:justify-start justify-center">
-                <span>Dec 23, 2024</span>
-                <span className="text-2xl">&#8729;</span> <span>4 min</span>
-              </h4>
-            </div>
-          </div>
-
-          <div onClick={() => router.push("/blog/234")} className="w-full flex flex-col items-center h-full cursor-pointer">
-            <div className="h-fit rounded-2xl">
-              <Image
-                src="/assets/blog.png"
-                className="object-cover w-[350px] h-[350px] rounded-2xl"
-                width={450}
-                height={450}
-                alt=""
-              />
-            </div>
-
-            <div className="font-roboto text-[15px] grid gap-3 font-thin text-[#a1a1aa] mt-7 sm:text-start text-center">
-              <h4 className="text-white text-2xl font-bold">
-                The Digital Revolution in Nigeria
-              </h4>
-
-              <h4>
-                In an era where digital ransformation is rehaping every aspect
-                of our lives Nigeria and beyond
-              </h4>
-
-              <h4 className="flex items-center space-x-1 text-sm sm:justify-start justify-center">
-                <span>Dec 23, 2024</span>
-                <span className="text-2xl">&#8729;</span> <span>4 min</span>
-              </h4>
-            </div>
-          </div>
-
-          <div onClick={() => router.push("/blog/234")} className="w-full flex flex-col items-center h-full cursor-pointer">
-            <div className="h-fit rounded-2xl">
-              <Image
-                src="/assets/blog.png"
-                className="object-cover w-[350px] h-[350px] rounded-2xl"
-                width={450}
-                height={450}
-                alt=""
-              />
-            </div>
-
-            <div className="font-roboto text-[15px] grid gap-3 font-thin text-[#a1a1aa] mt-7 sm:text-start text-center">
-              <h4 className="text-white text-2xl font-bold">
-                The Digital Revolution in Nigeria
-              </h4>
-
-              <h4>
-                In an era where digital ransformation is rehaping every aspect
-                of our lives Nigeria and beyond
-              </h4>
-
-              <h4 className="flex items-center space-x-1 text-sm sm:justify-start justify-center">
-                <span>Dec 23, 2024</span>
-                <span className="text-2xl">&#8729;</span> <span>4 min</span>
-              </h4>
-            </div>
-          </div>
+          </div> */}
         </div>
       </div>
 
@@ -289,7 +146,7 @@ const page = () => {
               <CustomButton
                 textStyles="uppercase text-[16px] sm:text-[18px] font-bold"
                 imageStyles="rounded-[35px]"
-                func={() => setIsActive(true)}
+                func={() => setModalActive(true)}
                 containerStyles="py-3 sm:py-4 self-center w-full sm:w-fit px-6 rounded-[35px]"
                 title="Join the waitlist"
               />
