@@ -2,7 +2,6 @@
 import Banking from "@/components/Banking";
 import Banner from "@/components/Banner";
 import Blog from "@/components/Blog";
-import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import { useGlobalContext } from "@/context/GlobalContext";
 

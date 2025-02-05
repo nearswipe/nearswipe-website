@@ -122,7 +122,7 @@ const NearSwipeAiChat = ({ setIsActive, isActive }) => {
         </div>
       </div>
 
-      <div className="h-[50vh] md:h-[60vh] overflow-y-auto scrollbar-hide bg-[#131313] rounded-xl p-4">
+      <div className="h-[60vh] overflow-y-auto scrollbar-hide bg-[#131313] rounded-xl p-4">
         {messages.map((msg, index) => (
           <div
             ref={messages.length - 1 === index ? messagesEndRef : () => {}}

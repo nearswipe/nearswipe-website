@@ -12,8 +12,8 @@ export default {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        roboto: ['Roboto', 'sans-serif'], // Main Roboto font family
-      }
+        roboto: ['"Roboto Condensed"', 'sans-serif'], // Ensure correct registration
+      },
     },
   },
   plugins: [require("@tailwindcss/typography")],

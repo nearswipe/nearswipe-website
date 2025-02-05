@@ -33,6 +33,7 @@ const Hero = ({ isActive, setIsActive }) => {
           alt=""
         />
       </div>
+
       {/* Background Bottom */}
       <div className="absolute bottom-0 z-1 bg-transparent w-full h-full ">
         <Image

@@ -5,9 +5,12 @@ import React, { useState } from "react";
 import { IoChevronUp, IoChevronDown } from "react-icons/io5";
 import { BiSupport } from "react-icons/bi";
 import { LiaTimesSolid } from "react-icons/lia";
+import { useGlobalContext } from "@/context/GlobalContext";
+import CustomButton from "./CustomButton";
 
-const Nav = ({ isActive, setIsActive, sideNav, setSideNav }) => {
+const Nav = () => {
   const [dropDown, setDropDown] = useState("");
+  const { chatBot, setChatBot, sideNav, setSideNav, busDropDown, setBusDropDown, cmpyDropDown, setCmpyDropDown, setModalActive } = useGlobalContext();
   const router = useRouter();
   const pathName = usePathname();
 
@@ -15,7 +18,7 @@ const Nav = ({ isActive, setIsActive, sideNav, setSideNav }) => {
     <>
       <div className="hidden absolute top-0 w-full px-16 z-[70] py-6 sm:flex items-center justify-between text-white bg-transparent">
         {/* Logo */}
-        <div className="w-8 h-8 bg-white rounded-full overflow-hidden">
+        <div className="w-8 h-8  bg-white rounded-full overflow-hidden">
           <Image
             src="/assets/hero-gradient.png"
             className="w-full h-full object-cover"
@@ -26,7 +29,7 @@ const Nav = ({ isActive, setIsActive, sideNav, setSideNav }) => {
         </div>
 
         {/* Navigation Links */}
-        <div className="flex items-center space-x-6 capitalize font-roboto font-thin text-[13px] text-[#a1a1aa]">
+        <div className="flex items-center space-x-6 capitalize font-roboto font-normal text-sm text-[#a1a1aa]">
           <div
             onClick={() => router.push("/")}
             className={`cursor-pointer hover:text-white  ${pathName === "/" && "text-white"}`}
@@ -178,7 +181,7 @@ const Nav = ({ isActive, setIsActive, sideNav, setSideNav }) => {
           </div>
 
           <div
-            onClick={() => setIsActive(!isActive)}
+            onClick={() => setChatBot(!chatBot)}
             className="group flex  items-center gap-1 tracking-widest hover:text-white cursor-pointer"
           >
             Ask AI <BiSupport size={15} color="#635BFF" />
@@ -219,6 +222,196 @@ const Nav = ({ isActive, setIsActive, sideNav, setSideNav }) => {
           />
         </div>
       </div>
+
+      {sideNav && (
+        <div className="w-full h-[100vh] fixed top-0 bottom-0 inset-0 z-[100] py-6 bg-[#0e0e0e]">
+          <div className="flex items-center justify-between w-full px-4">
+            <div className="w-8 h-8 bg-white rounded-full overflow-hidden">
+              <Image
+                src="/assets/hero-gradient.png"
+                className="w-full h-full object-cover"
+                width={12}
+                height={12}
+                alt="NearSwipe"
+              />
+            </div>
+
+            <div className="flex items-center justify-end">
+              <div
+                onClick={() => {
+                  setSideNav(!sideNav);
+                }}
+                className="p-2 cursor-pointer text-white text-[1.2rem] font-black rounded-full bg-[#fff]/15"
+              >
+                <LiaTimesSolid />
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col text-white justify-between w-full mt-4 h-[98%]">
+            <div>
+              <div
+                onClick={() => {
+                  setSideNav(false);
+                  router.push("/");
+                }}
+                className="border-b capitalize border-white/15 p-4 text-xl font-bold"
+              >
+                Home
+              </div>
+
+              <div className="border-b capitalize border-white/15 p-4 text-xl font-bold">
+                <div
+                  onClick={() => setBusDropDown(!busDropDown)}
+                  className="flex items-center justify-between"
+                >
+                  <span>business</span>
+
+                  <span className="text-[#635BFF] text-2xl">
+                    {busDropDown ? <IoChevronUp /> : <IoChevronDown />}
+                  </span>
+                </div>
+
+                {busDropDown && (
+                  <>
+                    <div
+                      onClick={() => {
+                        setSideNav(false);
+                        router.push("/products");
+                      }}
+                      className="flex items-center px-3 py-2 cursor-pointer"
+                    >
+                      <span className="bg-[#1e1e1e] p-2 rounded-md">
+                        <Image
+                          src="/assets/product.svg"
+                          width={20}
+                          height={20}
+                          alt=""
+                        />
+                      </span>
+
+                      <span className="ml-3 text-sm font-medium text-[#a1a1aa]">
+                        Products
+                      </span>
+                    </div>
+
+                    <div
+                      onClick={() => {
+                        setSideNav(false);
+                        router.push("/technology");
+                      }}
+                      className="flex items-center px-3 py-2 cursor-pointer"
+                    >
+                      <span className="bg-[#1e1e1e] p-2 rounded-md">
+                        <Image
+                          src="/assets/technology.svg"
+                          width={20}
+                          height={20}
+                          alt=""
+                        />
+                      </span>
+
+                      <span className="ml-3 text-sm font-medium text-[#a1a1aa]">
+                        technology
+                      </span>
+                    </div>
+                  </>
+                )}
+              </div>
+
+              <div className="border-b capitalize border-white/15 p-4 text-xl font-bold">
+                <div
+                  onClick={() => setCmpyDropDown(!cmpyDropDown)}
+                  className="flex items-center justify-between"
+                >
+                  <span>company</span>
+
+                  <span className="text-[#635BFF] text-2xl">
+                    {cmpyDropDown ? <IoChevronUp /> : <IoChevronDown />}
+                  </span>
+                </div>
+
+                {cmpyDropDown && (
+                  <>
+                    <div
+                      onClick={() => {
+                        setSideNav(false);
+                        router.push("/career");
+                      }}
+                      className="flex items-center px-3 py-2 cursor-pointer"
+                    >
+                      <span className="bg-[#1e1e1e] p-2 rounded-md">
+                        <Image
+                          src="/assets/career.svg"
+                          width={20}
+                          height={20}
+                          alt=""
+                        />
+                      </span>
+
+                      <span className="ml-3 text-sm font-medium text-[#a1a1aa]">
+                        Careers
+                      </span>
+                    </div>
+
+                    <div
+                      onClick={() => {
+                        setSideNav(false);
+                        router.push("/about-us");
+                      }}
+                      className="flex items-center px-3 py-2 cursor-pointer"
+                    >
+                      <span className="bg-[#1e1e1e] p-2 rounded-md">
+                        <Image
+                          src="/assets/about.svg"
+                          width={20}
+                          height={20}
+                          alt=""
+                        />
+                      </span>
+
+                      <span className="ml-3 text-sm font-medium text-[#a1a1aa]">
+                        About us
+                      </span>
+                    </div>
+                  </>
+                )}
+              </div>
+
+              <div
+                onClick={() => {
+                  setSideNav(false);
+                  router.push("/blog");
+                }}
+                className="border-b capitalize border-white/15 p-4 text-xl font-bold"
+              >
+                blog
+              </div>
+
+              <div
+                onClick={() => {
+                  setSideNav(false);
+                  router.push("/contact");
+                }}
+                className="border-b capitalize border-white/15 p-4 text-xl font-bold"
+              >
+                contact
+              </div>
+            </div>
+
+            <CustomButton
+              textStyles="uppercase text-lg font-bold"
+              imageStyles="rounded-[35px]"
+              func={() => {
+                setSideNav(false);
+                setModalActive(true);
+              }}
+              containerStyles="mb-2 py-3.5 self-center sm:self-start w-full px-6 rounded-[35px]"
+              title="Join the waitlist"
+            />
+          </div>
+        </div>
+      )}
     </>
   );
 };

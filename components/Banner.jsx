@@ -63,7 +63,6 @@ const Banner = ({ setIsActive }) => {
   */
 
   return (
-
     <div className="w-full h-fit p-4 sm:p-12 lg:p-16">
       <div className="relative w-full px-6 py-6 sm:p-12 lg:py-12 flex bg-[#f1f1f1] items-center rounded-[25px] overflow-hidden">
         {/* Left Content */}
@@ -93,14 +92,13 @@ const Banner = ({ setIsActive }) => {
 
         {/* Right Placeholder Section */}
         <Image
-            src={"/assets/image-gradient.svg"
-            }
-            priority
-            className="z-40 w-full h-full absolute rounded-2xl inset-0 object-cover"
-            width={400}
-            height={400}
-            alt=""
-          />
+          src={"/assets/image-gradient.svg"}
+          priority
+          className="z-40 w-full h-full absolute rounded-2xl inset-0 object-cover"
+          width={400}
+          height={400}
+          alt=""
+        />
       </div>
     </div>
   );

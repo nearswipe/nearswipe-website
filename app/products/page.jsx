@@ -41,7 +41,7 @@ const page = () => {
                 Our Products
               </p>
 
-              <p className="text-sm md:text-[1.2rem] mt-4 md:mt-6 font-light text-[#a1a1aa]">
+              <p className="text-sm md:text-[1.3rem] md:leading-[1.5rem] mt-4 md:mt-6 font-light text-[#a1a1aa]">
                 Discover the perfect NearSwipe solution for your needs, whether
                 you're a student, business owner, or institution.
               </p>
