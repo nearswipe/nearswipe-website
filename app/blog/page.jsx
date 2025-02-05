@@ -26,12 +26,12 @@ const page = () => {
 
   return (
     <div className="relative w-full">
-      <div className="relative h-[70vh] font-roboto w-full flex flex-col items-center justify-center">
+      <div className="relative h-[70vh] overflow-hidden font-roboto w-full flex flex-col items-center justify-center">
         {/* Responsive image container */}
-        <div className="absolute">
+        <div className="absolute w-full h-full inset-0">
                 <Image
                   src="/assets/bg.svg"
-                  className="w-full h-full object-cover rounded-full"
+                  className="w-full h-full object-cover"
                   width={windowWidth}
                   priority
                   height={500}
@@ -39,14 +39,14 @@ const page = () => {
                 />
               </div>
 
-        <div className="z-50 text-white w-full mt-20 px-20">
+        <div className="z-50 text-white w-full px-6 md:px-20">
           <div className=" w-full h-fit flex space-x-56 items-center justify-center">
             <div className="md:w-1/2 w-full flex flex-col items-center">
-              <p className="text-[5.5rem] text-center text-[#d1d1d1] font-black">
+              <p className="text-3xl md:text-[3.5rem] text-[#d1d1d1] font-black">
                 Blog
               </p>
 
-              <p className="text-[1.4rem] text-center mt-2 leading-7o font-light text-[#a1a1aa]">
+              <p className="text-sm md:text-[1.2rem] mt-4 md:mt-6 text-center font-light text-[#a1a1aa]">
                 Read about our latest product and research announcements
               </p>
             </div>
@@ -54,7 +54,7 @@ const page = () => {
         </div>
       </div>
 
-      <div className="w-full sm:mt-24 px-5 text-white md:px-20">
+      <div className="w-full px-5 text-white md:px-20">
         <p className="text-white mb-12 text-center text-[2.3rem] font-bold">
           All posts
         </p>
