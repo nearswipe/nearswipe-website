@@ -8,9 +8,10 @@ const GlobalContext = createContext(null);
 // Create the provider component
 export const GlobalProvider = ({ children }) => {
   const [blogs, setBlogs] = useState([]);
+  const [jobs, setJobs] = useState([]);
 
   const getBlogs = async () => {
-    const query = `*[_type == "blog"] | order(_createdAt desc) {
+    const blogQuery = `*[_type == "blog"] | order(_createdAt desc) {
     _id,
     title,
       smallDescription,
@@ -20,18 +21,26 @@ export const GlobalProvider = ({ children }) => {
       _createdAt
   }`;
 
-  const response = await client.fetch(query)
+    const jobQuery = `*[_type == "career"] | order(_createdAt desc) {
+    _id,
+    title,
+      link,
+      jobType,
+      jobLocation,
+  }`;
 
-  setBlogs(response )
-  
+    const response = await client.fetch(blogQuery);
+    const jobsRes = await client.fetch(jobQuery);
+    setJobs(jobsRes);
+    setBlogs(response);
   };
 
   useEffect(() => {
     getBlogs();
-  }, [])
+  }, []);
 
   return (
-    <GlobalContext.Provider value={{ blogs }}>
+    <GlobalContext.Provider value={{ blogs, jobs }}>
       {children}
     </GlobalContext.Provider>
   );

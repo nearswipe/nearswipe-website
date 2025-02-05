@@ -3,8 +3,10 @@ import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { IoChevronUp, IoChevronDown } from "react-icons/io5";
+import { BiSupport } from "react-icons/bi";
+import { LiaTimesSolid } from "react-icons/lia";
 
-const Nav = () => {
+const Nav = ({ isActive, setIsActive, sideNav, setSideNav }) => {
   const [dropDown, setDropDown] = useState("");
   const router = useRouter();
   const pathName = usePathname();
@@ -174,6 +176,13 @@ const Nav = () => {
           >
             Contact
           </div>
+
+          <div
+            onClick={() => setIsActive(!isActive)}
+            className="group flex  items-center gap-1 tracking-widest hover:text-white cursor-pointer"
+          >
+            Ask AI <BiSupport size={15} color="#635BFF" />
+          </div>
         </div>
 
         {/* Get Started Button */}
@@ -186,7 +195,7 @@ const Nav = () => {
       </div>
 
       <div className="absolute sm:hidden  top-0 w-full px-5 z-[70] py-6 flex items-center justify-between text-white bg-transparent">
-            {/* Logo */}
+        {/* Logo */}
         <div className="w-8 h-8 bg-white rounded-full overflow-hidden">
           <Image
             src="/assets/hero-gradient.png"
@@ -197,7 +206,10 @@ const Nav = () => {
           />
         </div>
 
-        <div className="flex bg-[#fff]/15 items-center justify-center rounded-3xl py-1.5 px-4">
+        <div
+          onClick={() => setSideNav(!sideNav)}
+          className="flex bg-[#fff]/15 items-center justify-center rounded-3xl py-1.5 px-4"
+        >
           <Image
             src="/assets/hamburger.svg"
             className="w-5 h-5 object-contain"

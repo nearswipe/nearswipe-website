@@ -1,5 +1,6 @@
 "use client";
 import CustomButton from "@/components/CustomButton";
+import dateFormat from "@/components/formatDate";
 import WaitlistModal from "@/components/WaitlistModal";
 import { useGlobalContext } from "@/context/GlobalContext";
 import { urlFor } from "@/lib/sanity";
@@ -84,8 +85,7 @@ const page = () => {
               </h4>
 
               <h4 className="flex items-center space-x-1 text-sm sm:justify-start justify-center">
-                <span>Dec 23, 2024</span>
-                <span className="text-2xl">&#8729;</span> <span>4 min</span>
+              {dateFormat(post?._createdAt)}
               </h4>
             </div>
           </div>

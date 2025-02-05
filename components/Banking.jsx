@@ -62,12 +62,12 @@ const Banking = () => {
       </div>
 
       <div className="w-full h-full flex flex-col sm:mt-32 mt-16 items-center">
-        <div className="p-2 sm:w-2/3 w-full h-full  flex flex-col items-center sm:px-28">
+        <div className="p-2 sm:w-2/3 w-full h-full  flex flex-col items-center sm:px-10">
           <p className="uppercase text-sm sm:text-[15px] text-center font-medium tracking-[0.3rem] text-[#F59E0B]">
             for merchants
           </p>
 
-          <h5 className="capitalize font-roboto text-center text-xl sm:text-3xl sm:text-[3rem] font-black mt-4 text-[#fff]">
+          <h5 className="capitalize text-center text-xl sm:text-3xl mt-4 sm:text-[2.8rem] font-semibold text-[#fff]">
             empower your business
           </h5>
 
@@ -115,12 +115,12 @@ const Banking = () => {
       </div>
 
       <div className="w-full h-full flex flex-col sm:mt-32 mt-16 items-center">
-        <div className="p-2 sm:w-2/3 w-full h-full  flex flex-col items-center sm:px-28">
+        <div className="p-2 sm:w-2/3 w-full h-full  flex flex-col items-center sm:px-10">
           <p className="uppercase text-sm text-[15px] font-medium tracking-[0.3rem] text-[#EF4444]">
             for student & staff
           </p>
 
-          <h5 className="capitalize text-center font-roboto text-xl sm:text-3xl sm:text-[3rem] font-black mt-4 text-[#fff]">
+          <h5 className="capitalize text-center text-xl sm:text-3xl mt-4 sm:text-[2.8rem] font-semibold text-[#fff]">
             campus life simplified
           </h5>
 

@@ -28,7 +28,7 @@ const page = () => {
       {isActive && (
         <WaitlistModal isActive={isActive} setIsActive={setIsActive} />
       )}
-      <div className="relative h-[70vh] font-roboto w-full flex flex-col items-center justify-center">
+      <div className="relative h-[70vh] overflow-hidden font-roboto w-full flex flex-col items-center justify-center">
         {/* Responsive image container */}
         <div className="absolute">
           <Image
@@ -56,7 +56,7 @@ const page = () => {
         </div>
       </div>
 
-      <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-16 sm:mt-16 px-5 text-white md:px-20">
+      <div className="w-full z-50 grid grid-cols-1 sm:grid-cols-2 gap-16 sm:mt-16 px-5 text-white md:px-20">
         <div className="w-full">
           <p className="text-xl font-semibold capitalize">
             contact information
@@ -118,7 +118,8 @@ const page = () => {
             <input
               name="name"
               id="name"
-              className="w-full px-4 bg-[#282828] py-3 mt-2 mb-7 rounded-xl focus-within:outline-[#635BFF] outline-none"
+              type="text"
+              className="w-full px-4 bg-[#282828] cursor-text py-3 mt-2 mb-7 rounded-xl focus-within:outline-[#635BFF] outline-none"
             />
 
             <label htmlFor="email" className="text-[#a1a1aa]">
@@ -152,7 +153,7 @@ const page = () => {
         </form>
       </div>
 
-      <div className="flex md:p-20 p-5 mt-16 font-roboto">
+      <div className="flex md:p-20 z-50 p-5 mt-16 font-roboto">
         <div className="relative flex flex-col rounded-2xl border items-center justify-center w-full md:h-96 h-80">
           <Image
             src={

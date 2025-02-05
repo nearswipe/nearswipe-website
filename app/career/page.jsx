@@ -1,11 +1,13 @@
 "use client";
 import CustomButton from "@/components/CustomButton";
 import WaitlistModal from "@/components/WaitlistModal";
+import { useGlobalContext } from "@/context/GlobalContext";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const page = () => {
+  const { jobs } = useGlobalContext();
   const [windowWidth, setWindowWidth] = useState(0);
   const [isActive, setIsActive] = useState(false);
 
@@ -59,12 +61,37 @@ const page = () => {
       </div>
 
       <div className="w-full flex flex-col gap-8 px-5 text-white md:px-20">
+        {jobs.length !== 0 ? (
+          jobs.map((item, idx) => (
+            <div key={idx} className="flex items-center justify-between">
+              <div>
+                <p className="text-sm md:text-xl font-bold">
+                  {item?.title}
+                </p>
+                <p className="flex items-center text-[#a1a1aa] text-[12px] md:text-[17px]">
+                  {item?.jobLocation}{" "}
+                  <span className="mx-2 text-md text-3xl">&#8729;</span>{" "}
+                  {item?.jobType}
+                </p>
+              </div>
+
+              <Link href={item?.link} target="_blank" rel="noopener noreferrer" className="md:px-6 px-4 py-2 md:text-[17px] text-[12px] cursor-pointer rounded-[35px] md:py-3 border font-medium uppercase">
+                Apply now
+              </Link>
+            </div>
+          ))
+        ) : (
+          <></>
+        )}
+
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-sm md:text-xl font-bold">Senior Frontend developer</p>
+            <p className="text-sm md:text-xl font-bold">
+              Senior Frontend developer
+            </p>
             <p className="flex items-center text-[#a1a1aa] text-[12px] md:text-[17px]">
-              Lagos, Nigeria <span className="mx-2 text-md text-3xl">&#8729;</span>{" "}
-              Full-time
+              Lagos, Nigeria{" "}
+              <span className="mx-2 text-md text-3xl">&#8729;</span> Full-time
             </p>
           </div>
 
@@ -75,10 +102,12 @@ const page = () => {
 
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-sm md:text-xl font-bold">Senior Frontend developer</p>
+            <p className="text-sm md:text-xl font-bold">
+              Senior Frontend developer
+            </p>
             <p className="flex items-center text-[#a1a1aa] text-[12px] md:text-[17px]">
-              Lagos, Nigeria <span className="mx-2 text-md text-3xl">&#8729;</span>{" "}
-              Full-time
+              Lagos, Nigeria{" "}
+              <span className="mx-2 text-md text-3xl">&#8729;</span> Full-time
             </p>
           </div>
 
@@ -89,10 +118,12 @@ const page = () => {
 
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-sm md:text-xl font-bold">Senior Frontend developer</p>
+            <p className="text-sm md:text-xl font-bold">
+              Senior Frontend developer
+            </p>
             <p className="flex items-center text-[#a1a1aa] text-[12px] md:text-[17px]">
-              Lagos, Nigeria <span className="mx-2 text-md text-3xl">&#8729;</span>{" "}
-              Full-time
+              Lagos, Nigeria{" "}
+              <span className="mx-2 text-md text-3xl">&#8729;</span> Full-time
             </p>
           </div>
 
@@ -103,10 +134,12 @@ const page = () => {
 
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-sm md:text-xl font-bold">Senior Frontend developer</p>
+            <p className="text-sm md:text-xl font-bold">
+              Senior Frontend developer
+            </p>
             <p className="flex items-center text-[#a1a1aa] text-[12px] md:text-[17px]">
-              Lagos, Nigeria <span className="mx-2 text-md text-3xl">&#8729;</span>{" "}
-              Full-time
+              Lagos, Nigeria{" "}
+              <span className="mx-2 text-md text-3xl">&#8729;</span> Full-time
             </p>
           </div>
 
@@ -117,10 +150,12 @@ const page = () => {
 
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-sm md:text-xl font-bold">Senior Frontend developer</p>
+            <p className="text-sm md:text-xl font-bold">
+              Senior Frontend developer
+            </p>
             <p className="flex items-center text-[#a1a1aa] text-[12px] md:text-[17px]">
-              Lagos, Nigeria <span className="mx-2 text-md text-3xl">&#8729;</span>{" "}
-              Full-time
+              Lagos, Nigeria{" "}
+              <span className="mx-2 text-md text-3xl">&#8729;</span> Full-time
             </p>
           </div>
 
@@ -131,10 +166,12 @@ const page = () => {
 
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-sm md:text-xl font-bold">Senior Frontend developer</p>
+            <p className="text-sm md:text-xl font-bold">
+              Senior Frontend developer
+            </p>
             <p className="flex items-center text-[#a1a1aa] text-[12px] md:text-[17px]">
-              Lagos, Nigeria <span className="mx-2 text-md text-3xl">&#8729;</span>{" "}
-              Full-time
+              Lagos, Nigeria{" "}
+              <span className="mx-2 text-md text-3xl">&#8729;</span> Full-time
             </p>
           </div>
 
