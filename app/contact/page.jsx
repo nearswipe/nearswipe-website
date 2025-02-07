@@ -1,6 +1,6 @@
 "use client";
 import CustomButton from "@/components/CustomButton";
-import WaitlistModal from "@/components/WaitlistModal";
+import { useGlobalContext } from "@/context/GlobalContext";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -21,6 +21,9 @@ const page = () => {
 
   const submit = (e) => {
     e.preventDefault();
+    // fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    //   .then(response => console.log('Success!', response))
+    //   .catch(error => console.error('Error!', error.message))
   };
 
   return (
