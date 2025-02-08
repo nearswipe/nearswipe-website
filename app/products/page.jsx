@@ -1,6 +1,7 @@
 "use client";
 import CustomButton from "@/components/CustomButton";
 import WaitlistModal from "@/components/WaitlistModal";
+import { bAnalys, bannerImage1, bannerImage2, bgImage, campus, card, easyStp, identity, instantSettle, linkedCards, mockUp, secureBnk, vAccts } from "@/constants/images";
 import { useGlobalContext } from "@/context/GlobalContext";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -25,7 +26,7 @@ const page = () => {
         {/* Responsive image container */}
         <div className="absolute w-full h-full inset-0">
           <Image
-            src="/assets/bg.svg"
+            src={bgImage}
             className="w-full h-full object-cover"
             width={windowWidth}
             priority
@@ -57,7 +58,7 @@ const page = () => {
 
             <div className="hidden w-1/2 h-fit mt-5 relative md:flex items-center justify-end">
               <Image
-                src="/assets/mockup.svg"
+                src={mockUp}
                 priority
                 className={`object-fill `}
                 width={windowWidth / 3}
@@ -86,7 +87,7 @@ const page = () => {
             <div className="flex w-full flex-col items-center gap-4">
               <div className="w-20 h-20 bg-[#282828] flex items-center justify-center rounded-xl">
                 <Image
-                  src="/assets/campus.svg"
+                  src={campus}
                   className="object-contain"
                   width={40}
                   height={40}
@@ -104,7 +105,7 @@ const page = () => {
             <div className="flex w-full flex-col items-center gap-4">
               <div className="w-20 h-20 bg-[#282828] flex items-center justify-center rounded-xl">
                 <Image
-                  src="/assets/card.svg"
+                  src={card}
                   className="object-contain"
                   width={40}
                   height={40}
@@ -122,7 +123,7 @@ const page = () => {
             <div className="flex w-full flex-col items-center gap-4">
               <div className="w-20 h-20 bg-[#282828] flex items-center justify-center rounded-xl">
                 <Image
-                  src="/assets/identity.svg"
+                  src={identity}
                   className="object-contain"
                   width={40}
                   height={40}
@@ -154,7 +155,7 @@ const page = () => {
             <div className="flex w-full flex-col items-center gap-4">
               <div className="w-20 h-20 bg-[#282828] flex items-center justify-center rounded-xl">
                 <Image
-                  src="/assets/easy-setup.svg"
+                  src={easyStp}
                   className="object-contain"
                   width={35}
                   height={35}
@@ -172,7 +173,7 @@ const page = () => {
             <div className="flex w-full flex-col items-center gap-4">
               <div className="w-20 h-20 bg-[#282828] flex items-center justify-center rounded-xl">
                 <Image
-                  src="/assets/instant-settle.svg"
+                  src={instantSettle}
                   className="object-contain"
                   width={35}
                   height={35}
@@ -190,7 +191,7 @@ const page = () => {
             <div className="flex w-full flex-col items-center gap-4">
               <div className="w-20 h-20 bg-[#282828] flex items-center justify-center rounded-xl">
                 <Image
-                  src="/assets/b-analysis.svg"
+                  src={bAnalys}
                   className="object-contain"
                   width={35}
                   height={35}
@@ -222,7 +223,7 @@ const page = () => {
             <div className="flex w-full flex-col items-center gap-4">
               <div className="w-20 h-20 bg-[#282828] flex items-center justify-center rounded-xl">
                 <Image
-                  src="/assets/virtual-accts.svg"
+                  src={vAccts}
                   className="object-contain"
                   width={40}
                   height={40}
@@ -240,7 +241,7 @@ const page = () => {
             <div className="flex w-full flex-col items-center gap-4">
               <div className="w-20 h-20 bg-[#282828] flex items-center justify-center rounded-xl">
                 <Image
-                  src="/assets/linked-cards.svg"
+                  src={linkedCards}
                   className="object-contain"
                   width={40}
                   height={40}
@@ -258,7 +259,7 @@ const page = () => {
             <div className="flex w-full flex-col items-center gap-4">
               <div className="w-20 h-20 bg-[#282828] flex items-center justify-center rounded-xl">
                 <Image
-                  src="/assets/secure-bank.svg"
+                  src={secureBnk}
                   className="object-contain"
                   width={40}
                   height={40}
@@ -281,8 +282,8 @@ const page = () => {
           <Image
             src={
               windowWidth > 1200
-                ? "/assets/bg-gradient.svg"
-                : "/assets/image-gradient.svg"
+                ? bannerImage2
+                : bannerImage1
             }
             priority
             className="z-40 w-full h-full absolute rounded-2xl inset-0 object-cover"

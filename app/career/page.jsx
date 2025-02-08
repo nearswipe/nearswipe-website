@@ -1,6 +1,7 @@
 "use client";
 import CustomButton from "@/components/CustomButton";
 import WaitlistModal from "@/components/WaitlistModal";
+import { bannerImage1, bannerImage2, bgImage } from "@/constants/images";
 import { useGlobalContext } from "@/context/GlobalContext";
 import Image from "next/image";
 import Link from "next/link";
@@ -31,7 +32,7 @@ const page = () => {
         {/* Responsive image container */}
         <div className="absolute w-full h-full inset-0">
           <Image
-            src="/assets/bg.svg"
+            src={bgImage}
             className="w-full h-full object-cover"
             width={windowWidth}
             priority
@@ -80,102 +81,6 @@ const page = () => {
         ) : (
           <></>
         )}
-
-        <div className="flex items-center justify-between">
-          <div>
-            <p className="text-sm md:text-xl font-bold">
-              Senior Frontend developer
-            </p>
-            <p className="flex items-center text-[#a1a1aa] text-[12px] md:text-[17px]">
-              Lagos, Nigeria{" "}
-              <span className="mx-2 text-md text-3xl">&#8729;</span> Full-time
-            </p>
-          </div>
-
-          <div className="md:px-6 px-4 py-2 md:text-[17px] text-[12px] cursor-pointer rounded-[35px] md:py-3 border font-medium uppercase">
-            Apply now
-          </div>
-        </div>
-
-        <div className="flex items-center justify-between">
-          <div>
-            <p className="text-sm md:text-xl font-bold">
-              Senior Frontend developer
-            </p>
-            <p className="flex items-center text-[#a1a1aa] text-[12px] md:text-[17px]">
-              Lagos, Nigeria{" "}
-              <span className="mx-2 text-md text-3xl">&#8729;</span> Full-time
-            </p>
-          </div>
-
-          <div className="md:px-6 px-4 py-2 md:text-[17px] text-[12px] cursor-pointer rounded-[35px] md:py-3 border font-medium uppercase">
-            Apply now
-          </div>
-        </div>
-
-        <div className="flex items-center justify-between">
-          <div>
-            <p className="text-sm md:text-xl font-bold">
-              Senior Frontend developer
-            </p>
-            <p className="flex items-center text-[#a1a1aa] text-[12px] md:text-[17px]">
-              Lagos, Nigeria{" "}
-              <span className="mx-2 text-md text-3xl">&#8729;</span> Full-time
-            </p>
-          </div>
-
-          <div className="md:px-6 px-4 py-2 md:text-[17px] text-[12px] cursor-pointer rounded-[35px] md:py-3 border font-medium uppercase">
-            Apply now
-          </div>
-        </div>
-
-        <div className="flex items-center justify-between">
-          <div>
-            <p className="text-sm md:text-xl font-bold">
-              Senior Frontend developer
-            </p>
-            <p className="flex items-center text-[#a1a1aa] text-[12px] md:text-[17px]">
-              Lagos, Nigeria{" "}
-              <span className="mx-2 text-md text-3xl">&#8729;</span> Full-time
-            </p>
-          </div>
-
-          <div className="md:px-6 px-4 py-2 md:text-[17px] text-[12px] cursor-pointer rounded-[35px] md:py-3 border font-medium uppercase">
-            Apply now
-          </div>
-        </div>
-
-        <div className="flex items-center justify-between">
-          <div>
-            <p className="text-sm md:text-xl font-bold">
-              Senior Frontend developer
-            </p>
-            <p className="flex items-center text-[#a1a1aa] text-[12px] md:text-[17px]">
-              Lagos, Nigeria{" "}
-              <span className="mx-2 text-md text-3xl">&#8729;</span> Full-time
-            </p>
-          </div>
-
-          <div className="md:px-6 px-4 py-2 md:text-[17px] text-[12px] cursor-pointer rounded-[35px] md:py-3 border font-medium uppercase">
-            Apply now
-          </div>
-        </div>
-
-        <div className="flex items-center justify-between">
-          <div>
-            <p className="text-sm md:text-xl font-bold">
-              Senior Frontend developer
-            </p>
-            <p className="flex items-center text-[#a1a1aa] text-[12px] md:text-[17px]">
-              Lagos, Nigeria{" "}
-              <span className="mx-2 text-md text-3xl">&#8729;</span> Full-time
-            </p>
-          </div>
-
-          <div className="md:px-6 px-4 py-2 md:text-[17px] text-[12px] cursor-pointer rounded-[35px] md:py-3 border font-medium uppercase">
-            Apply now
-          </div>
-        </div>
       </div>
 
       <div className="flex md:p-20 p-5 mt-16 font-roboto">
@@ -183,9 +88,10 @@ const page = () => {
           <Image
             src={
               windowWidth > 1200
-                ? "/assets/bg-gradient.svg"
-                : "/assets/image-gradient.svg"
+                ? bannerImage1
+                : bannerImage2
             }
+            priority
             className="z-40 w-full h-full absolute rounded-2xl inset-0 object-cover"
             width={400}
             height={400}

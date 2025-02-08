@@ -1,7 +1,9 @@
+"use client";
 import React from 'react'
 import NearSwipeAiChat from './NearSwipeAI';
 import { useGlobalContext } from '@/context/GlobalContext';
 import Image from 'next/image';
+import { aiSupport, bubble } from '@/constants/images';
 
 const DisplayAI = () => {
     const {chatBot, setChatBot} = useGlobalContext()
@@ -20,7 +22,7 @@ const DisplayAI = () => {
               className="md:hidden relative flex text-white items-center justify-center w-fit mr-4 cursor-pointer md:mr-8"
             >
               <Image
-                src="/assets/speech-bubble.png"
+                src={bubble}
                 className="w-[70px] h-[70px] object-contain"
                 width={300}
                 height={300}
@@ -29,7 +31,7 @@ const DisplayAI = () => {
 
               <div className="absolute flex flex-col items-center justify-center gap-2">
                 <Image
-                  src="/assets/support.png"
+                  src={aiSupport}
                   className="w-7 h-7 object-contain"
                   width={300}
                   height={300}

@@ -1,5 +1,9 @@
 import "./globals.css";
 import { GlobalProvider } from "@/context/GlobalContext";
+import Nav from "@/components/Nav";
+import DisplayAI from "@/components/DisplayAI";
+import Footer from "@/components/Footer";
+import WaitlistModal from "@/components/WaitlistModal";
 
 const metadata = {
   title: "NearSwipe",
@@ -11,8 +15,11 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className="bg-black">
         <GlobalProvider>
-          
+          <Nav />
+          <WaitlistModal />
           {children}
+          <DisplayAI />
+          <Footer />
         </GlobalProvider>
       </body>
     </html>

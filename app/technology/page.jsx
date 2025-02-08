@@ -1,6 +1,7 @@
 "use client";
 import CustomButton from "@/components/CustomButton";
 import WaitlistModal from "@/components/WaitlistModal";
+import { bannerImage1, bannerImage2, bgImage, campusAccess, digitalBnk, mark, merchantPay, mockUp } from "@/constants/images";
 import { useGlobalContext } from "@/context/GlobalContext";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -25,7 +26,7 @@ const page = () => {
         {/* Responsive image container */}
         <div className="absolute w-full h-full inset-0">
           <Image
-            src="/assets/bg.svg"
+            src={bgImage}
             className="w-full h-full object-cover"
             width={windowWidth}
             priority
@@ -57,7 +58,7 @@ const page = () => {
 
             <div className="hidden w-1/2 h-fit relative md:flex items-center justify-end">
               <Image
-                src="/assets/mockup.svg"
+                src={mockUp}
                 className={`object-fill `}
                 width={windowWidth / 3}
                 height={600}
@@ -72,7 +73,7 @@ const page = () => {
         <div className="z-50 font-roboto text-white bg-[#1e1e1e] flex flex-col md:flex-row items-center gap-9 md:gap-12 w-full px-5 md:px-12 rounded-3xl">
           <div className="w-full hidden md:flex h-full pt-6">
             <Image
-              src="/assets/campus-acs.svg"
+              src={campusAccess}
               className="w-full object-contain"
               width={0}
               height={0}
@@ -90,7 +91,7 @@ const page = () => {
             <div className="w-full grid grid-cols-1 gap-1 md:gap-4">
               <div className="flex space-x-4 w-full items-center">
                 <Image
-                  src="/assets/mark.svg"
+                  src={mark}
                   className="object-contain"
                   width={13}
                   height={13}
@@ -104,7 +105,7 @@ const page = () => {
 
               <div className="flex space-x-4 w-full items-center">
                 <Image
-                  src="/assets/mark.svg"
+                  src={mark}
                   className="object-contain"
                   width={13}
                   height={13}
@@ -118,7 +119,7 @@ const page = () => {
 
               <div className="flex space-x-4 w-full items-center">
                 <Image
-                  src="/assets/mark.svg"
+                  src={mark}
                   className="object-contain"
                   width={13}
                   height={13}
@@ -134,7 +135,7 @@ const page = () => {
 
           <div className="w-full flex md:hidden h-full ">
             <Image
-              src="/assets/campus-acs.svg"
+              src={campusAccess}
               className="w-full object-contain"
               width={0}
               height={0}
@@ -154,7 +155,7 @@ const page = () => {
             <div className="w-full grid grid-cols-1 gap-1 md:gap-4">
               <div className="flex space-x-4 w-full items-center">
                 <Image
-                  src="/assets/mark.svg"
+                  src={mark}
                   className="object-contain"
                   width={13}
                   height={13}
@@ -168,7 +169,7 @@ const page = () => {
 
               <div className="flex space-x-4 w-full items-center">
                 <Image
-                  src="/assets/mark.svg"
+                  src={mark}
                   className="object-contain"
                   width={13}
                   height={13}
@@ -182,7 +183,7 @@ const page = () => {
 
               <div className="flex space-x-4 w-full items-center">
                 <Image
-                  src="/assets/mark.svg"
+                  src={mark}
                   className="object-contain"
                   width={13}
                   height={13}
@@ -198,7 +199,7 @@ const page = () => {
 
           <div className="w-full flex max-h-[500px] md:pt-6 overflow-hidden relative h-full">
             <Image
-              src="/assets/merchant-pay.svg"
+              src={merchantPay}
               className="w-full h-full object-contain"
               width={0}
               height={0}
@@ -210,7 +211,7 @@ const page = () => {
         <div className="z-50 font-roboto text-white bg-[#1e1e1e] flex flex-col md:flex-row items-center gap-9 md:gap-12 w-full rounded-3xl">
           <div className="w-full hidden md:flex max-h-[500px] pt-6 overflow-hidden relative h-full">
             <Image
-              src="/assets/digital-bnk.svg"
+              src={digitalBnk}
               className="w-full object-contain"
               width={0}
               height={0}
@@ -228,7 +229,7 @@ const page = () => {
             <div className="w-full grid grid-cols-1 gap-1 md:gap-4">
               <div className="flex space-x-4 w-full items-center">
                 <Image
-                  src="/assets/mark.svg"
+                  src={mark}
                   className="object-contain"
                   width={13}
                   height={13}
@@ -242,7 +243,7 @@ const page = () => {
 
               <div className="flex space-x-4 w-full items-center">
                 <Image
-                  src="/assets/mark.svg"
+                  src={mark}
                   className="object-contain"
                   width={13}
                   height={13}
@@ -256,7 +257,7 @@ const page = () => {
 
               <div className="flex space-x-4 w-full items-center">
                 <Image
-                  src="/assets/mark.svg"
+                  src={mark}
                   className="object-contain"
                   width={13}
                   height={13}
@@ -272,7 +273,7 @@ const page = () => {
 
           <div className="w-full flex md:hidden h-full mt-6">
             <Image
-              src="/assets/digital-bnk.svg"
+              src={digitalBnk}
               className="w-full object-contain"
               width={0}
               height={0}
@@ -287,8 +288,8 @@ const page = () => {
           <Image
             src={
               windowWidth > 1200
-                ? "/assets/bg-gradient.svg"
-                : "/assets/image-gradient.svg"
+                ? bannerImage2
+                : bannerImage1
             }
             priority
             className="z-40 w-full h-full absolute rounded-2xl inset-0 object-cover"

@@ -1,10 +1,6 @@
 "use client";
 import { client } from "@/lib/sanity";
 import React, { createContext, useContext, useEffect, useState } from "react";
-import WaitlistModal from "@/components/WaitlistModal";
-import Nav from "@/components/Nav";
-import Footer from "@/components/Footer";
-import DisplayAI from "@/components/DisplayAI";
 
 // Create the context
 const GlobalContext = createContext(null);
@@ -65,15 +61,7 @@ export const GlobalProvider = ({ children }) => {
         setSideNav,
       }}
     >
-      {modalActive && (
-        <WaitlistModal isActive={modalActive} setIsActive={setModalActive} />
-      )}
-      <Nav />
       {children}
-
-      <DisplayAI />
-
-      <Footer />
     </GlobalContext.Provider>
   );
 };

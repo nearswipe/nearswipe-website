@@ -1,5 +1,6 @@
 "use client";
 import CustomButton from "@/components/CustomButton";
+import { bgImage, email, phone } from "@/constants/images";
 import { useGlobalContext } from "@/context/GlobalContext";
 import Image from "next/image";
 import Link from "next/link";
@@ -32,7 +33,7 @@ const page = () => {
         {/* Responsive image container */}
         <div className="absolute">
           <Image
-            src="/assets/bg.svg"
+            src={bgImage}
             className="w-full h-full object-cover rounded-full"
             width={windowWidth}
             priority
@@ -65,7 +66,8 @@ const page = () => {
           <div className="flex items-center space-x-5 mt-5">
             <div className="w-16 h-16 bg-[#282828] flex items-center justify-center rounded-xl">
               <Image
-                src="/assets/email.svg"
+                src={email}
+                priority
                 className="object-contain"
                 width={20}
                 height={20}
@@ -88,7 +90,8 @@ const page = () => {
           <div className="flex items-center space-x-5 mt-5">
             <div className="w-16 h-16 bg-[#282828] flex items-center justify-center rounded-xl">
               <Image
-                src="/assets/phone.svg"
+                src={phone}
+                priority
                 className="object-contain"
                 width={20}
                 height={20}
@@ -161,6 +164,7 @@ const page = () => {
                 ? "/assets/bg-gradient.svg"
                 : "/assets/image-gradient.svg"
             }
+            priority
             className="z-40 w-full h-full absolute rounded-2xl inset-0 object-cover"
             width={400}
             height={400}

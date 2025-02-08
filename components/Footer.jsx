@@ -1,4 +1,5 @@
 "use client";
+import { footer } from "@/constants/images";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
@@ -34,23 +35,23 @@ const Footer = () => {
           <div className="grid lg:grid-cols-5 md:grid-cols-3 gap-12 mt-12 grid-cols-2 w-full justify-around">
             <div className="flex flex-col gap-4">
               <h1 className="text-lg font-semibold">Company</h1>
-              <Link href="#" className="text-md text-[#A1A1AA]">
+              <Link href="/about-us" className="text-md text-[#A1A1AA]">
                 About us
               </Link>
-              <Link href="#" className="text-md text-[#A1A1AA]">
+              <Link href="/career" className="text-md text-[#A1A1AA]">
                 Career
               </Link>
             </div>
 
             <div className="flex flex-col gap-4">
               <h1 className="text-lg font-semibold">Explore</h1>
-              <Link href="#" className="text-md text-[#A1A1AA]">
+              <Link href="/" className="text-md text-[#A1A1AA]">
                 Home
               </Link>
-              <Link href="#" className="text-md text-[#A1A1AA]">
+              <Link href="/products" className="text-md text-[#A1A1AA]">
                 Products
               </Link>
-              <Link href="#" className="text-md text-[#A1A1AA]">
+              <Link href="/technology" className="text-md text-[#A1A1AA]">
                 Technology
               </Link>
             </div>
@@ -67,8 +68,8 @@ const Footer = () => {
 
             <div className="flex flex-col gap-4">
               <h1 className="text-lg font-semibold">Contact</h1>
-              <Link href="tel:8005446877" className="text-md text-[#A1A1AA]">
-                800-544-6877
+              <Link href="tel:+2348063642312" className="text-md text-[#A1A1AA]">
+                +234 806-364-2312
               </Link>
               <Link
                 href="mailto:team@nearswipe.com"
@@ -80,14 +81,14 @@ const Footer = () => {
 
             <div className="flex flex-col gap-4">
               <h1 className="text-lg font-semibold">Social</h1>
-              <Link href="#" className="text-md text-[#A1A1AA]">
+              <Link href="https://facebook.com/@NearSwipe" className="text-md text-[#A1A1AA]">
                 Facebook
               </Link>
-              <Link href="#" className="text-md text-[#A1A1AA]">
+              <Link href="https://www.linkedin.com/company/nearswipe" className="text-md text-[#A1A1AA]">
                 LinkedIn
               </Link>
-              <Link href="#" className="text-md text-[#A1A1AA]">
-                Twitter
+              <Link href="https://x.com/nearswipe" className="text-md text-[#A1A1AA]">
+                X
               </Link>
             </div>
           </div>
@@ -96,7 +97,7 @@ const Footer = () => {
       {/* Dynamic Text Section */}
 
       <Image
-        src="/assets/footer.png"
+        src={footer}
         className="w-full h-full object-cover bottom-0"
         width={windowWidth}
         height={500}

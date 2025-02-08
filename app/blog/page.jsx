@@ -2,6 +2,7 @@
 import CustomButton from "@/components/CustomButton";
 import dateFormat from "@/components/formatDate";
 import WaitlistModal from "@/components/WaitlistModal";
+import { bannerImage1, bannerImage2, bgImage } from "@/constants/images";
 import { useGlobalContext } from "@/context/GlobalContext";
 import { urlFor } from "@/lib/sanity";
 import Image from "next/image";
@@ -30,7 +31,7 @@ const page = () => {
         {/* Responsive image container */}
         <div className="absolute w-full h-full inset-0">
                 <Image
-                  src="/assets/bg.svg"
+                  src={bgImage}
                   className="w-full h-full object-cover"
                   width={windowWidth}
                   priority
@@ -65,6 +66,7 @@ const page = () => {
             <div className="h-fit rounded-2xl">
               <Image
                 src={urlFor(post?.titleImage).url()}
+                priority
                 className="object-cover w-[350px] h-[350px] rounded-2xl"
                 width={450}
                 height={450}
@@ -123,8 +125,8 @@ const page = () => {
           <Image
             src={
               windowWidth > 1200
-                ? "/assets/bg-gradient.svg"
-                : "/assets/image-gradient.svg"
+                ? bannerImage1
+                : bannerImage2
             }
             className="z-40 w-full h-full absolute rounded-2xl inset-0 object-cover"
             width={400}

@@ -1,3 +1,15 @@
+import {
+  growWelt,
+  instantSet,
+  secure,
+  secureAccess,
+  smartAnalys,
+  smartBnk,
+  successful,
+  support,
+  tap2pay,
+  vCard,
+} from "@/constants/images";
 import Image from "next/image";
 import React from "react";
 
@@ -24,7 +36,8 @@ const Banking = () => {
         <div className="w-full h-full grid grid-cols-1 gap-12 sm:gap-12 sm:grid-cols-2 mt-12">
           <div className="h-full">
             <Image
-              src="/assets/smart-bnk.svg"
+              priority
+              src={smartBnk}
               className="w-full object-contain"
               width={400}
               height={400}
@@ -33,7 +46,8 @@ const Banking = () => {
           </div>
           <div className="h-full">
             <Image
-              src="/assets/grow-welt.svg"
+              priority
+              src={growWelt}
               className="w-full object-cover"
               width={400}
               height={400}
@@ -42,7 +56,8 @@ const Banking = () => {
           </div>
           <div className="h-full  flex">
             <Image
-              src="/assets/support.svg"
+              priority
+              src={support}
               className="w-full h-full"
               width={400}
               height={400}
@@ -51,7 +66,8 @@ const Banking = () => {
           </div>
           <div className="h-full flex">
             <Image
-              src="/assets/secure.svg"
+              priority
+              src={secure}
               className="w-full h-full"
               width={400}
               height={400}
@@ -82,7 +98,8 @@ const Banking = () => {
           <div className="h-full">
             <div className="w-full h-full">
               <Image
-                src="/assets/tap-to-pay.svg"
+                priority
+                src={tap2pay}
                 className="w-full object-cover"
                 width={800}
                 height={800}
@@ -94,7 +111,8 @@ const Banking = () => {
           <div className="grid grid-cols-1 gap-12">
             <div className="h-full  flex">
               <Image
-                src="/assets/instant-set.svg"
+                priority
+                src={instantSet}
                 className="w-full h-full"
                 width={400}
                 height={400}
@@ -103,7 +121,8 @@ const Banking = () => {
             </div>
             <div className="h-full flex">
               <Image
-                src="/assets/smart-analytics.svg"
+                priority
+                src={smartAnalys}
                 className="w-full h-full"
                 width={400}
                 height={400}
@@ -134,7 +153,8 @@ const Banking = () => {
           <div className="grid grid-cols-1 gap-12">
             <div className="h-full  flex">
               <Image
-                src="/assets/successfull.svg"
+                priority
+                src={successful}
                 className="w-full h-full"
                 width={400}
                 height={400}
@@ -143,7 +163,8 @@ const Banking = () => {
             </div>
             <div className="h-full flex">
               <Image
-                src="/assets/virtual-card.svg"
+                priority
+                src={vCard}
                 className="w-full h-full"
                 width={400}
                 height={400}
@@ -154,7 +175,8 @@ const Banking = () => {
           <div className="h-full">
             <div className="w-full h-full">
               <Image
-                src="/assets/secure-access.svg"
+                priority
+                src={secureAccess}
                 className="w-full object-cover"
                 width={800}
                 height={800}

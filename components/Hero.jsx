@@ -5,6 +5,7 @@ import Nav from "./Nav";
 import { IoChevronForward } from "react-icons/io5";
 import CustomButton from "./CustomButton";
 import { useRouter } from "next/navigation";
+import { bgImage, heroBg } from "@/constants/images";
 
 const Hero = ({ isActive, setIsActive }) => {
   const [windowWidth, setWindowWidth] = useState(0);
@@ -22,10 +23,9 @@ const Hero = ({ isActive, setIsActive }) => {
 
   return (
     <div className="relative overflow-hidden h-[70vh] sm:h-screen w-full flex flex-col items-center justify-center">
-
       <div className="absolute">
         <Image
-          src="/assets/bg.svg"
+          src={bgImage}
           className="w-full h-full object-cover rounded-full"
           width={windowWidth}
           priority
@@ -37,9 +37,10 @@ const Hero = ({ isActive, setIsActive }) => {
       {/* Background Bottom */}
       <div className="absolute bottom-0 z-1 bg-transparent w-full h-full ">
         <Image
-          src="/assets/hero-down.svg"
+          src={heroBg}
+          priority
           className="w-full h-full object-fill"
-          width={700}
+          width={windowWidth}
           height={700}
           alt="Hero"
         />

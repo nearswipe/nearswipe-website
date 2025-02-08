@@ -2,38 +2,27 @@
 import React, { useState } from "react";
 import { LiaTimesSolid } from "react-icons/lia";
 import CustomButton from "./CustomButton";
+import { useGlobalContext } from "@/context/GlobalContext";
 
-const WaitlistModal = ({ isActive, setIsActive }) => {
-  const apiKey = process.env.NEXT_PUBLIC_MAILCHIMP_APIKEY;
-  const audienceID = process.env.NEXT_PUBLIC_MAILCHIMP_AUDIENCE_ID;
+const WaitlistModal = () => {
+  const {modalActive, setModalActive} = useGlobalContext()
   const [form, setForm] = useState({
-    Name: "",
-    Email: "",
+    name: "",
+    email: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const submit = async () => {
-    console.log(audienceID);
-    
     setIsSubmitting(true);
 
     try {
-      const response = await fetch(`https://us19.api.mailchimp.com/3.0/lists/${audienceID}/members/`, {
+      const response = await fetch(`/api/newsletter-subscribe`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `Bearer ${apiKey}`
         },
-        body: JSON.stringify({
-          email_address: form?.Email,
-          status: "subscribed",
-          merge_fields: {
-            FNAME: form?.Name
-          }
-        }),
+        body: JSON.stringify(form),
       })
-      console.log(response)
-
       const data = await response.json()
 
       console.log("data", data);
@@ -43,34 +32,14 @@ const WaitlistModal = ({ isActive, setIsActive }) => {
     } finally {
       setIsSubmitting(false);
     }
-    // Object.entries(form).forEach(([key, value]) => {
-    //   formData.append(key, value);
-    // });
-
-    // fetch(
-    //   "https://script.google.com/macros/s/AKfycbwX9zK-Zm-OszFwyaGG-YDkyLlnmhRfvY7aiCzxrQ1_Upjrpi-EEzVHgsq64yAM4Hmw/exec",
-    //   { method: "POST", body: formData }
-    // )
-    //   .then(async (response) => {
-    //     const data = await response.json();
-    //     console.log("Success!", response);
-    //     console.log("data", data);
-    //   })
-    //   .catch((error) => console.error("Error!", error.message))
-    //   .finally(() => {
-    //     setForm({
-    //       Name: "",
-    //       Email: "",
-    //     });
-    //   });
   };
 
-  return (
+  if (modalActive) return (
     <div className="z-[80] cursor-pointer px-6 text-white fixed flex items-center justify-center inset-0 bg-black/40">
       <div
         className="fixed inset-0 z-50"
         onClick={() => {
-          setIsActive(!isActive);
+          setModalActive(!modalActive);
         }}
       ></div>
       <div
@@ -80,7 +49,7 @@ const WaitlistModal = ({ isActive, setIsActive }) => {
         <div className="flex items-center justify-end">
           <div
             onClick={() => {
-              setIsActive(!isActive);
+              setModalActive(!modalActive);
             }}
             className="p-2 cursor-pointer text-[1rem] font-black rounded-full bg-gray-300"
           >
@@ -97,16 +66,16 @@ const WaitlistModal = ({ isActive, setIsActive }) => {
 
         <input
           name="name"
-          value={form?.Name}
-          onChange={(e) => setForm({ ...form, Name: e.target.value })}
+          value={form?.name}
+          onChange={(e) => setForm({ ...form, name: e.target.value })}
           placeholder="Your name"
           className="px-6 text-sm focus-within:outline-[#635BFF] md:text-lg focus-within:bg-white mt-6 bg-gray-200 py-4 rounded-2xl w-full"
         />
 
         <input
           name="email"
-          value={form?.Email}
-          onChange={(e) => setForm({ ...form, Email: e.target.value })}
+          value={form?.email}
+          onChange={(e) => setForm({ ...form, email: e.target.value })}
           type="email"
           placeholder="Your email"
           className="px-6 focus-within:bg-white focus-within:outline-[#635BFF] mt-4 bg-gray-200 py-4 rounded-2xl w-full"
@@ -123,6 +92,8 @@ const WaitlistModal = ({ isActive, setIsActive }) => {
       </div>
     </div>
   );
+
+  return(<></>);
 };
 
 export default WaitlistModal;

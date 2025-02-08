@@ -2,6 +2,7 @@
 import CustomButton from "@/components/CustomButton";
 import dateFormat from "@/components/formatDate";
 import WaitlistModal from "@/components/WaitlistModal";
+import { bannerImage2, dynamicBanner } from "@/constants/images";
 import { useGlobalContext } from "@/context/GlobalContext";
 import { urlFor } from "@/lib/sanity";
 import { PortableText } from "next-sanity";
@@ -93,6 +94,7 @@ const page = ({ params }) => {
                   <div className="h-fit rounded-2xl">
                     <Image
                       src={urlFor(post?.titleImage).url()}
+                      priority
                       className="object-cover w-[350px] h-[350px] rounded-2xl"
                       width={450}
                       height={450}
@@ -125,8 +127,8 @@ const page = ({ params }) => {
           <Image
             src={
               windowWidth > 1200
-                ? "/assets/dynamic-bg.svg"
-                : "/assets/image-gradient.svg"
+                ? dynamicBanner
+                : bannerImage2
             }
             priority
             className="z-40 w-full h-full absolute rounded-2xl inset-0 object-cover"

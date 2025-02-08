@@ -7,6 +7,7 @@ import { BiSupport } from "react-icons/bi";
 import { LiaTimesSolid } from "react-icons/lia";
 import { useGlobalContext } from "@/context/GlobalContext";
 import CustomButton from "./CustomButton";
+import { about, bgImage, career, hamburger, product, technology } from "@/constants/images";
 
 const Nav = () => {
   const [dropDown, setDropDown] = useState("");
@@ -20,7 +21,7 @@ const Nav = () => {
         {/* Logo */}
         <div className="w-8 h-8  bg-white rounded-full overflow-hidden">
           <Image
-            src="/assets/hero-gradient.png"
+            src={bgImage}
             className="w-full h-full object-cover"
             width={12}
             height={12}
@@ -64,7 +65,7 @@ const Nav = () => {
                 >
                   <span className="bg-[#1e1e1e] p-2 rounded-md">
                     <Image
-                      src="/assets/product.svg"
+                      src={product}
                       width={20}
                       height={20}
                       alt=""
@@ -85,7 +86,7 @@ const Nav = () => {
                 >
                   <span className="bg-[#1e1e1e] p-2 rounded-md">
                     <Image
-                      src="/assets/technology.svg"
+                      src={technology}
                       width={20}
                       height={20}
                       alt=""
@@ -127,7 +128,7 @@ const Nav = () => {
                 >
                   <span className="bg-[#1e1e1e] p-2 rounded-md">
                     <Image
-                      src="/assets/career.svg"
+                      src={career}
                       width={20}
                       height={20}
                       alt=""
@@ -148,7 +149,7 @@ const Nav = () => {
                 >
                   <span className="bg-[#1e1e1e] p-2 rounded-md">
                     <Image
-                      src="/assets/about.svg"
+                      src={about}
                       width={20}
                       height={20}
                       alt=""
@@ -201,7 +202,7 @@ const Nav = () => {
         {/* Logo */}
         <div className="w-8 h-8 bg-white rounded-full overflow-hidden">
           <Image
-            src="/assets/hero-gradient.png"
+            src={bgImage}
             className="w-full h-full object-cover"
             width={12}
             height={12}
@@ -214,7 +215,7 @@ const Nav = () => {
           className="flex bg-[#fff]/15 items-center justify-center rounded-3xl py-1.5 px-4"
         >
           <Image
-            src="/assets/hamburger.svg"
+            src={hamburger}
             className="w-5 h-5 object-contain"
             width={8}
             height={8}
@@ -228,7 +229,7 @@ const Nav = () => {
           <div className="flex items-center justify-between w-full px-4">
             <div className="w-8 h-8 bg-white rounded-full overflow-hidden">
               <Image
-                src="/assets/hero-gradient.png"
+                src={bgImage}
                 className="w-full h-full object-cover"
                 width={12}
                 height={12}
@@ -283,7 +284,7 @@ const Nav = () => {
                     >
                       <span className="bg-[#1e1e1e] p-2 rounded-md">
                         <Image
-                          src="/assets/product.svg"
+                          src={product}
                           width={20}
                           height={20}
                           alt=""
@@ -304,7 +305,7 @@ const Nav = () => {
                     >
                       <span className="bg-[#1e1e1e] p-2 rounded-md">
                         <Image
-                          src="/assets/technology.svg"
+                          src={technology}
                           width={20}
                           height={20}
                           alt=""
@@ -342,7 +343,7 @@ const Nav = () => {
                     >
                       <span className="bg-[#1e1e1e] p-2 rounded-md">
                         <Image
-                          src="/assets/career.svg"
+                          src={career}
                           width={20}
                           height={20}
                           alt=""
@@ -363,7 +364,7 @@ const Nav = () => {
                     >
                       <span className="bg-[#1e1e1e] p-2 rounded-md">
                         <Image
-                          src="/assets/about.svg"
+                          src={about}
                           width={20}
                           height={20}
                           alt=""
