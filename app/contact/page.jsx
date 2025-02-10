@@ -1,6 +1,6 @@
 "use client";
 import CustomButton from "@/components/CustomButton";
-import { bgImage, email, phone } from "@/constants/images";
+import { bannerImage1, bannerImage2, bgImage, email, phone } from "@/constants/images";
 import { useGlobalContext } from "@/context/GlobalContext";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,6 +8,11 @@ import { useEffect, useState } from "react";
 
 const page = () => {
   const [windowWidth, setWindowWidth] = useState(0);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
   const { setModalActive} = useGlobalContext();
 
   useEffect(() => {
@@ -20,8 +25,40 @@ const page = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const submit = (e) => {
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const submit = async (e) => {
     e.preventDefault();
+    try {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_ADMIN_SERVER_URL}/api/contact/`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email, company, message }),
+      });
+  
+      const data = await res.json();
+      if (data.success) {
+        toast.success(data.message);
+        setResMessage(data.message);
+        setName("");
+        setEmail("");
+        setMessage("");
+        setCompany("");
+      } else {
+        setResMessage(data.error || "Something went wrong. Please try again.");
+        toast.error(data.error || "Failed to send message. Please try again.");
+      }
+
+      setTimeout(() => {
+        setResMessage("")
+      }, 2000);
+    } catch (error) {
+      toast.error("An error occurred. Please try again later.");
+    }
     // fetch(scriptURL, { method: 'POST', body: new FormData(form)})
     //   .then(response => console.log('Success!', response))
     //   .catch(error => console.error('Error!', error.message))
@@ -121,6 +158,7 @@ const page = () => {
             <input
               name="name"
               id="name"
+              onChange={handleChange}
               type="text"
               className="w-full px-4 bg-[#282828] cursor-text py-3 mt-2 mb-7 rounded-xl focus-within:outline-[#635BFF] outline-none"
             />
@@ -132,6 +170,7 @@ const page = () => {
             <input
               name="email"
               id="email"
+              onChange={handleChange}
               type="email"
               className="w-full px-4 bg-[#282828] py-3 mt-2 mb-7 rounded-xl focus-within:outline-[#635BFF] outline-none"
             />
@@ -143,6 +182,7 @@ const page = () => {
             <textarea
               name="message"
               id="message"
+              onChange={handleChange}
               className="h-40 w-full px-4 bg-[#282828] py-3 mt-2 rounded-xl focus-within:outline-[#635BFF] outline-none"
             />
           </div>
@@ -161,8 +201,8 @@ const page = () => {
           <Image
             src={
               windowWidth > 1200
-                ? "/assets/bg-gradient.svg"
-                : "/assets/image-gradient.svg"
+                ? bannerImage1
+                : bannerImage2
             }
             priority
             className="z-40 w-full h-full absolute rounded-2xl inset-0 object-cover"
