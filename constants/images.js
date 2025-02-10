@@ -28,7 +28,7 @@ import hamburger from "../assets/hamburger.svg";
 import bubble from "../assets/speech-bubble.png";
 import aiSupport from "../assets/support.png";
 import footer from "../assets/footer.png";
-import mockUp from "../assets/mockUp.svg";
+import mockUp from "../assets/mockup.svg";
 import campusAccess from "../assets/campus-acs.svg";
 import mark from "../assets/mark.svg";
 import phone from "../assets/phone.svg";
