@@ -22,7 +22,7 @@ const page = () => {
 
   return (
     <div className="relative w-full">
-      <div className="relative h-[65vh] sm:h-screen font-roboto w-full flex flex-col items-center justify-center">
+      <div className="relative h-[65vh] md:h-screen font-roboto w-full flex flex-col items-center justify-center">
         {/* Responsive image container */}
         <div className="absolute w-full h-full inset-0">
           <Image
@@ -100,7 +100,7 @@ const page = () => {
         </div>
       </div>
 
-      <div className="w-full sm:mt-16 px-5 mt-12 text-white md:px-20">
+      <div className="w-full md:mt-16 px-5 mt-12 text-white md:px-20">
         <p className="text-white mb-6 md:mb-12 text-center text-3xl md:text-[2.5rem] capitalize font-bold">
           meet our team
         </p>
@@ -174,7 +174,7 @@ const page = () => {
         </div>
       </div>
 
-      <div className="w-full sm:mt-16 mt-12 px-5 text-white md:px-20">
+      <div className="w-full md:mt-16 mt-12 px-5 text-white md:px-20">
         <p className="text-white mb-6 md:mb-12 text-center text-3xl md:text-[2.5rem] capitalize font-bold">
           our journey
         </p>

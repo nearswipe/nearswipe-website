@@ -9,9 +9,9 @@ const DisplayAI = () => {
     const {chatBot, setChatBot} = useGlobalContext()
   return (
     <div
-        className={`fixed z-[70] flex items-center border justify-end md:inset-0 md:w-full w-fit self-end px-6 md:px-0 bottom-16 right-4 md:right-0 md:bottom-4`}
+        className={`fixed z-[70] flex items-center justify-end lg:inset-0 lg:w-full w-fit self-end lg:px-0 bottom-16 right-4 lg:right-0 lg:bottom-4`}
       >
-        <div className="w-full md:w-1/2 flex justify-end">
+        <div className="w-full lg:w-1/2 flex justify-end">
           {chatBot ? (
             <NearSwipeAiChat isActive={chatBot} setIsActive={setChatBot} />
           ) : (
@@ -19,7 +19,7 @@ const DisplayAI = () => {
               onClick={() => {
                 setChatBot(true);
               }}
-              className="md:hidden relative border flex text-white items-center justify-center w-fit mr-4 cursor-pointer md:mr-8"
+              className="lg:hidden relative flex text-white items-center justify-center w-fit mr-4 cursor-pointer lg:mr-8"
             >
               <Image
                 src={bubble}

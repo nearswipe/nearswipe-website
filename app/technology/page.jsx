@@ -1,14 +1,23 @@
 "use client";
 import CustomButton from "@/components/CustomButton";
 import WaitlistModal from "@/components/WaitlistModal";
-import { bannerImage1, bannerImage2, bgImage, campusAccess, digitalBnk, mark, merchantPay, mockUp } from "@/constants/images";
+import {
+  bannerImage1,
+  bannerImage2,
+  bgImage,
+  campusAccess,
+  digitalBnk,
+  mark,
+  merchantPay,
+  mockUp,
+} from "@/constants/images";
 import { useGlobalContext } from "@/context/GlobalContext";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const page = () => {
   const [windowWidth, setWindowWidth] = useState(0);
-  const { setModalActive} = useGlobalContext();
+  const { setModalActive } = useGlobalContext();
 
   useEffect(() => {
     // Set the initial window width on the client side
@@ -22,7 +31,7 @@ const page = () => {
 
   return (
     <div className="relative w-full">
-      <div className="relative h-[70vh] sm:h-screen font-roboto w-full flex flex-col items-center justify-center">
+      <div className="relative h-[70vh] md:h-screen font-roboto w-full flex flex-col items-center justify-center">
         {/* Responsive image container */}
         <div className="absolute w-full h-full inset-0">
           <Image
@@ -48,10 +57,10 @@ const page = () => {
               </p>
 
               <CustomButton
-                textStyles="uppercase text-sm sm:text-md font-bold"
+                textStyles="uppercase text-sm md:text-md font-bold"
                 imageStyles="rounded-[35px]"
                 func={() => setModalActive(true)}
-                containerStyles="mt-6 py-3 sm:py-4 self-center sm:self-start w-full sm:w-fit px-6 rounded-[35px]"
+                containerStyles="mt-6 py-3 md:py-4 self-center md:self-start w-full md:w-fit px-6 rounded-[35px]"
                 title="Join the waitlist"
               />
             </div>
@@ -82,7 +91,9 @@ const page = () => {
           </div>
 
           <div className=" w-full px-4 pt-6 md:pt-0 flex flex-col gap-4">
-            <p className="capitalize text-2xl md:text-3xl font-black">Campus access</p>
+            <p className="capitalize text-2xl md:text-3xl font-black">
+              Campus access
+            </p>
 
             <p className="text-md md:text-lg w-full font-light text-[#a1a1aa]">
               Seamless entry to buildings and facilities with a simple tap
@@ -146,7 +157,9 @@ const page = () => {
 
         <div className="z-50 font-roboto text-white bg-[#1e1e1e] flex flex-col md:flex-row items-center gap-9 md:gap-12 w-full md:px-12 rounded-3xl">
           <div className="w-full md:px-4 px-9 pt-6 md:pt-0 flex flex-col gap-5">
-            <p className="capitalize text-2xl md:text-3xl font-black">merchant payments</p>
+            <p className="capitalize text-2xl md:text-3xl font-black">
+              merchant payments
+            </p>
 
             <p className="text-md md:text-lg w-full font-light text-[#a1a1aa]">
               Transform any smartphone into a powerful payment terminal
@@ -220,7 +233,9 @@ const page = () => {
           </div>
 
           <div className=" w-full md:px-4 px-9 pt-6 md:pt-0 flex flex-col gap-4">
-            <p className="capitalize text-2xl md:text-3xl font-black">digital banking</p>
+            <p className="capitalize text-2xl md:text-3xl font-black">
+              digital banking
+            </p>
 
             <p className="text-md md:text-lg w-full font-light text-[#a1a1aa]">
               Secure integration with virtual accounts and banking services
@@ -286,11 +301,7 @@ const page = () => {
       <div className="flex md:p-20 p-5 mt-16 font-roboto">
         <div className="relative flex flex-col rounded-2xl items-center justify-center w-full md:h-96 h-80">
           <Image
-            src={
-              windowWidth > 1200
-                ? bannerImage2
-                : bannerImage1
-            }
+            src={windowWidth > 1200 ? bannerImage2 : bannerImage1}
             priority
             className="z-40 w-full h-full absolute rounded-2xl inset-0 object-cover"
             width={400}

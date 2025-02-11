@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
 const page = () => {
   const { jobs } = useGlobalContext();
   const [windowWidth, setWindowWidth] = useState(0);
-  const { setModalActive} = useGlobalContext();
+  const { setModalActive } = useGlobalContext();
 
   useEffect(() => {
     // Set the initial window width on the client side
@@ -28,7 +28,7 @@ const page = () => {
 
   return (
     <div className="relative w-full">
-      <div className="relative h-[70vh] sm:h-screen overflow-hidden font-roboto w-full flex flex-col items-center justify-center">
+      <div className="relative h-[70vh] md:h-screen overflow-hidden font-roboto w-full flex flex-col items-center justify-center">
         {/* Responsive image container */}
         <div className="absolute w-full h-full inset-0">
           <Image
@@ -63,9 +63,7 @@ const page = () => {
           jobs.map((item, idx) => (
             <div key={idx} className="flex items-center justify-between">
               <div>
-                <p className="text-sm md:text-xl font-bold">
-                  {item?.title}
-                </p>
+                <p className="text-sm md:text-xl font-bold">{item?.title}</p>
                 <p className="flex items-center text-[#a1a1aa] text-[12px] md:text-[17px]">
                   {item?.jobLocation}{" "}
                   <span className="mx-2 text-md text-3xl">&#8729;</span>{" "}
@@ -73,7 +71,12 @@ const page = () => {
                 </p>
               </div>
 
-              <Link href={item?.link} target="_blank" rel="noopener noreferrer" className="md:px-6 px-4 py-2 md:text-[17px] text-[12px] cursor-pointer rounded-[35px] md:py-3 border font-medium uppercase">
+              <Link
+                href={item?.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="md:px-6 px-4 py-2 md:text-[17px] text-[12px] cursor-pointer rounded-[35px] md:py-3 border font-medium uppercase"
+              >
                 Apply now
               </Link>
             </div>
@@ -86,11 +89,7 @@ const page = () => {
       <div className="flex md:p-20 p-5 mt-16 font-roboto">
         <div className="relative flex flex-col rounded-2xl items-center justify-center w-full md:h-96 h-80">
           <Image
-            src={
-              windowWidth > 1200
-                ? bannerImage1
-                : bannerImage2
-            }
+            src={windowWidth > 1200 ? bannerImage1 : bannerImage2}
             priority
             className="z-40 w-full h-full absolute rounded-2xl inset-0 object-cover"
             width={400}

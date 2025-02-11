@@ -17,7 +17,7 @@ const Nav = () => {
 
   return (
     <>
-      <div className="hidden absolute top-0 w-full px-16 z-[70] py-6 sm:flex items-center justify-between text-white bg-transparent">
+      <div className="hidden absolute top-0 w-full px-16 z-[70] py-6 md:flex items-center justify-between text-white bg-transparent">
         {/* Logo */}
         <div className="w-8 h-8  bg-white rounded-full overflow-hidden">
           <Image
@@ -198,7 +198,7 @@ const Nav = () => {
         </div>
       </div>
 
-      <div className="absolute sm:hidden  top-0 w-full px-5 z-[70] py-6 flex items-center justify-between text-white bg-transparent">
+      <div className="absolute md:hidden  top-0 w-full px-5 z-[70] py-6 flex items-center justify-between text-white bg-transparent">
         {/* Logo */}
         <div className="w-8 h-8 bg-white rounded-full overflow-hidden">
           <Image

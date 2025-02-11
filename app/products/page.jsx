@@ -1,14 +1,28 @@
 "use client";
 import CustomButton from "@/components/CustomButton";
 import WaitlistModal from "@/components/WaitlistModal";
-import { bAnalys, bannerImage1, bannerImage2, bgImage, campus, card, easyStp, identity, instantSettle, linkedCards, mockUp, secureBnk, vAccts } from "@/constants/images";
+import {
+  bAnalys,
+  bannerImage1,
+  bannerImage2,
+  bgImage,
+  campus,
+  card,
+  easyStp,
+  identity,
+  instantSettle,
+  linkedCards,
+  mockUp,
+  secureBnk,
+  vAccts,
+} from "@/constants/images";
 import { useGlobalContext } from "@/context/GlobalContext";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const page = () => {
   const [windowWidth, setWindowWidth] = useState(0);
-  const { setModalActive} = useGlobalContext();
+  const { setModalActive } = useGlobalContext();
 
   useEffect(() => {
     // Set the initial window width on the client side
@@ -22,7 +36,7 @@ const page = () => {
 
   return (
     <div>
-      <div className="relative h-[70vh] sm:h-screen font-roboto w-full flex flex-col items-center justify-center">
+      <div className="relative h-[70vh] md:h-screen font-roboto w-full flex flex-col items-center justify-center">
         {/* Responsive image container */}
         <div className="absolute w-full h-full inset-0">
           <Image
@@ -48,10 +62,10 @@ const page = () => {
               </p>
 
               <CustomButton
-                textStyles="uppercase text-sm sm:text-md font-bold"
+                textStyles="uppercase text-sm md:text-md font-bold"
                 imageStyles="rounded-[35px]"
                 func={() => setModalActive(true)}
-                containerStyles="mt-6 py-3 sm:py-4 self-center sm:self-start w-full sm:w-fit px-6 rounded-[35px]"
+                containerStyles="mt-6 py-3 md:py-4 self-center md:self-start w-full md:w-fit px-6 rounded-[35px]"
                 title="Join the waitlist"
               />
             </div>
@@ -280,11 +294,7 @@ const page = () => {
       <div className="flex md:p-20 p-5 mt-16 font-roboto">
         <div className="relative flex flex-col rounded-2xl border items-center justify-center w-full md: 0">
           <Image
-            src={
-              windowWidth > 1200
-                ? bannerImage2
-                : bannerImage1
-            }
+            src={windowWidth > 1200 ? bannerImage2 : bannerImage1}
             priority
             className="z-40 w-full h-full absolute rounded-2xl inset-0 object-cover"
             width={400}

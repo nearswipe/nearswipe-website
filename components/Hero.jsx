@@ -22,7 +22,7 @@ const Hero = ({ isActive, setIsActive }) => {
   }, []);
 
   return (
-    <div className="relative overflow-hidden h-[70vh] sm:h-screen w-full flex flex-col items-center justify-center">
+    <div className="relative overflow-hidden h-[70vh] md:h-screen w-full flex flex-col items-center justify-center">
       <div className="absolute">
         <Image
           src={bgImage}
