@@ -29,7 +29,7 @@ const Hero = ({ isActive, setIsActive }) => {
           className="w-full h-full object-cover rounded-full"
           width={windowWidth}
           priority
-          height={500}
+          height={10000}
           alt=""
         />
       </div>
@@ -41,14 +41,14 @@ const Hero = ({ isActive, setIsActive }) => {
           priority
           className="w-full h-full object-fill"
           width={windowWidth}
-          height={700}
+          height={1000}
           alt="Hero"
         />
       </div>
 
       <div className="z-40 text-white flex flex-col items-center p-3 sm:mb-[100px] mb-[50px] sm:gap-3">
         <div className="bg-white/10 flex items-center space-x-1 px-3 py-0.5 mb-3 sm:mb-0 rounded-2xl">
-          <span className="capitalize text-[9px] text-[#a1a1aa]">
+          <span className="capitalize text-[.6rem] text-[#a1a1aa]">
             Smart, secure, seemless
           </span>
           <span>&#8729;</span>
@@ -63,11 +63,11 @@ const Hero = ({ isActive, setIsActive }) => {
         <div className="sm:text-[70px] text-[45px] leading-[3rem] uppercase flex flex-col items-center justify-center sm:leading-[4.5rem] font-roboto font-bold">
           <span>Access</span>
           <span>
-            Pay. <span className="text-[#fff]/30">Thrive.</span>
+            Pay. <span className="text-[#fff]/50">Thrive.</span>
           </span>
         </div>
 
-        <div className="text-[13px] sm:text-lg font-normal text-[#a1a1aa] mt-2">
+        <div className="text-[1rem] sm:text-lg font-normal text-[#b0b0b8] mt-2">
           Revolutionizing campuses with Near-filed technology
         </div>
 

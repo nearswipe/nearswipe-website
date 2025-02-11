@@ -1,3 +1,4 @@
+import logo from "../assets/logo.png"
 import bgImage from "../assets/bg.svg";
 import heroBg from "../assets/hero-down.svg";
 import smartBnk from "../assets/smart-bnk.svg";
@@ -17,7 +18,7 @@ import vCard from "../assets/virtual-card.svg";
 import secureAccess from "../assets/secure-access.svg";
 import bannerImage1 from "../assets/image-gradient.svg";
 import bannerImage2 from "../assets/bg-gradient.svg";
-import dynamicBanner from "../assets/dynamic-bg.svg"
+import dynamicBanner from "../assets/dynamic-bg.svg";
 import buttonImg from "../assets/button-img.png";
 import buttonBlur from "../assets/btn-blur.png";
 import product from "../assets/product.svg";
@@ -44,6 +45,7 @@ import vAccts from "../assets/virtual-accts.svg";
 import linkedCards from "../assets/linked-cards.svg";
 
 export {
+  logo,
   bgImage,
   heroBg,
   phone,

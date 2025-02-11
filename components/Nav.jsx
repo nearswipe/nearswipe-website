@@ -7,26 +7,46 @@ import { BiSupport } from "react-icons/bi";
 import { LiaTimesSolid } from "react-icons/lia";
 import { useGlobalContext } from "@/context/GlobalContext";
 import CustomButton from "./CustomButton";
-import { about, bgImage, career, hamburger, product, technology } from "@/constants/images";
+import {
+  about,
+  bgImage,
+  career,
+  hamburger,
+  logo,
+  product,
+  technology,
+} from "@/constants/images";
 
 const Nav = () => {
   const [dropDown, setDropDown] = useState("");
-  const { chatBot, setChatBot, sideNav, setSideNav, busDropDown, setBusDropDown, cmpyDropDown, setCmpyDropDown, setModalActive } = useGlobalContext();
+  const {
+    chatBot,
+    setChatBot,
+    sideNav,
+    setSideNav,
+    busDropDown,
+    setBusDropDown,
+    cmpyDropDown,
+    setCmpyDropDown,
+    setModalActive,
+  } = useGlobalContext();
   const router = useRouter();
   const pathName = usePathname();
 
   return (
     <>
-      <div className="hidden absolute top-0 w-full px-16 z-[70] py-6 md:flex items-center justify-between text-white bg-transparent">
-        {/* Logo */}
-        <div className="w-8 h-8  bg-white rounded-full overflow-hidden">
-          <Image
-            src={bgImage}
-            className="w-full h-full object-cover"
-            width={12}
-            height={12}
-            alt="NearSwipe"
-          />
+      <div className="hidden absolute top-0 w-full z-[70] px-16 py-6 md:flex items-center justify-between text-white bg-transparent">
+        <div className="w-[25%]">
+          {/* Logo */}
+          <div className="w-14 h-14 rounded-full overflow-hidden">
+            <Image
+              src={logo}
+              className="w-full h-full object-cover"
+              width={1000}
+              height={1000}
+              alt="NearSwipe"
+            />
+          </div>
         </div>
 
         {/* Navigation Links */}
@@ -64,12 +84,7 @@ const Nav = () => {
                   className="flex items-center px-3 py-2 hover:bg-[#383838] cursor-pointer"
                 >
                   <span className="bg-[#1e1e1e] p-2 rounded-md">
-                    <Image
-                      src={product}
-                      width={20}
-                      height={20}
-                      alt=""
-                    />
+                    <Image src={product} width={20} height={20} alt="" />
                   </span>
 
                   <span className="ml-3 text-[#f3f3f3]">
@@ -85,12 +100,7 @@ const Nav = () => {
                   className="flex items-center px-3 py-2 hover:bg-[#383838] z-50 cursor-pointer"
                 >
                   <span className="bg-[#1e1e1e] p-2 rounded-md">
-                    <Image
-                      src={technology}
-                      width={20}
-                      height={20}
-                      alt=""
-                    />
+                    <Image src={technology} width={20} height={20} alt="" />
                   </span>
 
                   <span className="ml-3 text-[#f3f3f3]">
@@ -127,12 +137,7 @@ const Nav = () => {
                   className="flex items-center px-3 py-2 hover:bg-[#383838] cursor-pointer"
                 >
                   <span className="bg-[#1e1e1e] p-2 rounded-md">
-                    <Image
-                      src={career}
-                      width={20}
-                      height={20}
-                      alt=""
-                    />
+                    <Image src={career} width={20} height={20} alt="" />
                   </span>
 
                   <span className="ml-3 text-[#f3f3f3]">
@@ -148,12 +153,7 @@ const Nav = () => {
                   className="flex items-center px-3 py-2 hover:bg-[#383838] cursor-pointer"
                 >
                   <span className="bg-[#1e1e1e] p-2 rounded-md">
-                    <Image
-                      src={about}
-                      width={20}
-                      height={20}
-                      alt=""
-                    />
+                    <Image src={about} width={20} height={20} alt="" />
                   </span>
 
                   <span className="ml-3 text-[#f3f3f3]">
@@ -189,23 +189,25 @@ const Nav = () => {
           </div>
         </div>
 
-        {/* Get Started Button */}
-        <div
-          onClick={() => router.push("/products")}
-          className="px-4 py-1.5 uppercase font-normal bg-[#212121] text-[12px] rounded-[20px] cursor-pointer"
-        >
-          Get started
+        <div className="w-[25%] flex justify-end">
+          {/* Get Started Button */}
+          <div
+            onClick={() => router.push("/products")}
+            className="px-4 py-1.5 uppercase font-normal bg-[#212121] text-[12px] rounded-[20px] cursor-pointer"
+          >
+            Get started
+          </div>
         </div>
       </div>
 
       <div className="absolute md:hidden  top-0 w-full px-5 z-[70] py-6 flex items-center justify-between text-white bg-transparent">
         {/* Logo */}
-        <div className="w-8 h-8 bg-white rounded-full overflow-hidden">
+        <div className="w-14 h-14 rounded-full overflow-hidden">
           <Image
-            src={bgImage}
+            src={logo}
             className="w-full h-full object-cover"
-            width={12}
-            height={12}
+            width={1000}
+            height={1000}
             alt="NearSwipe"
           />
         </div>
@@ -217,8 +219,8 @@ const Nav = () => {
           <Image
             src={hamburger}
             className="w-5 h-5 object-contain"
-            width={8}
-            height={8}
+            width={12}
+            height={12}
             alt="NearSwipe"
           />
         </div>
@@ -227,12 +229,12 @@ const Nav = () => {
       {sideNav && (
         <div className="w-full h-[100vh] fixed top-0 bottom-0 inset-0 z-[100] py-6 bg-[#0e0e0e]">
           <div className="flex items-center justify-between w-full px-4">
-            <div className="w-8 h-8 bg-white rounded-full overflow-hidden">
+            <div className="w-14 h-14 rounded-full overflow-hidden">
               <Image
-                src={bgImage}
+                src={logo}
                 className="w-full h-full object-cover"
-                width={12}
-                height={12}
+                width={1000}
+                height={1000}
                 alt="NearSwipe"
               />
             </div>
@@ -283,12 +285,7 @@ const Nav = () => {
                       className="flex items-center px-3 py-2 cursor-pointer"
                     >
                       <span className="bg-[#1e1e1e] p-2 rounded-md">
-                        <Image
-                          src={product}
-                          width={20}
-                          height={20}
-                          alt=""
-                        />
+                        <Image src={product} width={20} height={20} alt="" />
                       </span>
 
                       <span className="ml-3 text-sm font-medium text-[#a1a1aa]">
@@ -304,12 +301,7 @@ const Nav = () => {
                       className="flex items-center px-3 py-2 cursor-pointer"
                     >
                       <span className="bg-[#1e1e1e] p-2 rounded-md">
-                        <Image
-                          src={technology}
-                          width={20}
-                          height={20}
-                          alt=""
-                        />
+                        <Image src={technology} width={20} height={20} alt="" />
                       </span>
 
                       <span className="ml-3 text-sm font-medium text-[#a1a1aa]">
@@ -342,12 +334,7 @@ const Nav = () => {
                       className="flex items-center px-3 py-2 cursor-pointer"
                     >
                       <span className="bg-[#1e1e1e] p-2 rounded-md">
-                        <Image
-                          src={career}
-                          width={20}
-                          height={20}
-                          alt=""
-                        />
+                        <Image src={career} width={20} height={20} alt="" />
                       </span>
 
                       <span className="ml-3 text-sm font-medium text-[#a1a1aa]">
@@ -363,12 +350,7 @@ const Nav = () => {
                       className="flex items-center px-3 py-2 cursor-pointer"
                     >
                       <span className="bg-[#1e1e1e] p-2 rounded-md">
-                        <Image
-                          src={about}
-                          width={20}
-                          height={20}
-                          alt=""
-                        />
+                        <Image src={about} width={20} height={20} alt="" />
                       </span>
 
                       <span className="ml-3 text-sm font-medium text-[#a1a1aa]">

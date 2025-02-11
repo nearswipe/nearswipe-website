@@ -39,8 +39,8 @@ const Banking = () => {
               priority
               src={smartBnk}
               className="w-full object-contain"
-              width={400}
-              height={400}
+              width={1000}
+              height={1000}
               alt=""
             />
           </div>
@@ -49,8 +49,8 @@ const Banking = () => {
               priority
               src={growWelt}
               className="w-full object-cover"
-              width={400}
-              height={400}
+              width={1000}
+              height={1000}
               alt=""
             />
           </div>
@@ -166,8 +166,8 @@ const Banking = () => {
                 priority
                 src={vCard}
                 className="w-full h-full"
-                width={400}
-                height={400}
+                width={1000}
+                height={1000}
                 alt=""
               />
             </div>
@@ -178,8 +178,8 @@ const Banking = () => {
                 priority
                 src={secureAccess}
                 className="w-full object-cover"
-                width={800}
-                height={800}
+                width={1000}
+                height={1000}
                 alt=""
               />
             </div>
