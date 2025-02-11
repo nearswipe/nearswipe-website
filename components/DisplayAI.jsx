@@ -9,7 +9,7 @@ const DisplayAI = () => {
     const {chatBot, setChatBot} = useGlobalContext()
   return (
     <div
-        className={`fixed z-[70] flex items-center border justify-end md:inset-0 w-full  self-end px-6 md:px-0 bottom-16 md:bottom-4`}
+        className={`fixed z-[70] flex items-center border justify-end md:inset-0 md:w-full w-fit self-end px-6 md:px-0 bottom-16 right-4 md:right-0 md:bottom-4`}
       >
         <div className="w-full md:w-1/2 flex justify-end">
           {chatBot ? (
