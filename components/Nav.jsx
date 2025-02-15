@@ -16,6 +16,7 @@ import {
   product,
   technology,
 } from "@/constants/images";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Nav = () => {
   const [dropDown, setDropDown] = useState("");
@@ -33,6 +34,20 @@ const Nav = () => {
   const router = useRouter();
   const pathName = usePathname();
 
+  const sideNavVariants = {
+    hidden: { y: "-100%", opacity: 0 },
+    visible: {
+      y: "0%",
+      opacity: 1,
+      transition: { duration: 0.6, ease: "easeInOut" },
+    },
+    exit: {
+      y: "-100%",
+      opacity: 0,
+      transition: { duration: 0.4, ease: "easeInOut" },
+    },
+  };
+
   return (
     <>
       <div className="hidden absolute top-0 w-full z-[70] px-16 py-6 md:flex items-center justify-between text-white bg-transparent">
@@ -41,6 +56,7 @@ const Nav = () => {
           <div className="w-14 h-14 rounded-full overflow-hidden">
             <Image
               src={logo}
+              onClick={() => router.push("/")}
               className="w-full h-full object-cover"
               width={1000}
               height={1000}
@@ -205,6 +221,7 @@ const Nav = () => {
         <div className="w-14 h-14 rounded-full overflow-hidden">
           <Image
             src={logo}
+            onClick={() => router.push("/")}
             className="w-full h-full object-cover"
             width={1000}
             height={1000}
@@ -227,11 +244,18 @@ const Nav = () => {
       </div>
 
       {sideNav && (
-        <div className="w-full h-[100vh] fixed top-0 bottom-0 inset-0 z-[100] py-6 bg-[#0e0e0e]">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
+          className="w-full h-[100vh] fixed top-0 bottom-0 inset-0 z-[100] py-6 bg-[#0e0e0e]"
+        >
           <div className="flex items-center justify-between w-full px-4">
             <div className="w-14 h-14 rounded-full overflow-hidden">
               <Image
                 src={logo}
+                onClick={() => router.push("/")}
                 className="w-full h-full object-cover"
                 width={1000}
                 height={1000}
@@ -241,9 +265,7 @@ const Nav = () => {
 
             <div className="flex items-center justify-end">
               <div
-                onClick={() => {
-                  setSideNav(!sideNav);
-                }}
+                onClick={() => setSideNav(!sideNav)}
                 className="p-2 cursor-pointer text-white text-[1.2rem] font-black rounded-full bg-[#fff]/15"
               >
                 <LiaTimesSolid />
@@ -251,149 +273,169 @@ const Nav = () => {
             </div>
           </div>
 
-          <div className="flex flex-col text-white justify-between w-full mt-4 h-[98%]">
+          <motion.div
+            initial={{ y: -20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="flex flex-col text-white justify-between w-full mt-4 h-[98%]"
+          >
             <div>
-              <div
+              <motion.div
+                whileTap={{ scale: 0.95 }}
                 onClick={() => {
                   setSideNav(false);
                   router.push("/");
                 }}
-                className="border-b capitalize border-white/15 p-4 text-xl font-bold"
+                className="border-b capitalize border-white/15 p-4 text-xl font-bold cursor-pointer"
               >
                 Home
-              </div>
+              </motion.div>
 
-              <div className="border-b capitalize border-white/15 p-4 text-xl font-bold">
+              {/* Business Dropdown */}
+              <motion.div className="border-b capitalize border-white/15 p-4 text-xl font-bold">
                 <div
                   onClick={() => setBusDropDown(!busDropDown)}
-                  className="flex items-center justify-between"
+                  className="flex items-center justify-between cursor-pointer"
                 >
-                  <span>business</span>
-
-                  <span className="text-[#635BFF] text-2xl">
+                  <span>Business</span>
+                  <motion.span
+                    animate={{ rotate: busDropDown ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="text-[#635BFF] text-2xl"
+                  >
                     {busDropDown ? <IoChevronUp /> : <IoChevronDown />}
-                  </span>
+                  </motion.span>
                 </div>
 
-                {busDropDown && (
-                  <>
-                    <div
-                      onClick={() => {
-                        setSideNav(false);
-                        router.push("/products");
-                      }}
-                      className="flex items-center px-3 py-2 cursor-pointer"
+                <AnimatePresence>
+                  {busDropDown && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.4, ease: "easeInOut" }}
                     >
-                      <span className="bg-[#1e1e1e] p-2 rounded-md">
-                        <Image src={product} width={20} height={20} alt="" />
-                      </span>
+                      <div
+                        onClick={() => {
+                          setSideNav(false);
+                          router.push("/products");
+                        }}
+                        className="flex items-center px-3 py-2 cursor-pointer"
+                      >
+                        <span className="bg-[#1e1e1e] p-2 rounded-md">
+                          <Image src={product} width={20} height={20} alt="" />
+                        </span>
+                        <span className="ml-3 text-sm font-medium text-[#a1a1aa]">
+                          Products
+                        </span>
+                      </div>
 
-                      <span className="ml-3 text-sm font-medium text-[#a1a1aa]">
-                        Products
-                      </span>
-                    </div>
+                      <div
+                        onClick={() => {
+                          setSideNav(false);
+                          router.push("/technology");
+                        }}
+                        className="flex items-center px-3 py-2 cursor-pointer"
+                      >
+                        <span className="bg-[#1e1e1e] p-2 rounded-md">
+                          <Image
+                            src={technology}
+                            width={20}
+                            height={20}
+                            alt=""
+                          />
+                        </span>
+                        <span className="ml-3 text-sm font-medium text-[#a1a1aa]">
+                          Technology
+                        </span>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
 
-                    <div
-                      onClick={() => {
-                        setSideNav(false);
-                        router.push("/technology");
-                      }}
-                      className="flex items-center px-3 py-2 cursor-pointer"
-                    >
-                      <span className="bg-[#1e1e1e] p-2 rounded-md">
-                        <Image src={technology} width={20} height={20} alt="" />
-                      </span>
-
-                      <span className="ml-3 text-sm font-medium text-[#a1a1aa]">
-                        technology
-                      </span>
-                    </div>
-                  </>
-                )}
-              </div>
-
-              <div className="border-b capitalize border-white/15 p-4 text-xl font-bold">
+              {/* Company Dropdown (Same logic) */}
+              <motion.div className="border-b capitalize border-white/15 p-4 text-xl font-bold">
                 <div
                   onClick={() => setCmpyDropDown(!cmpyDropDown)}
-                  className="flex items-center justify-between"
+                  className="flex items-center justify-between cursor-pointer"
                 >
-                  <span>company</span>
-
-                  <span className="text-[#635BFF] text-2xl">
+                  <span>Company</span>
+                  <motion.span
+                    animate={{ rotate: cmpyDropDown ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="text-[#635BFF] text-2xl"
+                  >
                     {cmpyDropDown ? <IoChevronUp /> : <IoChevronDown />}
-                  </span>
+                  </motion.span>
                 </div>
 
-                {cmpyDropDown && (
-                  <>
-                    <div
-                      onClick={() => {
-                        setSideNav(false);
-                        router.push("/career");
-                      }}
-                      className="flex items-center px-3 py-2 cursor-pointer"
+                <AnimatePresence>
+                  {cmpyDropDown && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.4, ease: "easeInOut" }}
                     >
-                      <span className="bg-[#1e1e1e] p-2 rounded-md">
-                        <Image src={career} width={20} height={20} alt="" />
-                      </span>
+                      <div
+                        onClick={() => {
+                          setSideNav(false);
+                          router.push("/career");
+                        }}
+                        className="flex items-center px-3 py-2 cursor-pointer"
+                      >
+                        <span className="bg-[#1e1e1e] p-2 rounded-md">
+                          <Image src={career} width={20} height={20} alt="" />
+                        </span>
+                        <span className="ml-3 text-sm font-medium text-[#a1a1aa]">
+                          Careers
+                        </span>
+                      </div>
 
-                      <span className="ml-3 text-sm font-medium text-[#a1a1aa]">
-                        Careers
-                      </span>
-                    </div>
+                      <div
+                        onClick={() => {
+                          setSideNav(false);
+                          router.push("/about-us");
+                        }}
+                        className="flex items-center px-3 py-2 cursor-pointer"
+                      >
+                        <span className="bg-[#1e1e1e] p-2 rounded-md">
+                          <Image src={about} width={20} height={20} alt="" />
+                        </span>
+                        <span className="ml-3 text-sm font-medium text-[#a1a1aa]">
+                          About Us
+                        </span>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
 
-                    <div
-                      onClick={() => {
-                        setSideNav(false);
-                        router.push("/about-us");
-                      }}
-                      className="flex items-center px-3 py-2 cursor-pointer"
-                    >
-                      <span className="bg-[#1e1e1e] p-2 rounded-md">
-                        <Image src={about} width={20} height={20} alt="" />
-                      </span>
-
-                      <span className="ml-3 text-sm font-medium text-[#a1a1aa]">
-                        About us
-                      </span>
-                    </div>
-                  </>
-                )}
-              </div>
-
-              <div
+              <motion.div
+                whileTap={{ scale: 0.95 }}
                 onClick={() => {
                   setSideNav(false);
                   router.push("/blog");
                 }}
-                className="border-b capitalize border-white/15 p-4 text-xl font-bold"
+                className="border-b capitalize border-white/15 p-4 text-xl font-bold cursor-pointer"
               >
-                blog
-              </div>
+                Blog
+              </motion.div>
 
-              <div
+              <motion.div
+                whileTap={{ scale: 0.95 }}
                 onClick={() => {
                   setSideNav(false);
                   router.push("/contact");
                 }}
-                className="border-b capitalize border-white/15 p-4 text-xl font-bold"
+                className="border-b capitalize border-white/15 p-4 text-xl font-bold cursor-pointer"
               >
-                contact
-              </div>
+                Contact
+              </motion.div>
             </div>
-
-            <CustomButton
-              textStyles="uppercase text-lg font-bold"
-              imageStyles="rounded-[35px]"
-              func={() => {
-                setSideNav(false);
-                setModalActive(true);
-              }}
-              containerStyles="mb-2 py-3.5 self-center sm:self-start w-full px-6 rounded-[35px]"
-              title="Join the waitlist"
-            />
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       )}
     </>
   );

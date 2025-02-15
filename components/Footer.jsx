@@ -30,6 +30,7 @@ const Footer = () => {
               <div className="w-10 h-10 rounded-full overflow-hidden">
                 <Image
                   src={logo}
+                  onClick={() => router.push("/")}
                   className="w-full h-full object-cover"
                   width={1000}
                   height={1000}
