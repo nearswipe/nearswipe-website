@@ -4,6 +4,7 @@ import Nav from "@/components/Nav";
 import DisplayAI from "@/components/DisplayAI";
 import Footer from "@/components/Footer";
 import WaitlistModal from "@/components/WaitlistModal";
+import { ToastContainer } from "react-toastify";
 
 const metadata = {
   title: "NearSwipe",
@@ -20,6 +21,7 @@ export default function RootLayout({ children }) {
           {children}
           <DisplayAI />
           <Footer />
+          <ToastContainer  />
         </GlobalProvider>
       </body>
     </html>

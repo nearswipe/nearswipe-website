@@ -1,4 +1,4 @@
 import Blog from './Blog'
-import career from './career'
+import career from './Career'
 
 export const schemaTypes = [Blog, career]

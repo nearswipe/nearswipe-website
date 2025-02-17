@@ -17,42 +17,44 @@ import { motion } from "framer-motion";
 
 const allJourney = [
   {
-    date: "march 2023",
-    title: "NearSwipe Founded",
-    desc: "Started a journey to revolutionize NFC payments and identity solutions",
+    date: "January 2025",
+    title: "NOMINEE FINTECH STARTUP OF THE YEAR AWARD",
+    desc: "Nominated for the FINTECH STARTUP OF THE YEAR in United States for the Northern American Startup Awards Edition 11.",
   },
   {
-    date: "march 2023",
-    title: "NearSwipe Founded",
-    desc: "Started a journey to revolutionize NFC payments and identity solutions",
+    date: "January 2025",
+    title: "NOMINEE BEST NEWCOMER AWARD",
+    desc: "Nominated for the BEST NEWCOMER OF THE YEAR in United States for the Northern American Startup Awards Edition 11.",
   },
   {
-    date: "march 2023",
-    title: "NearSwipe Founded",
-    desc: "Started a journey to revolutionize NFC payments and identity solutions",
+    date: "January 2025",
+    title: "NOMINEE FOUNDER OF THE YEAR AWARD",
+    desc: "Nominated for the FOUNDER OF THE YEAR AWARD in United States for the Northern American Startup Awards Edition 11.",
   },
 ];
 
 const myTeam = [
   {
-    name: "Sarah Johnson",
-    position: "CEO & Founder",
-    experience:
-      "Fintech veteran with +10 years of experience in payment solutions",
+    name: "Joshua Inioluwa Jacob",
+    position: "CEO/CTO",
+    experience: "",
   },
   {
-    name: "Sarah Johnson",
-    position: "CEO & Founder",
-    experience:
-      "Fintech veteran with +10 years of experience in payment solutions",
+    name: "Augustine Gboru",
+    position: "Executive Chairman",
+    experience: "",
   },
   {
-    name: "Sarah Johnson",
-    position: "CEO & Founder",
-    experience:
-      "Fintech veteran with +10 years of experience in payment solutions",
+    name: "Samuel Oluwatobi Joseph",
+    position: "COO",
+    experience: "",
   },
 ];
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
 
 const page = () => {
   const [windowWidth, setWindowWidth] = useState(0);
@@ -302,7 +304,7 @@ const page = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                 viewport={{ once: true }}
-                className="text-2xl md:text-[2rem] font-black capitalize"
+                className="text-2xl md:text-[2rem] font-[600] capitalize text-center"
               >
                 {team?.name}
               </motion.h1>
@@ -384,7 +386,7 @@ const page = () => {
                 </p>
 
                 {/* Title */}
-                <h1 className="text-2xl font-bold capitalize">{item?.title}</h1>
+                <h1 className="text-2xl font-bold capitalize text-center">{item?.title}</h1>
 
                 {/* Description */}
                 <p className="text-md text-[#a1a1aa] font-light text-center">
@@ -417,36 +419,29 @@ const page = () => {
       </motion.div>
 
       {/* Security Section */}
-      <motion.div
-        className="flex md:p-20 p-5 mt-16 font-roboto"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: 50 }}
-        transition={{ duration: 0.8, ease: "easeOut", delay: 0.5 }}
-      >
-        <div className="relative flex flex-col rounded-2xl border items-center justify-center w-full md:h-96 h-80">
+      <div className="flex md:p-20 p-5 mt-16 font-roboto">
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={fadeUp}
+          className="relative flex flex-col rounded-2xl border items-center justify-center w-full"
+        >
           <Image
-            src={windowWidth > 1200 ? dynamicBanner : bannerImage2}
+            src={windowWidth > 1200 ? bannerImage2 : bannerImage1}
+            priority
             className="z-40 w-full h-full absolute rounded-2xl inset-0 object-cover"
             width={400}
             height={400}
-            alt="Security"
+            alt=""
           />
-
-          <motion.div
-            className="absolute z-50 w-full flex justify-center"
-            initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ opacity: 0, y: 50 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
-          >
-            <div className="w-full md:w-[55%] px-4 flex flex-col items-center gap-6">
+          <div className="z-40 w-full py-10 flex justify-center">
+            <div className="w-full md:w-[50%] px-4 flex flex-col items-center gap-6">
               <h1 className="text-2xl font-black md:text-[2rem] text-center md:leading-[3rem]">
                 Enterprise-Grade Security
               </h1>
 
               <p className="text-center text-[#656573] font-light md:text-[1.2rem]">
-                Our NFC technology is protected by military-grade encryption,
+                Our NFC technologyis protected by military-grade encryption,
                 ensuring your data and transactions remain secure at all times.
               </p>
 
@@ -458,9 +453,9 @@ const page = () => {
                 title="Join the waitlist"
               />
             </div>
-          </motion.div>
-        </div>
-      </motion.div>
+          </div>
+        </motion.div>
+      </div>
     </div>
   );
 };

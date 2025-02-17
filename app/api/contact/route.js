@@ -4,9 +4,9 @@ const adminEmail = "team@nearswipe.com";
 
 export async function POST(req) {
   try {
-    const { email, name, message } = await req.json(); // Read the request body
+    const { email, name, subject, reason, message } = await req.json(); // Read the request body
 
-    if (!email || !name || !message) {
+    if (!email || !name || !subject || !reason || !message) {
       return new Response(
         JSON.stringify({ error: "All fields are required" }),
         {
@@ -16,12 +16,10 @@ export async function POST(req) {
       );
     }
 
-   
-
     // Send email to the admin
     await sendMail({
       email: adminEmail,
-      subject: "New Contact Message",
+      subject: `New Contact Message: ${subject}`,
       html: `
               <!DOCTYPE html>
               <html lang="en">
@@ -93,6 +91,12 @@ export async function POST(req) {
                         <span>Email:</span> ${email}
                       </div>
                       <div class="info-item">
+                        <span>Subject:</span> ${subject}
+                      </div>
+                      <div class="info-item">
+                        <span>Reason:</span> ${reason}
+                      </div>
+                      <div class="info-item">
                         <span>Message:</span>
                         <p>${message}</p>
                       </div>
@@ -100,7 +104,7 @@ export async function POST(req) {
                   </div>
                   <div class="footer">
                     <p>This message was sent from the NearSwipe website contact form.</p>
-                    <p>&copy; 2024 NearSwipe. All rights reserved.</p>
+                    <p>&copy; {(new Date().getFullYear())} NearSwipe, Inc. All rights reserved.</p>
                   </div>
                 </div>
               </body>

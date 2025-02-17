@@ -39,9 +39,14 @@ const Footer = () => {
               </div>
               <h1 className="text-lg font-semibold">NearSwipe, Inc.</h1>
             </div>
-            <p className="text-[17px] text-[#A1A1AA]">
-              Global dollar investments made simple.
-            </p>
+            <div>
+              <p className="text-[17px] text-[#A1A1AA]">
+                Global dollar investments made simple.
+              </p>
+              <p className="text-[15px] text-[#A1A1AA]">
+                NearSwipe, Inc. &copy; {(new Date().getFullYear())}
+              </p>
+            </div>
           </div>
 
           <div className="grid lg:grid-cols-5 md:grid-cols-3 gap-12 mt-12 grid-cols-2 w-full justify-around">

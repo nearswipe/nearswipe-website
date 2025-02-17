@@ -15,7 +15,7 @@ const page = ({ params }) => {
   const { blogs } = useGlobalContext();
   const router = useRouter();
   const { slug } = use(params);
-  const { setModalActive} = useGlobalContext();
+  const { setModalActive } = useGlobalContext();
   const [article, setArticle] = useState(null);
 
   useEffect(() => {
@@ -35,6 +35,45 @@ const page = ({ params }) => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+
+  const portableTextComponents = {
+    types: {
+      block: (props) => {
+        const { children, node } = props;
+        switch (node.style) {
+          case "h1":
+            return <h1 className="text-4xl font-bold text-white">{children}</h1>;
+          case "h2":
+            return <h2 className="text-3xl font-semibold text-white">{children}</h2>;
+          case "h3":
+            return <h3 className="text-2xl font-semibold text-gray-300">{children}</h3>;
+          case "h4":
+            return <h4 className="text-xl font-medium text-gray-300">{children}</h4>;
+          case "blockquote":
+            return (
+              <blockquote className="border-l-4 border-gray-500 pl-4 italic text-gray-400">
+                {children}
+              </blockquote>
+            );
+          default:
+            return <p className="text-lg text-gray-300">{children}</p>;
+        }
+      },
+      list: (props) => {
+        const { type, children } = props;
+        return type === "bullet" ? (
+          <ul className="list-disc ml-5 text-gray-300">{children}</ul>
+        ) : (
+          <ol className="list-decimal ml-5 text-gray-300">{children}</ol>
+        );
+      },
+      listItem: (props) => {
+        const { children } = props;
+        return <li className="text-gray-300">{children}</li>;
+      },
+    },
+  };
+  
   return (
     <div className="relative w-full">
       <div className="relative font-roboto w-full flex flex-col items-center justify-center">
@@ -66,8 +105,10 @@ const page = ({ params }) => {
                   {article?.smallDescription}
                 </p>
 
-                <div className="prose font-roboto min-w-full text-md  my-8 font-light text-[#a1a1aa]">
-                  <PortableText value={article?.content} />
+                <div className="prose prose-invert font-roboto min-w-full text-md my-8 font-light">
+                  <PortableText
+                    value={article?.content}
+                  />
                 </div>
               </div>
             </div>
@@ -125,11 +166,7 @@ const page = ({ params }) => {
       <div className="flex md:p-20 p-5 mt-16 font-roboto">
         <div className="relative flex flex-col rounded-2xl items-center justify-center w-full md:h-96 h-80">
           <Image
-            src={
-              windowWidth > 1200
-                ? dynamicBanner
-                : bannerImage2
-            }
+            src={windowWidth > 1200 ? dynamicBanner : bannerImage2}
             priority
             className="z-40 w-full h-full absolute rounded-2xl inset-0 object-cover"
             width={400}

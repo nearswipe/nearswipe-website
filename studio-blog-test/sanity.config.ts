@@ -5,9 +5,9 @@ import {schemaTypes} from './schemaTypes'
 
 export default defineConfig({
   name: 'default',
-  title: 'Blog-test',
+  title: 'NearSwipe Blog',
 
-  projectId: 'tl0xhybj',
+  projectId: 'x43til9e',
   dataset: 'production',
 
   plugins: [structureTool(), visionTool()],
