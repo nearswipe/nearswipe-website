@@ -11,8 +11,8 @@ export async function POST(req) {
       });
     }
 
-    const LIST_ID = process.env.NEXT_PUBLIC_MAILCHIMP_AUDIENCE_ID;
-    const API_KEY = process.env.NEXT_PUBLIC_MAILCHIMP_APIKEY;
+    const LIST_ID = process.env.MAILCHIMP_AUDIENCE_ID;
+    const API_KEY = process.env.MAILCHIMP_APIKEY;
     const DATACENTER = API_KEY.split("-")[1];
 
     const url = `https://${DATACENTER}.api.mailchimp.com/3.0/lists/${LIST_ID}/members/`;
