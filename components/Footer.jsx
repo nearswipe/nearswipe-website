@@ -75,10 +75,10 @@ const Footer = () => {
 
             <div className="flex flex-col gap-4">
               <h1 className="text-lg font-semibold">Legal</h1>
-              <Link href="#" className="text-md text-[#A1A1AA]">
+              <Link href="/legal" className="text-md text-[#A1A1AA]">
                 Privacy policy
               </Link>
-              <Link href="#" className="text-md text-[#A1A1AA]">
+              <Link href="/terms" className="text-md text-[#A1A1AA]">
                 Terms of use
               </Link>
             </div>
