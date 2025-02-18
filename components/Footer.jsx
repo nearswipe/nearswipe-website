@@ -25,7 +25,7 @@ const Footer = () => {
     <div className="relative flex flex-col items-center">
       <div className="w-full font-roboto text-white h-fit p-4 sm:p-12 lg:p-16">
         <div className="grrd grid-cols-1 md:grid-cols-2 mb-3">
-          <div className="flex lg:w-1/4 flex-col gap-4">
+          <div className="flex lg:w-1/2 flex-col gap-4">
             <div className="flex items-center ">
               <div className="w-10 h-10 rounded-full overflow-hidden">
                 <Image
@@ -41,7 +41,7 @@ const Footer = () => {
             </div>
             <div>
               <p className="text-[17px] text-[#A1A1AA]">
-                Global dollar investments made simple.
+                Secure Access. Trusted Identity. Seamless Payments.
               </p>
               <p className="text-[15px] text-[#A1A1AA]">
                 NearSwipe, Inc. &copy; {new Date().getFullYear()}

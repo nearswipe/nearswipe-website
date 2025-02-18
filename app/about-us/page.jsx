@@ -17,17 +17,17 @@ import { motion } from "framer-motion";
 
 const allJourney = [
   {
-    date: "January 2025",
+    date: "24th January 2025",
     title: "NOMINEE FINTECH STARTUP OF THE YEAR AWARD",
     desc: "Nominated for the FINTECH STARTUP OF THE YEAR in United States for the Northern American Startup Awards Edition 11.",
   },
   {
-    date: "January 2025",
+    date: "05th February 2025",
     title: "NOMINEE BEST NEWCOMER AWARD",
     desc: "Nominated for the BEST NEWCOMER OF THE YEAR in United States for the Northern American Startup Awards Edition 11.",
   },
   {
-    date: "January 2025",
+    date: "12th February 2025",
     title: "NOMINEE FOUNDER OF THE YEAR AWARD",
     desc: "Nominated for the FOUNDER OF THE YEAR AWARD in United States for the Northern American Startup Awards Edition 11.",
   },
@@ -36,17 +36,17 @@ const allJourney = [
 const myTeam = [
   {
     name: "Joshua Inioluwa Jacob",
-    position: "CEO/CTO",
-    experience: "",
-  },
-  {
-    name: "Augustine Gboru",
-    position: "Executive Chairman",
+    position: "CEO & CTO",
     experience: "",
   },
   {
     name: "Samuel Oluwatobi Joseph",
-    position: "COO",
+    position: "COO & CMO",
+    experience: "",
+  },
+  {
+    name: "Augustine Gboru",
+    position: "Executive Chairman & President",
     experience: "",
   },
 ];
