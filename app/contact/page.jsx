@@ -66,7 +66,7 @@ const Page = () => {
     e.preventDefault();
   
     await toast.promise(
-      fetch(`${process.env.ADMIN_SERVER_URL}/api/contact`, {
+      fetch(`${process.env.NEXT_PUBLIC_ADMIN_SERVER_URL}/api/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
