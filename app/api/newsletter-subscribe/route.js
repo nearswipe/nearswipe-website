@@ -2,7 +2,7 @@ import sendMail from "@/lib/sendMail";
 
 export async function POST(req) {
   try {
-    const { email, name } = await req.json(); // Read the request body
+    const { email, name, reason } = await req.json(); // Read the request body
 
     if (!email) {
       return new Response(JSON.stringify({ error: "Email is required" }), {
@@ -20,7 +20,7 @@ export async function POST(req) {
     const data = {
       email_address: email,
       status: "subscribed",
-      merge_fields: { FNAME: name },
+      merge_fields: { FNAME: name, REASON: reason },
     };
 
     const response = await fetch(url, {
@@ -57,6 +57,7 @@ export async function POST(req) {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Welcome to NearSwipe</title>
+        <img src="https://nearswipe.com/favicon.ico" alt="NearSwipe Logo" width="32" height="32">
         <style>
           body {
             font-family: Arial, sans-serif;
