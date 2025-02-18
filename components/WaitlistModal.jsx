@@ -156,7 +156,7 @@ const WaitlistModal = () => {
                 }}
               >
                 You have successfully joined the waitlist of our app. Thank you
-                for your interest in NearSwipe Bank! We're excited to have you
+                for your interest in NearSwipe! We're excited to have you
                 on board and will keep you updated on your application status.
                 Stay tuned for more information!
               </motion.h3>
