@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IoChevronUp, IoChevronDown } from "react-icons/io5";
 import { BiSupport } from "react-icons/bi";
 import { LiaTimesSolid } from "react-icons/lia";
@@ -47,6 +47,8 @@ const Nav = () => {
       transition: { duration: 0.4, ease: "easeInOut" },
     },
   };
+
+  useEffect(() => setDropDown(""), [pathName])
 
   return (
     <>

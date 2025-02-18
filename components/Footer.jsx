@@ -44,7 +44,7 @@ const Footer = () => {
                 Global dollar investments made simple.
               </p>
               <p className="text-[15px] text-[#A1A1AA]">
-                NearSwipe, Inc. &copy; {(new Date().getFullYear())}
+                NearSwipe, Inc. &copy; {new Date().getFullYear()}
               </p>
             </div>
           </div>
@@ -102,18 +102,21 @@ const Footer = () => {
             <div className="flex flex-col gap-4">
               <h1 className="text-lg font-semibold">Social</h1>
               <Link
+                target="_blank"
                 href="https://facebook.com/@NearSwipe"
                 className="text-md text-[#A1A1AA]"
               >
                 Facebook
               </Link>
               <Link
+                target="_blank"
                 href="https://www.linkedin.com/company/nearswipe"
                 className="text-md text-[#A1A1AA]"
               >
                 LinkedIn
               </Link>
               <Link
+                target="_blank"
                 href="https://x.com/nearswipe"
                 className="text-md text-[#A1A1AA]"
               >
