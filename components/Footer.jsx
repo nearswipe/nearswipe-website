@@ -39,7 +39,7 @@ const Footer = () => {
               </div>
               <h1 className="text-lg font-semibold">NearSwipe, Inc.</h1>
             </div>
-            <div>
+            <div className="space-y-2">
               <p className="text-[17px] text-[#A1A1AA]">
                 Secure Access. Trusted Identity. Seamless Payments.
               </p>
