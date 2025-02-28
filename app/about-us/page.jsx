@@ -2,12 +2,15 @@
 import CustomButton from "@/components/CustomButton";
 import WaitlistModal from "@/components/WaitlistModal";
 import {
+  augustine,
   bannerImage1,
   bannerImage2,
   bgImage,
   border,
   dynamicBanner,
+  josh,
   mission,
+  sam,
   vision,
 } from "@/constants/images";
 import { useGlobalContext } from "@/context/GlobalContext";
@@ -38,16 +41,19 @@ const myTeam = [
     name: "Joshua Inioluwa Jacob",
     position: "CEO & CTO",
     experience: "",
+    picture: josh,
   },
   {
     name: "Samuel Oluwatobi Joseph",
     position: "COO & CMO",
     experience: "",
+    picture: sam,
   },
   {
     name: "Augustine Gboru",
     position: "Executive Chairman & President",
     experience: "",
+    picture: augustine,
   },
 ];
 
@@ -281,21 +287,20 @@ const page = () => {
               whileHover={{ scale: 1.05 }}
               className="w-full bg-[#1e1e1e] p-8 rounded-2xl flex flex-col items-center gap-5"
             >
-              {/* Profile Picture Placeholder */}
               <motion.div
                 initial={{ opacity: 0, y: -20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 viewport={{ once: true }}
-                className="w-40 h-40 bg-[#282828] flex items-center justify-center rounded-xl"
+                className="w-40 h-40 bg-[#282828] flex items-center justify-center rounded-xl overflow-hidden"
               >
-                {/* <Image
-            src="/assets/mission.svg"
-            className="object-contain"
-            width={40}
-            height={40}
-            alt=""
-          /> */}
+                <Image
+                  src={team?.picture}
+                  className="w-full h-full object-cover"
+                  width={400}
+                  height={400}
+                  alt="profile picture"
+                />
               </motion.div>
 
               {/* Name */}
@@ -386,7 +391,9 @@ const page = () => {
                 </p>
 
                 {/* Title */}
-                <h1 className="text-2xl font-bold capitalize text-center">{item?.title}</h1>
+                <h1 className="text-2xl font-bold capitalize text-center">
+                  {item?.title}
+                </h1>
 
                 {/* Description */}
                 <p className="text-md text-[#a1a1aa] font-light text-center">

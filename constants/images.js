@@ -1,4 +1,4 @@
-import logo from "../assets/logo.png"
+import logo from "../assets/logo.png";
 import bgImage from "../assets/bg.svg";
 import heroBg from "../assets/hero-down.svg";
 import smartBnk from "../assets/smart-bnk.svg";
@@ -43,6 +43,9 @@ import instantSettle from "../assets/instant-settle.svg";
 import bAnalys from "../assets/b-analysis.svg";
 import vAccts from "../assets/virtual-accts.svg";
 import linkedCards from "../assets/linked-cards.svg";
+import sam from "../assets/sam.JPG";
+import josh from "../assets/josh.JPG";
+import augustine from "../assets/augustine.JPG";
 
 export {
   logo,
@@ -90,4 +93,7 @@ export {
   mission,
   vision,
   border,
+  sam,
+  josh,
+  augustine,
 };
