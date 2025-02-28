@@ -9,7 +9,7 @@ import Head from "next/head";
 import { logo } from "@/constants/images";
 
 const metadata = {
-  title: "NearSwipe",
+  title: "NearSwipe - Multifunctional ID Cards Including Payments",
   description: "Access. Pay. Thrive.",
 };
 
@@ -45,6 +45,7 @@ export default function RootLayout({ children }) {
             }),
           }}
         />
+        <link rel="canonical" href="URL" />
       </Head>
 
       <body className="bg-black">
