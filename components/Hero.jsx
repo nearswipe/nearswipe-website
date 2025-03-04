@@ -124,7 +124,7 @@ const Hero = ({ isActive, setIsActive }) => {
             textStyles="uppercase text-[16px] font-bold"
             containerStyles="mt-5 py-2 px-6 rounded-[35px]"
             imageStyles="rounded-[35px]"
-            title="Join the whitelist"
+            title="Join the waitlist"
           />
         </motion.div>
       </motion.div>
