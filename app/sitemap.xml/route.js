@@ -1,7 +1,7 @@
 import { client } from "@/lib/sanity";
 
 export async function GET() {
-  const BASE_URL = "https://www.nearswipe.com"; // Update with your actual domain
+  const BASE_URL = "https://nearswipe.com"; // Update with your actual domain
 
   const staticPages = [
     "",
