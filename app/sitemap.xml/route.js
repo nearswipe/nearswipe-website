@@ -37,7 +37,7 @@ export async function GET() {
       <url>
         <loc>${BASE_URL}/${page}</loc>
         <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
+        <priority>0.8</priority>
       </url>`
     );
 

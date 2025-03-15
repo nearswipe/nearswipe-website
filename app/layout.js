@@ -28,6 +28,38 @@ export default function RootLayout({ children }) {
               logo: logo,
               description:
                 "NearSwipe provides NFC-enabled smart ID cards, integrating payments and access control.",
+              potentialAction: {
+                "@type": "SearchAction",
+                target: "https://nearswipe.com/search?q={search_term}",
+                "query-input": "required name=search_term",
+              },
+              hasPart: [
+                {
+                  "@type": "SiteNavigationElement",
+                  name: "Products",
+                  url: "https://nearswipe.com/products",
+                },
+                {
+                  "@type": "SiteNavigationElement",
+                  name: "Technology",
+                  url: "https://nearswipe.com/technology",
+                },
+                {
+                  "@type": "SiteNavigationElement",
+                  name: "About Us",
+                  url: "https://nearswipe.com/about-us",
+                },
+                {
+                  "@type": "SiteNavigationElement",
+                  name: "Blogs",
+                  url: "https://nearswipe.com/blog",
+                },
+                {
+                  "@type": "SiteNavigationElement",
+                  name: "Contact",
+                  url: "https://nearswipe.com/contact",
+                },
+              ],
               contactPoint: [
                 {
                   "@type": "ContactPoint",
