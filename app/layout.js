@@ -24,16 +24,15 @@ export default function RootLayout({ children }) {
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "NearSwipe",
-              url: "https://www.nearswipe.com",
+              url: "https://nearswipe.com",
               logo: logo,
               description:
-                "NearSwipe provides NFC-enabled smart ID cards for university students, integrating payments and access control.",
+                "NearSwipe provides NFC-enabled smart ID cards, integrating payments and access control.",
               contactPoint: [
                 {
                   "@type": "ContactPoint",
                   telephone: "+2348063642312",
                   contactType: "customer service",
-                  areaServed: "NG",
                   availableLanguage: "English",
                 },
               ],
@@ -45,6 +44,7 @@ export default function RootLayout({ children }) {
             }),
           }}
         />
+
         <link rel="canonical" href="URL" />
       </Head>
 
