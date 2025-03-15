@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Organization",
+              "@type": "Company",
               name: "NearSwipe",
               url: "https://nearswipe.com",
               logo: logo,
